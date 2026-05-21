@@ -7,8 +7,8 @@ tags: [exercise, solution, projection]
 [Insert step-by-step LaTeX math here]
 
 ## Code Implementation
-```cpp
-// Optional C++ snippet here
+```python
+# Optional Python implementation
 ```
 
-**Back to Question:** [[Q_Vector_Projection]] **Related Concepts:** [[Vector Projection]]
+**Back to Question:** [[Q_Vector_Projection]] **Related Concepts:** [[05_Vector_Projection]]
