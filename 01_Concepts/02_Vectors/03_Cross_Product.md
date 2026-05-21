@@ -9,10 +9,12 @@ Unlike the dot product which gives a number, the cross product gives a **new vec
 - **Zero Result:** If the cross product is zero, the vectors are parallel (they don't form a plane).
 
 ## Definitions
-| Type | Formula |
-| :--- | :--- |
-| **Algebraic** | $\vec{a} \times \vec{b} = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)$ |
-| **Geometric** | $\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$ |
+
+### Algebraic Definition
+$$\vec{a} \times \vec{b} = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)$$
+
+### Geometric Definition
+$$\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$$
 
 ## Key Properties
 | Property | Formula / Description |

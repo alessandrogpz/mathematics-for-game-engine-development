@@ -10,10 +10,12 @@ Think of vector projection as finding the "shadow" that vector $\vec{a}$ casts o
   - **Vector Projection (Vector):** The actual vector that represents that shadow.
 
 ## Formulas
-| Type | Notation | Formula |
-| :--- | :--- | :--- |
-| **Scalar Projection** | $\text{comp}_{\vec{b}}\vec{a}$ | $\frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|}$ |
-| **Vector Projection** | $\text{proj}_{\vec{b}}\vec{a}$ | $\left( \frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|^2} \right) \vec{b}$ |
+
+### Scalar Projection (Component)
+$$\text{comp}_{\vec{b}}\vec{a} = \frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|}$$
+
+### Vector Projection
+$$\text{proj}_{\vec{b}}\vec{a} = \frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|^2} \vec{b}$$
 
 ## Derivation of the Formula
 

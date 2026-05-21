@@ -9,10 +9,12 @@ Think of the dot product as a measure of how much one vector "points" in the dir
 - **High Negative Value:** The vectors are pointing in roughly opposite directions.
 
 ## Definitions
-| Type | Formula |
-| :--- | :--- |
-| **Algebraic** | $\vec{a} \cdot \vec{b} = \sum a_i b_i = a_1b_1 + a_2b_2 + \dots$ |
-| **Geometric** | $\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos(\theta)$ |
+
+### Algebraic Definition
+$$\vec{a} \cdot \vec{b} = \sum_{i=1}^n a_i b_i = a_1b_1 + a_2b_2 + \dots + a_nb_n$$
+
+### Geometric Definition
+$$\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos(\theta)$$
 
 ## Key Properties
 | Property | Formula |
