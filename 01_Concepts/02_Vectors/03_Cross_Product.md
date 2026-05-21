@@ -2,31 +2,38 @@
 
 The cross product of two 3D vectors is another 3D vector that is perpendicular (orthogonal) to both original vectors.
 
-## Algebraic Definition
-Given $\vec{a} = (a_1, a_2, a_3)$ and $\vec{b} = (b_1, b_2, b_3)$:
-$$\vec{a} \times \vec{b} = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)$$
+## Conceptual Understanding: "Perpendicular Generator"
+Unlike the dot product which gives a number, the cross product gives a **new vector**.
+- **Direction:** The result is always perpendicular to the "floor" or plane created by the two input vectors.
+- **Magnitude:** The length of the resulting vector represents the **area** of the parallelogram formed by the two vectors.
+- **Zero Result:** If the cross product is zero, the vectors are parallel (they don't form a plane).
 
-## Geometric Definition
-The magnitude of the cross product is related to the sine of the angle $\theta$ between them:
-$$\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$$
+## Definitions
+| Type | Formula |
+| :--- | :--- |
+| **Algebraic** | $\vec{a} \times \vec{b} = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)$ |
+| **Geometric** | $\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$ |
 
-### Right-Hand Rule
-The direction of $\vec{a} \times \vec{b}$ is determined by the right-hand rule:
-- Point your fingers in the direction of $\vec{a}$.
-- Curl them toward $\vec{b}$.
-- Your thumb points in the direction of $\vec{a} \times \vec{b}$.
+## Common Applications
+- **Finding Surface Normals:** In 3D modeling and physics, the cross product is used to find a vector perpendicular to a surface (a "normal").
+- **Torque and Rotation:** In physics, torque is the cross product of the lever arm and the force ($\vec{\tau} = \vec{r} \times \vec{F}$).
+- **Calculating Area:** Used to find the area of triangles or parallelograms in 3D space.
+- **Checking Parallelism:** If the result is the zero vector, the two vectors are parallel.
 
-## Basic Properties
-| Property | Formula | Description |
-| :--- | :--- | :--- |
-| **Anticommutative** | $\vec{a} \times \vec{b} = -(\vec{b} \times \vec{a})$ | Reversing order flips the vector |
-| **Distributive** | $\vec{a} \times (\vec{b} + \vec{c}) = \vec{a} \times \vec{b} + \vec{a} \times \vec{c}$ | Over vector addition |
-| **Scalar Factorization** | $(s\vec{a}) \times \vec{b} = \vec{a} \times (s\vec{b}) = s(\vec{a} \times \vec{b})$ | Scalars can be factored out |
-| **Vector Triple Product** | $\vec{a} \times (\vec{b} \times \vec{c}) = \vec{b}(\vec{a} \cdot \vec{c}) - \vec{c}(\vec{a} \cdot \vec{b})$ | "BAC-CAB" rule |
-| **Lagrange's Identity** | $\|\vec{a} \times \vec{b}\|^2 = \|\vec{a}\|^2 \|\vec{b}\|^2 - (\vec{a} \cdot \vec{b})^2$ | Relation to dot product |
+## Key Properties
+| Property | Formula / Description |
+| :--- | :--- |
+| **Anticommutative** | $\vec{a} \times \vec{b} = -(\vec{b} \times \vec{a})$ (Reversing order flips the vector) |
+| **Distributive** | $\vec{a} \times (\vec{b} + \vec{c}) = \vec{a} \times \vec{b} + \vec{a} \times \vec{c}$ |
+| **Vector Triple Product** | $\vec{a} \times (\vec{b} \times \vec{c}) = \vec{b}(\vec{a} \cdot \vec{c}) - \vec{c}(\vec{a} \cdot \vec{b})$ |
 
-## Area of a Parallelogram
-The magnitude $\|\vec{a} \times \vec{b}\|$ is equal to the area of the parallelogram formed by $\vec{a}$ and $\vec{b}$.
-- **Base:** $\|\vec{b}\|$
-- **Height:** $\|\vec{a}\| \sin(\theta)$
-- **Area:** $Base \times Height = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$
+## Visualizing the Result (Right-Hand Rule)
+- Point fingers in direction of $\vec{a}$.
+- Curl fingers toward $\vec{b}$.
+- Thumb points in direction of $\vec{a} \times \vec{b}$.
+```mermaid
+graph TD
+    A(Vector A) -->|cross| B(Vector B)
+    B --> Result(Perpendicular Vector)
+    A --> Result
+```
