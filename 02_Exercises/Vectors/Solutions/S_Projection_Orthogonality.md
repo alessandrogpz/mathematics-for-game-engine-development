@@ -7,8 +7,8 @@ tags: [exercise, solution, projection, orthogonality]
 [Insert step-by-step LaTeX math here]
 
 ## Code Implementation
-```python
-# Optional Python implementation
+```cpp
+// Optional C++ snippet here
 ```
 
 **Back to Question:** [[Q_Projection_Orthogonality]] **Related Concepts:** [[05_Vector_Projection]], [[02_Dot_Product]]
