@@ -14,12 +14,6 @@ Unlike the dot product which gives a number, the cross product gives a **new vec
 | **Algebraic** | $\vec{a} \times \vec{b} = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)$ |
 | **Geometric** | $\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$ |
 
-## Common Applications
-- **Finding Surface Normals:** In 3D modeling and physics, the cross product is used to find a vector perpendicular to a surface (a "normal").
-- **Torque and Rotation:** In physics, torque is the cross product of the lever arm and the force ($\vec{\tau} = \vec{r} \times \vec{F}$).
-- **Calculating Area:** Used to find the area of triangles or parallelograms in 3D space.
-- **Checking Parallelism:** If the result is the zero vector, the two vectors are parallel.
-
 ## Key Properties
 | Property | Formula / Description |
 | :--- | :--- |

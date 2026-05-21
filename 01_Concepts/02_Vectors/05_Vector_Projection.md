@@ -46,9 +46,3 @@ $$\text{proj}_{\vec{b}}\vec{a} = \left( \frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|
 ### 4. Simplify
 Multiplying the denominators ($\|\vec{b}\| \cdot \|\vec{b}\| = \|\vec{b}\|^2$):
 $$\text{proj}_{\vec{b}}\vec{a} = \frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|^2} \vec{b}$$
-
-## Common Applications
-- **Decomposing Forces (Physics):** Used to find how much of a force (like gravity) is acting along a specific direction (like an inclined plane).
-- **Gram-Schmidt Process:** A fundamental algorithm in linear algebra used to create orthogonal bases by "removing" projections of vectors from each other.
-- **Data Compression:** In machine learning (PCA), projections are used to reduce high-dimensional data into a few "principal components."
-- **Collision Detection:** In game development, projections are used to determine if two objects have collided along a specific axis.

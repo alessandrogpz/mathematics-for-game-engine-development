@@ -11,11 +11,6 @@ Think of the scalar triple product as the 3D version of the cross-product's area
 ## Formula
 $$[\vec{a}, \vec{b}, \vec{c}] = (\vec{a} \times \vec{b}) \cdot \vec{c}$$
 
-## Common Applications
-- **Calculating Volume:** Used to find the volume of skewed shapes in 3D geometry and engineering.
-- **Checking Coplanarity:** Essential for determining if a set of three vectors is linearly independent or if they all flat-pack into the same plane.
-- **Change of Basis:** Used in calculating the "scaling factor" when switching between different 3D coordinate systems (related to the determinant).
-
 ## Properties
 | Property | Formula / Description |
 | :--- | :--- |
