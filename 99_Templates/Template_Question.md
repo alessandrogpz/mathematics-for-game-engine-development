@@ -12,3 +12,8 @@ tags: [exercise, question]
 
 ---
 **Check Answer:** [[Solution_Name]]
+
+---
+## Attachments
+*   [[Question_Name.pdf|View Reference PDF]]
+
