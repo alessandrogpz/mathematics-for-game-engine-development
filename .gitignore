@@ -19,3 +19,7 @@ Thumbs.db
 # Local Memory/Temp (if any)
 .gemini/
 memory/
+
+# Attachments (Ignore large binary files to keep git repo light)
+98_Attachments/
+
