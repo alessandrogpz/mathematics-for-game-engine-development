@@ -113,5 +113,13 @@ This change-of-basis operation is composed of three sequential steps (read right
 
 Because System $A$ is rotated $-90^\circ$ relative to System $B$, System $A$'s local x-axis physically points in the same direction as System $B$'s y-axis. Therefore, applying a scale to the local x-axis geometrically manifests as a scale along the world y-axis. This is verified mathematically by the entry $3$ on the main diagonal in $\mathbf{S}_B$ at the $(2, 2)$ index, which corresponds directly to the y-axis scaling factor.
 
+---
+## Code Implementation
+```cpp
+// Optional C++ snippet here
+```
+
+---
+
 **Back to Question:** [[Q_Orthogonal_Transforms]] | **Related Concepts:** [[01_Transformation_Matrices]]
 

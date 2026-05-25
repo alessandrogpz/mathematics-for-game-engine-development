@@ -4,8 +4,6 @@ tags: [exercise, solution, matrix-inversion, gauss-jordan, elementary-matrices]
 ---
 # Solution: Gauss-Jordan 3x3 Matrix Inversion
 
-This solution contains the complete, step-by-step mathematical calculations and conceptual proofs transcribed from your handwritten notes, formatted in LaTeX and polished for grammatical and mathematical precision.
-
 ---
 
 ## Part 1: Calculation
@@ -86,5 +84,10 @@ To transform an $n \times n$ matrix $\mathbf{A}$ into the identity matrix $\math
 
 Excluding pivoting, the maximum number of row operations required is:
 $$\text{Total Operations} = n + (n^2 - n) = n^2 \text{ operations}$$
+---
+## Code Implementation
+```cpp
+// Optional C++ snippet here
+```
 
 **Back to Question:** [[Q_Gauss_Jordan_3x3]] | **Related Concepts:** [[03_Matrices]]
