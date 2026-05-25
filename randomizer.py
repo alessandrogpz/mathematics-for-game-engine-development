@@ -206,9 +206,10 @@ def safe_sample(population, k):
 
 def get_default_distribution_questions(base_path="02_Exercises"):
     """
-    Scans the repository and randomly picks one of two study distributions:
-    - 4 Easy questions, 1 Medium question (i.e., 3 easy + 1 medium + 1 easy)
-    - 3 Easy questions, 1 Medium question, 1 Hard question (i.e., 3 easy + 1 medium + 1 hard)
+    Scans the repository and randomly picks one of three study categories:
+    - Category A: 3 Easy questions
+    - Category B: 1 Medium and 1 Easy question
+    - Category C: 1 Hard question
     """
     all_questions = []
     for root, dirs, files in os.walk(base_path):
@@ -233,21 +234,20 @@ def get_default_distribution_questions(base_path="02_Exercises"):
             elif diff_clean == "hard":
                 hard_q.append(q_path)
                 
-    # Randomly select which study category distribution to use (50/50 chance)
-    # Distribution A: 4 Easy, 1 Medium (translates to: 3 easy, 1 medium, and 1 easy)
-    # Distribution B: 3 Easy, 1 Medium, 1 Hard
-    distribution_type = random.choice(["4_easy_1_medium", "3_easy_1_medium_1_hard"])
+    # Randomly select one of the three study categories (A, B, or C)
+    category = random.choice(["A", "B", "C"])
     
     selected = []
-    if distribution_type == "4_easy_1_medium":
-        selected.extend(safe_sample(easy_q, 4))
-        selected.extend(safe_sample(medium_q, 1))
-        desc = "Study Category A (4 Easy, 1 Medium)"
-    else:
+    if category == "A":
         selected.extend(safe_sample(easy_q, 3))
+        desc = "Study Category A (3 Easy)"
+    elif category == "B":
         selected.extend(safe_sample(medium_q, 1))
+        selected.extend(safe_sample(easy_q, 1))
+        desc = "Study Category B (1 Medium, 1 Easy)"
+    else:
         selected.extend(safe_sample(hard_q, 1))
-        desc = "Study Category B (3 Easy, 1 Medium, 1 Hard)"
+        desc = "Study Category C (1 Hard)"
         
     random.shuffle(selected)
     return selected, desc
