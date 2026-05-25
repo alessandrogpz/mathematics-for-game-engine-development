@@ -193,11 +193,96 @@ def generate_daily_practice(questions, output_path="Daily_Practice.md"):
         print(f"Error generating Daily Practice note: {e}")
         return False
 
-def get_random_questions(count=5, topic_query=None, difficulty_filter=None, tag_filter=None, practice=False, base_path="02_Exercises"):
+def safe_sample(population, k):
+    """
+    Safely samples k elements from a population without raising a ValueError if k > len(population).
+    Falls back to returning the full population in a shuffled state.
+    """
+    if len(population) <= k:
+        shuffled = list(population)
+        random.shuffle(shuffled)
+        return shuffled
+    return random.sample(population, k)
+
+def get_default_distribution_questions(base_path="02_Exercises"):
+    """
+    Scans the repository and randomly picks one of two study distributions:
+    - 4 Easy questions, 1 Medium question (i.e., 3 easy + 1 medium + 1 easy)
+    - 3 Easy questions, 1 Medium question, 1 Hard question (i.e., 3 easy + 1 medium + 1 hard)
+    """
+    all_questions = []
+    for root, dirs, files in os.walk(base_path):
+        if os.path.basename(root) == "Questions":
+            for file in files:
+                if file.endswith(".md") and file.startswith("Q_"):
+                    all_questions.append(os.path.join(root, file))
+                    
+    easy_q = []
+    medium_q = []
+    hard_q = []
+    
+    for q_path in all_questions:
+        metadata = parse_frontmatter(q_path)
+        diff = metadata["difficulty"]
+        if diff:
+            diff_clean = diff.strip().lower()
+            if diff_clean == "easy":
+                easy_q.append(q_path)
+            elif diff_clean == "medium":
+                medium_q.append(q_path)
+            elif diff_clean == "hard":
+                hard_q.append(q_path)
+                
+    # Randomly select which study category distribution to use (50/50 chance)
+    # Distribution A: 4 Easy, 1 Medium (translates to: 3 easy, 1 medium, and 1 easy)
+    # Distribution B: 3 Easy, 1 Medium, 1 Hard
+    distribution_type = random.choice(["4_easy_1_medium", "3_easy_1_medium_1_hard"])
+    
+    selected = []
+    if distribution_type == "4_easy_1_medium":
+        selected.extend(safe_sample(easy_q, 4))
+        selected.extend(safe_sample(medium_q, 1))
+        desc = "Study Category A (4 Easy, 1 Medium)"
+    else:
+        selected.extend(safe_sample(easy_q, 3))
+        selected.extend(safe_sample(medium_q, 1))
+        selected.extend(safe_sample(hard_q, 1))
+        desc = "Study Category B (3 Easy, 1 Medium, 1 Hard)"
+        
+    random.shuffle(selected)
+    return selected, desc
+
+def get_random_questions(count=None, topic_query=None, difficulty_filter=None, tag_filter=None, practice=False, base_path="02_Exercises"):
     """
     Walks through topic folders, parses metadata, filters by criteria, and prints random questions.
+    If no filtering or count flags are specified, runs the default randomized category distribution.
     Optionally calls Daily Practice generation.
     """
+    # Check if this is a default run where no query options are provided
+    is_default_run = (
+        count is None and
+        topic_query is None and
+        difficulty_filter is None and
+        tag_filter is None
+    )
+    
+    if is_default_run:
+        selected, desc = get_default_distribution_questions(base_path)
+        if not selected:
+            print("No questions found in the repository.")
+            return
+            
+        print(f"--- Default Study Practice ({len(selected)} questions | {desc}) ---")
+        for i, path in enumerate(selected, 1):
+            print(f"{i}. [[{os.path.basename(path)[:-3]}]] (Path: {path})")
+            
+        if practice:
+            generate_daily_practice(selected)
+        return
+
+    # Fallback default count if explicitly filtered but no count was specified
+    final_count = count if count is not None else 5
+
     # 1. Resolve search path
     search_path = base_path
     resolved_topic_name = None
@@ -253,7 +338,7 @@ def get_random_questions(count=5, topic_query=None, difficulty_filter=None, tag_
         return
 
     # 4. Sample and display
-    sample_size = min(count, len(filtered_questions))
+    sample_size = min(final_count, len(filtered_questions))
     selected = random.sample(filtered_questions, sample_size)
     
     topic_str = f"Topic: {resolved_topic_name}" if resolved_topic_name else "All Topics"
@@ -282,7 +367,7 @@ if __name__ == "__main__":
     # Query/Filtering group
     query_group = parser.add_argument_group("Searching & Filtering")
     query_group.add_argument("topic", nargs="?", default=None, help="Optional topic folder substring to filter within (e.g., Vectors)")
-    query_group.add_argument("-n", "--number", type=int, default=5, help="Number of questions to pick (default: 5)")
+    query_group.add_argument("-n", "--number", type=int, default=None, help="Number of questions to pick (default: 5, or randomized distribution if no flags specified)")
     query_group.add_argument("-d", "--difficulty", type=str, default=None, help="Filter by difficulty level (Easy, Medium, Hard)")
     query_group.add_argument("-t", "--tag", type=str, default=None, help="Filter by frontmatter tag")
     query_group.add_argument("-p", "--practice", action="store_true", help="Generate a Daily_Practice.md file with transcluded questions in the root directory")
@@ -301,4 +386,5 @@ if __name__ == "__main__":
             tag_filter=args.tag,
             practice=args.practice
         )
+
 
