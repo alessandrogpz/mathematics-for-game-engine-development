@@ -67,17 +67,92 @@ Here is the geometric intuition explaining why the rotated vector $\vec{v}'$ mak
 
 ## Part 2: Rotation About an Arbitrary Axis
 
+We rotate the vector $\vec{v} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$ by $\theta = 180^\circ$ (or $\pi$ radians) about the arbitrary unit axis $\vec{a} = \begin{bmatrix} 0 \\ \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix}$.
+
 ### 1. Component Decomposition
-[Insert your calculations for parallel and perpendicular pieces: $\vec{v}_{\parallel a} = (\vec{v} \cdot \vec{a})\vec{a}$ and $\vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a}$ here]
+
+#### A. Calculate the Parallel Component ($\vec{v}_{\parallel a}$)
+Geometrically, the parallel component $\vec{v}_{\parallel a}$ is the vector projection of $\vec{v}$ onto the unit axis $\vec{a}$ ($\text{proj}_{\vec{a}} \vec{v}$):
+$$\vec{v} \cdot \vec{a} = \|\vec{v}\| \|\vec{a}\| \cos\phi$$
+$$\text{comp}_{\vec{a}} \vec{v} = \|\vec{v}\| \cos\phi = \frac{\vec{v} \cdot \vec{a}}{\|\vec{a}\|}$$
+$$\text{proj}_{\vec{a}} \vec{v} = \left(\frac{\vec{v} \cdot \vec{a}}{\|\vec{a}\|}\right)\frac{\vec{a}}{\|\vec{a}\|}$$
+
+Since $\vec{a}$ is a unit vector ($\|\vec{a}\| = 1$):
+$$\vec{v}_{\parallel a} = \text{proj}_{\vec{a}} \vec{v} = (\vec{v} \cdot \vec{a})\vec{a}$$
+
+Calculating the dot product:
+$$\vec{v} \cdot \vec{a} = (1)(0) + (0)\left(\frac{\sqrt{2}}{2}\right) + (1)\left(\frac{\sqrt{2}}{2}\right) = \frac{\sqrt{2}}{2}$$
+
+Thus, the parallel component is:
+$$\vec{v}_{\parallel a} = \left(\frac{\sqrt{2}}{2}\right) \begin{bmatrix} 0 \\ \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix} = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix}$$
+
+#### B. Calculate the Perpendicular Component ($\vec{v}_{\perp a}$)
+The total vector $\vec{v}$ is the sum of the parallel and perpendicular pieces:
+$$\vec{v} = \vec{v}_{\parallel a} + \vec{v}_{\perp a} \implies \vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a}$$
+
+Substituting our values:
+$$\vec{v}_{\perp a} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} - \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} = \begin{bmatrix} 1 \\ -\frac{1}{2} \\ \frac{1}{2} \end{bmatrix}$$
+
+---
 
 ### 2. Rodrigues' Rotation Formula Application
-[Insert your step-by-step substitution and vector arithmetic using Rodrigues' Rotation Formula here]
+
+We setup our local orthonormal coordinate frame in the plane of rotation:
+*   **Local X-axis:** The perpendicular component $\vec{v}_{\perp a}$ (on local $x$).
+*   **Local Y-axis:** The cross product $\vec{a} \times \vec{v}$ (on local $y$).
+*   **Stationary component:** The parallel component $\vec{v}_{\parallel a}$ (on axis $\vec{a}$).
+
+The rotated vector is:
+$$\vec{v}' = \vec{v}_{\parallel a} + \vec{v}_{\perp a}\cos\theta + (\vec{a} \times \vec{v})\sin\theta$$
+$$\vec{v}' = (\vec{v} \cdot \vec{a})\vec{a} + \big(\vec{v} - (\vec{v} \cdot \vec{a})\vec{a}\big)\cos\theta + (\vec{a} \times \vec{v})\sin\theta$$
+
+#### A. Calculate the Cross Product ($\vec{a} \times \vec{v}$)
+$$\vec{a} \times \vec{v} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ a_x & a_y & a_z \\ v_x & v_y & v_z \end{vmatrix} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ 0 & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ 1 & 0 & 1 \end{vmatrix}$$
+$$\vec{a} \times \vec{v} = \begin{bmatrix} \left(\frac{\sqrt{2}}{2}\right)(1) - \left(\frac{\sqrt{2}}{2}\right)(0) \\ \left(\frac{\sqrt{2}}{2}\right)(1) - (0)(1) \\ (0)(0) - \left(\frac{\sqrt{2}}{2}\right)(1) \end{bmatrix} = \begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} \end{bmatrix}$$
+
+#### B. Evaluate the Formula
+For $\theta = 180^\circ$ ($\cos 180^\circ = -1$ and $\sin 180^\circ = 0$):
+$$\vec{v}' = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} 1 \\ -\frac{1}{2} \\ \frac{1}{2} \end{bmatrix}\cos(180^\circ) + \begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} \end{bmatrix}\sin(180^\circ)$$
+$$\vec{v}' = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} 1 \\ -\frac{1}{2} \\ \frac{1}{2} \end{bmatrix}(-1) + \begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} \end{bmatrix}(0)$$
+$$\vec{v}' = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} -1 \\ \frac{1}{2} \\ -\frac{1}{2} \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$$
+
+---
 
 ### 3. Matrix Multiplication Verification
-*   **Skew-symmetric Matrix ($[\vec{a}]_{\times}$):** [Insert calculation here]
-*   **Outer Product Matrix ($\vec{a}\vec{a}^T$):** [Insert calculation here]
-*   **Arbitrary Axis Rotation Matrix ($\mathbf{M}_{\text{rot}}$):** [Insert calculation here]
-*   **Product ($\mathbf{M}_{\text{rot}}\vec{v}$):** [Insert verification multiplication here]
+
+We express Rodrigues' formula in matrix form:
+$$\vec{v}' = \mathbf{I}\vec{v}\cos\theta + \vec{a}\vec{a}^T\vec{v}(1 - \cos\theta) + [\vec{a}]_{\times}\vec{v}\sin\theta$$
+
+#### A. Skew-Symmetric Matrix ($[\vec{a}]_{\times}$)
+$$[\vec{a}]_{\times} = \begin{bmatrix} 0 & -a_z & a_y \\ a_z & 0 & -a_x \\ -a_y & a_x & 0 \end{bmatrix} = \begin{bmatrix} 0 & -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} & 0 & 0 \\ -\frac{\sqrt{2}}{2} & 0 & 0 \end{bmatrix}$$
+
+#### B. Outer Product Matrix ($\vec{a}\vec{a}^T$)
+$$\vec{a}\vec{a}^T = \begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix} \begin{bmatrix} a_x & a_y & a_z \end{bmatrix} = \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\ a_x a_y & a_y^2 & a_y a_z \\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix}$$
+Substituting $a_x = 0$, $a_y = \frac{\sqrt{2}}{2}$, $a_z = \frac{\sqrt{2}}{2}$:
+$$\vec{a}\vec{a}^T = \begin{bmatrix} 0 & 0 & 0 \\ 0 & \frac{1}{2} & \frac{1}{2} \\ 0 & \frac{1}{2} & \frac{1}{2} \end{bmatrix}$$
+
+#### C. Evaluate the Rotation Matrix $\mathbf{M}_{\text{rot}}(\theta, \vec{a})$
+$$\mathbf{M}_{\text{rot}}(\theta, \vec{a}) = \begin{bmatrix} \cos\theta + (1 - \cos\theta)a_x^2 & (1 - \cos\theta)a_x a_y - \sin\theta a_z & (1 - \cos\theta)a_x a_z + \sin\theta a_y \\ (1 - \cos\theta)a_x a_y + \sin\theta a_z & \cos\theta + (1 - \cos\theta)a_y^2 & (1 - \cos\theta)a_y a_z - \sin\theta a_x \\ (1 - \cos\theta)a_x a_z - \sin\theta a_y & (1 - \cos\theta)a_y a_z + \sin\theta a_x & \cos\theta + (1 - \cos\theta)a_z^2 \end{bmatrix}$$
+
+For $\theta = 180^\circ$ ($\cos 180^\circ = -1$, $\sin 180^\circ = 0$, and $1 - \cos 180^\circ = 2$):
+*   $(1, 1) = -1 + 2(0)^2 = -1$
+*   $(1, 2) = 2(0)\left(\frac{\sqrt{2}}{2}\right) - (0)\left(\frac{\sqrt{2}}{2}\right) = 0$
+*   $(1, 3) = 2(0)\left(\frac{\sqrt{2}}{2}\right) + (0)\left(\frac{\sqrt{2}}{2}\right) = 0$
+*   $(2, 1) = 2(0)\left(\frac{\sqrt{2}}{2}\right) + (0)\left(\frac{\sqrt{2}}{2}\right) = 0$
+*   $(2, 2) = -1 + 2\left(\frac{\sqrt{2}}{2}\right)^2 = -1 + 2\left(\frac{1}{2}\right) = 0$
+*   $(2, 3) = 2\left(\frac{\sqrt{2}}{2}\right)\left(\frac{\sqrt{2}}{2}\right) - (0)(0) = 2\left(\frac{1}{2}\right) = 1$
+*   $(3, 1) = 2(0)\left(\frac{\sqrt{2}}{2}\right) - (0)\left(\frac{\sqrt{2}}{2}\right) = 0$
+*   $(3, 2) = 2\left(\frac{\sqrt{2}}{2}\right)\left(\frac{\sqrt{2}}{2}\right) + (0)(0) = 2\left(\frac{1}{2}\right) = 1$
+*   $(3, 3) = -1 + 2\left(\frac{\sqrt{2}}{2}\right)^2 = -1 + 2\left(\frac{1}{2}\right) = 0$
+
+Thus, the complete rotation matrix $\mathbf{M}_{\text{rot}}(\theta, \vec{a})$ becomes:
+$$\mathbf{M}_{\text{rot}}(180^\circ, \vec{a}) = \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}$$
+
+#### D. Product ($\mathbf{M}_{\text{rot}}\vec{v}$)
+Let's verify by multiplying our matrix by the vector $\vec{v}$:
+$$\vec{v}' = \mathbf{M}_{\text{rot}}(180^\circ, \vec{a})\vec{v} = \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$$
+
+This perfectly verifies the rotated vector computed using Rodrigues' Formula.
 
 ---
 
