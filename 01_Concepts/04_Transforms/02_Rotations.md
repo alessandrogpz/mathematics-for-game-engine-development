@@ -1,4 +1,4 @@
-# Rotations in 3D Space
+ # Rotations in 3D Space
 
 In 3D game engines and graphics programming, rotations are fundamental transformations. A rotation typically occurs within a local coordinate system where the axis of rotation is aligned with one of the coordinate axes ($x$, $y$, or $z$), though they can also be performed about an arbitrary axis specified by a unit direction vector.
 
@@ -26,7 +26,9 @@ $$\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}} \implies \text{Opposite
 Thus, the rotated $x$-component is:
 $$v_x\vec{i}' = v_x\cos\theta\vec{i} + v_x\sin\theta\vec{j}$$
 
-![[98_Assets/Concepts/vxi.webp]]
+<center>
+	<img src="../../98_Assets/Concepts/vxi.webp" width="400" height="300">
+</center>
 
 ---
 
@@ -40,7 +42,9 @@ $$\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}} \implies \text{Opposite
 Thus, the rotated $y$-component is:
 $$v_y\vec{j}' = -v_y\sin\theta\vec{i} + v_y\cos\theta\vec{j}$$
 
-![[98_Assets/Concepts/vyj.webp]]
+<center>
+	<img src="../../98_Assets/Concepts/vyj.webp" width="400" height="300">
+</center>
 
 
 ---
@@ -84,13 +88,25 @@ All principal rotation matrices are **orthogonal matrices**, meaning they exhibi
 2.  **Determinant equals 1:** $\det(\mathbf{M}) = 1$. This confirms they are orientation-preserving pure rotations.
 3.  **Preservation:** They preserve vector lengths, angles, and dot products.
 
+> [!NOTE]
+> **General $N \times N$ Rotation Matrix Criteria:**
+> A square matrix $\mathbf{M}$ of any dimension ($N \times N$) represents a pure orientation-preserving rotation if and only if:
+> *   **Column Orthonormality:** The columns are mutually perpendicular unit vectors (the magnitude of each column is $1$, and the dot product between any two distinct columns is $0$). Mathematically, this is expressed as $\mathbf{M}^T\mathbf{M} = \mathbf{I}$, certifying it as an **orthogonal matrix**.
+> *   **Orientation Preservation:** The determinant (which represents the spatial volume scaling factor) is exactly $+1$ ($\det(\mathbf{M}) = +1$), confirming that the transform does not involve a reflection.
+> 
+> **Concrete Dimensional Cases:**
+> *   **In 2D ($2 \times 2$):** For $\mathbf{M} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$, the determinant is represented exactly by your formula—the **difference of its cross-multiplication products** must be $+1$ ($ad - bc = 1$).
+> *   **In 3D ($3 \times 3$):** The determinant represents the volume of the unit box formed by the three columns. It is evaluated by summing three weighted $2 \times 2$ cross-multiplication differences, and must also equal $+1$.
+
 ---
 
 ## 5. Rotation About an Arbitrary Axis
 
 We want to construct a transform that rotates a vector around an arbitrary axis $\vec{a}$.
 
-![[98_Assets/Concepts/rotation_arbitrary_axis.webp]]
+<center>
+	<img src="../../98_Assets/Concepts/rotation_arbitrary_axis.webp" width="400" height="300">
+</center>
 
 ### Step 1: Component Breakdown
 
@@ -100,7 +116,9 @@ We need to break $\vec{v}$ into two distinct components:
     
 - **Perpendicular Piece ($v_{\perp a}$):** The rejection of $\vec{v}$ from $\vec{a}$ (the piece shooting off at $90^\circ$ from $\vec{a}$). This is the piece that rotates.
     
-![[98_Assets/Concepts/decomposing_v.webp]]
+<center>
+	<img src="../../98_Assets/Concepts/decomposing_v.webp" width="400" height="300">
+</center>
 
 ### Step 2: Rotating the Perpendicular Piece
 
@@ -111,13 +129,17 @@ Now we need to rotate $v_{\perp a}$. We need a local x-axis and y-axis:
 - **Local y-axis:** It is the cross product of $\vec{a} \times \vec{v}$.
     
 
-![[98_Assets/Concepts/localx_localy.webp]]
+<center>
+	<img src="../../98_Assets/Concepts/localx_localy.webp" width="400" height="300">
+</center>
 
 By applying standard 2D rotation ($\cos\theta$ for the x-axis and $\sin\theta$ for the y-axis), the new position of the rotating piece is defined as:
 
 $$v' = v_{\parallel a} + v_{\perp a}\cos\theta + (\vec{a} \times \vec{v})\sin\theta$$
 
-![[decomosing_rotated_v.webp]]
+<center>
+	<img src="../../98_Assets/Concepts/decomosing_rotated_v.webp" width="400" height="300">
+</center>
 ### Step 3: Creating the Equation
 
 We know that $v = v_{\parallel a} + v_{\perp a}$, therefore $v_{\perp a} = v - v_{\parallel a}$. The parallel component of $\vec{v}$ onto a unit vector is defined as $v_{\parallel a} = (\vec{v} \cdot \vec{a})\vec{a}$. This gives us $v_{\perp a} = \vec{v} - (\vec{v} \cdot \vec{a})\vec{a}$.
