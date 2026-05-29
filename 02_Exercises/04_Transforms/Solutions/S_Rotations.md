@@ -36,7 +36,7 @@ Adding these rotated components together gives the final transformed vector $\ve
 $$\vec{v}' = \vec{i}(v_x\cos\theta - v_z\sin\theta) + v_y\vec{j} + \vec{k}(v_x\sin\theta + v_z\cos\theta)$$
 
 Expressed as a system of linear equations in matrix form:
-$$\begin{bmatrix} v'_x \\ v'_y \\ v'_z \end{bmatrix} = \begin{bmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \sin\theta & 0 & \cos\theta \end{bmatrix} \begin{bmatrix} v_x \\ v_y \\ v_z \end{bmatrix}$$
+$$\begin{bmatrix} v'_x \\\\ v'_y \\\\ v'_z \end{bmatrix} = \begin{bmatrix} \cos\theta & 0 & -\sin\theta \\\\ 0 & 1 & 0 \\\\ \sin\theta & 0 & \cos\theta \end{bmatrix} \begin{bmatrix} v_x \\\\ v_y \\\\ v_z \end{bmatrix}$$
 
 This is the explicit **$3 \times 3$ Rotation Matrix about the $y$-axis ($\mathbf{M}_{\text{rot } y}$)**
 
@@ -46,7 +46,7 @@ This is the explicit **$3 \times 3$ Rotation Matrix about the $y$-axis ($\mathbf
 Given the initial vector $\vec{v} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$ and a positive rotation angle of $\theta = 90^\circ$:
 We have $\cos 90^\circ = 0$, $\sin 90^\circ = 1$
 
-$$\vec{v}' = \mathbf{M}_{\text{rot } y}\vec{v} = \begin{bmatrix} 0 & 0 & -1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} (0)(1) + (0)(0) + (-1)(1) \\ (0)(1) + (1)(0) + (0)(1) \\ (1)(1) + (0)(0) + (0)(1) \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$$
+$$\vec{v}' = \mathbf{M}_{\text{rot } y}\vec{v} = \begin{bmatrix} 0 & 0 & -1 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0 \end{bmatrix} \begin{bmatrix} 1 \\\\ 0 \\\\ 1 \end{bmatrix} = \begin{bmatrix} (0)(1) + (0)(0) + (-1)(1) \\\\ (0)(1) + (1)(0) + (0)(1) \\\\ (1)(1) + (0)(0) + (0)(1) \end{bmatrix} = \begin{bmatrix} -1 \\\\ 0 \\\\ 1 \end{bmatrix}$$
 
 ---
 
@@ -84,14 +84,14 @@ Calculating the dot product:
 $$\vec{v} \cdot \vec{a} = (1)(0) + (0)\left(\frac{\sqrt{2}}{2}\right) + (1)\left(\frac{\sqrt{2}}{2}\right) = \frac{\sqrt{2}}{2}$$
 
 Thus, the parallel component is:
-$$\vec{v}_{\parallel a} = \left(\frac{\sqrt{2}}{2}\right) \begin{bmatrix} 0 \\ \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix} = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix}$$
+$$\vec{v}_{\parallel a} = \left(\frac{\sqrt{2}}{2}\right) \begin{bmatrix} 0 \\\\ \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} \end{bmatrix} = \begin{bmatrix} 0 \\\\ \frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix}$$
 
 #### B. Calculate the Perpendicular Component ($\vec{v}_{\perp a}$)
 The total vector $\vec{v}$ is the sum of the parallel and perpendicular pieces:
 $$\vec{v} = \vec{v}_{\parallel a} + \vec{v}_{\perp a} \implies \vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a}$$
 
 Substituting our values:
-$$\vec{v}_{\perp a} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} - \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} = \begin{bmatrix} 1 \\ -\frac{1}{2} \\ \frac{1}{2} \end{bmatrix}$$
+$$\vec{v}_{\perp a} = \begin{bmatrix} 1 \\\\ 0 \\\\ 1 \end{bmatrix} - \begin{bmatrix} 0 \\\\ \frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix} = \begin{bmatrix} 1 \\\\ -\frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix}$$
 
 ---
 
@@ -107,14 +107,14 @@ $$\vec{v}' = \vec{v}_{\parallel a} + \vec{v}_{\perp a}\cos\theta + (\vec{a} \tim
 $$\vec{v}' = (\vec{v} \cdot \vec{a})\vec{a} + \big(\vec{v} - (\vec{v} \cdot \vec{a})\vec{a}\big)\cos\theta + (\vec{a} \times \vec{v})\sin\theta$$
 
 #### A. Calculate the Cross Product ($\vec{a} \times \vec{v}$)
-$$\vec{a} \times \vec{v} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ a_x & a_y & a_z \\ v_x & v_y & v_z \end{vmatrix} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ 0 & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ 1 & 0 & 1 \end{vmatrix}$$
-$$\vec{a} \times \vec{v} = \begin{bmatrix} \left(\frac{\sqrt{2}}{2}\right)(1) - \left(\frac{\sqrt{2}}{2}\right)(0) \\ \left(\frac{\sqrt{2}}{2}\right)(1) - (0)(1) \\ (0)(0) - \left(\frac{\sqrt{2}}{2}\right)(1) \end{bmatrix} = \begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} \end{bmatrix}$$
+$$\vec{a} \times \vec{v} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\\\ a_x & a_y & a_z \\\\ v_x & v_y & v_z \end{vmatrix} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\\\ 0 & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\\\ 1 & 0 & 1 \end{vmatrix}$$
+$$\vec{a} \times \vec{v} = \begin{bmatrix} \left(\frac{\sqrt{2}}{2}\right)(1) - \left(\frac{\sqrt{2}}{2}\right)(0) \\\\ \left(\frac{\sqrt{2}}{2}\right)(1) - (0)(1) \\\\ (0)(0) - \left(\frac{\sqrt{2}}{2}\right)(1) \end{bmatrix} = \begin{bmatrix} \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} \\\\ -\frac{\sqrt{2}}{2} \end{bmatrix}$$
 
 #### B. Evaluate the Formula
 For $\theta = 180^\circ$ ($\cos 180^\circ = -1$ and $\sin 180^\circ = 0$):
-$$\vec{v}' = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} 1 \\ -\frac{1}{2} \\ \frac{1}{2} \end{bmatrix}\cos(180^\circ) + \begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} \end{bmatrix}\sin(180^\circ)$$
-$$\vec{v}' = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} 1 \\ -\frac{1}{2} \\ \frac{1}{2} \end{bmatrix}(-1) + \begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} \end{bmatrix}(0)$$
-$$\vec{v}' = \begin{bmatrix} 0 \\ \frac{1}{2} \\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} -1 \\ \frac{1}{2} \\ -\frac{1}{2} \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$$
+$$\vec{v}' = \begin{bmatrix} 0 \\\\ \frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} 1 \\\\ -\frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix}\cos(180^\circ) + \begin{bmatrix} \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} \\\\ -\frac{\sqrt{2}}{2} \end{bmatrix}\sin(180^\circ)$$
+$$\vec{v}' = \begin{bmatrix} 0 \\\\ \frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} 1 \\\\ -\frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix}(-1) + \begin{bmatrix} \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} \\\\ -\frac{\sqrt{2}}{2} \end{bmatrix}(0)$$
+$$\vec{v}' = \begin{bmatrix} 0 \\\\ \frac{1}{2} \\\\ \frac{1}{2} \end{bmatrix} + \begin{bmatrix} -1 \\\\ \frac{1}{2} \\\\ -\frac{1}{2} \end{bmatrix} = \begin{bmatrix} -1 \\\\ 1 \\\\ 0 \end{bmatrix}$$
 
 ---
 
@@ -124,15 +124,15 @@ We express Rodrigues' formula in matrix form:
 $$\vec{v}' = \mathbf{I}\vec{v}\cos\theta + \vec{a}\vec{a}^T\vec{v}(1 - \cos\theta) + [\vec{a}]_{\times}\vec{v}\sin\theta$$
 
 #### A. Skew-Symmetric Matrix ($[\vec{a}]_{\times}$)
-$$[\vec{a}]_{\times} = \begin{bmatrix} 0 & -a_z & a_y \\ a_z & 0 & -a_x \\ -a_y & a_x & 0 \end{bmatrix} = \begin{bmatrix} 0 & -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} & 0 & 0 \\ -\frac{\sqrt{2}}{2} & 0 & 0 \end{bmatrix}$$
+$$[\vec{a}]_{\times} = \begin{bmatrix} 0 & -a_z & a_y \\\\ a_z & 0 & -a_x \\\\ -a_y & a_x & 0 \end{bmatrix} = \begin{bmatrix} 0 & -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} & 0 & 0 \\\\ -\frac{\sqrt{2}}{2} & 0 & 0 \end{bmatrix}$$
 
 #### B. Outer Product Matrix ($\vec{a}\vec{a}^T$)
-$$\vec{a}\vec{a}^T = \begin{bmatrix} a_x \\ a_y \\ a_z \end{bmatrix} \begin{bmatrix} a_x & a_y & a_z \end{bmatrix} = \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\ a_x a_y & a_y^2 & a_y a_z \\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix}$$
+$$\vec{a}\vec{a}^T = \begin{bmatrix} a_x \\\\ a_y \\\\ a_z \end{bmatrix} \begin{bmatrix} a_x & a_y & a_z \end{bmatrix} = \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\\\ a_x a_y & a_y^2 & a_y a_z \\\\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix}$$
 Substituting $a_x = 0$, $a_y = \frac{\sqrt{2}}{2}$, $a_z = \frac{\sqrt{2}}{2}$:
-$$\vec{a}\vec{a}^T = \begin{bmatrix} 0 & 0 & 0 \\ 0 & \frac{1}{2} & \frac{1}{2} \\ 0 & \frac{1}{2} & \frac{1}{2} \end{bmatrix}$$
+$$\vec{a}\vec{a}^T = \begin{bmatrix} 0 & 0 & 0 \\\\ 0 & \frac{1}{2} & \frac{1}{2} \\\\ 0 & \frac{1}{2} & \frac{1}{2} \end{bmatrix}$$
 
 #### C. Evaluate the Rotation Matrix $\mathbf{M}_{\text{rot}}(\theta, \vec{a})$
-$$\mathbf{M}_{\text{rot}}(\theta, \vec{a}) = \begin{bmatrix} \cos\theta + (1 - \cos\theta)a_x^2 & (1 - \cos\theta)a_x a_y - \sin\theta a_z & (1 - \cos\theta)a_x a_z + \sin\theta a_y \\ (1 - \cos\theta)a_x a_y + \sin\theta a_z & \cos\theta + (1 - \cos\theta)a_y^2 & (1 - \cos\theta)a_y a_z - \sin\theta a_x \\ (1 - \cos\theta)a_x a_z - \sin\theta a_y & (1 - \cos\theta)a_y a_z + \sin\theta a_x & \cos\theta + (1 - \cos\theta)a_z^2 \end{bmatrix}$$
+$$\mathbf{M}_{\text{rot}}(\theta, \vec{a}) = \begin{bmatrix} \cos\theta + (1 - \cos\theta)a_x^2 & (1 - \cos\theta)a_x a_y - \sin\theta a_z & (1 - \cos\theta)a_x a_z + \sin\theta a_y \\\\ (1 - \cos\theta)a_x a_y + \sin\theta a_z & \cos\theta + (1 - \cos\theta)a_y^2 & (1 - \cos\theta)a_y a_z - \sin\theta a_x \\\\ (1 - \cos\theta)a_x a_z - \sin\theta a_y & (1 - \cos\theta)a_y a_z + \sin\theta a_x & \cos\theta + (1 - \cos\theta)a_z^2 \end{bmatrix}$$
 
 For $\theta = 180^\circ$ ($\cos 180^\circ = -1$, $\sin 180^\circ = 0$, and $1 - \cos 180^\circ = 2$):
 *   $(1, 1) = -1 + 2(0)^2 = -1$
@@ -146,11 +146,11 @@ For $\theta = 180^\circ$ ($\cos 180^\circ = -1$, $\sin 180^\circ = 0$, and $1 - 
 *   $(3, 3) = -1 + 2\left(\frac{\sqrt{2}}{2}\right)^2 = -1 + 2\left(\frac{1}{2}\right) = 0$
 
 Thus, the complete rotation matrix $\mathbf{M}_{\text{rot}}(\theta, \vec{a})$ becomes:
-$$\mathbf{M}_{\text{rot}}(180^\circ, \vec{a}) = \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}$$
+$$\mathbf{M}_{\text{rot}}(180^\circ, \vec{a}) = \begin{bmatrix} -1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \end{bmatrix}$$
 
 #### D. Product ($\mathbf{M}_{\text{rot}}\vec{v}$)
 Let's verify by multiplying our matrix by the vector $\vec{v}$:
-$$\vec{v}' = \mathbf{M}_{\text{rot}}(180^\circ, \vec{a})\vec{v} = \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}$$
+$$\vec{v}' = \mathbf{M}_{\text{rot}}(180^\circ, \vec{a})\vec{v} = \begin{bmatrix} -1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\\\ 0 \\\\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\\\ 1 \\\\ 0 \end{bmatrix}$$
 
 This perfectly verifies the rotated vector computed using Rodrigues' Formula.
 

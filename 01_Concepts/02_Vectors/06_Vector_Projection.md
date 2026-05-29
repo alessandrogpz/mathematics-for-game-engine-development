@@ -78,13 +78,13 @@ Applying the **matrix associative property**, where $A(BC) = (AB)C$, we can grou
 $$\text{proj}_{\hat{u}}\vec{a} = (\hat{u}\hat{u}^T)\vec{a}$$
 
 Here, the isolated term $(\hat{u}\hat{u}^T)$ is an **outer product**—a $3 \times 1$ column vector multiplied by a $1 \times 3$ row vector:
-$$\hat{u}\hat{u}^T = \begin{bmatrix} u_x \\ u_y \\ u_z \end{bmatrix} \begin{bmatrix} u_x & u_y & u_z \end{bmatrix} = \begin{bmatrix} u_x^2 & u_x u_y & u_x u_z \\ u_x u_y & u_y^2 & u_y u_z \\ u_x u_z & u_y u_z & u_z^2 \end{bmatrix}$$
+$$\hat{u}\hat{u}^T = \begin{bmatrix} u_x \\\\ u_y \\\\ u_z \end{bmatrix} \begin{bmatrix} u_x & u_y & u_z \end{bmatrix} = \begin{bmatrix} u_x^2 & u_x u_y & u_x u_z \\\\ u_x u_y & u_y^2 & u_y u_z \\\\ u_x u_z & u_y u_z & u_z^2 \end{bmatrix}$$
 
 This outer product is also denoted as the tensor product:
 $$\hat{u}\hat{u}^T = \hat{u} \otimes \hat{u}$$
 
 This $3 \times 3$ matrix represents the **projection operator** itself. Multiplying this matrix by any vector $\vec{a}$ projects it directly onto the direction of $\hat{u}$:
-$$\text{proj}_{\hat{u}}\vec{a} = \begin{bmatrix} u_x^2 & u_x u_y & u_x u_z \\ u_x u_y & u_y^2 & u_y u_z \\ u_x u_z & u_y u_z & u_z^2 \end{bmatrix}\vec{a}$$
+$$\text{proj}_{\hat{u}}\vec{a} = \begin{bmatrix} u_x^2 & u_x u_y & u_x u_z \\\\ u_x u_y & u_y^2 & u_y u_z \\\\ u_x u_z & u_y u_z & u_z^2 \end{bmatrix}\vec{a}$$
 ### Geometric Representation
 
 In 3D math and game engines, the outer product is primarily used to represent a **subspace** (like a line or a plane) in matrix form.

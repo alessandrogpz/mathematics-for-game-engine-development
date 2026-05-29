@@ -11,7 +11,7 @@ This exercise explores representing vector projections onto unit vectors using t
 
 ## Part 1: Calculation
 We are given a unit direction vector $\hat{u}$ and an arbitrary vector $\vec{a}$:
-$$\hat{u} = \begin{bmatrix} \frac{3}{5} \\ 0 \\ \frac{4}{5} \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 2 \\ 5 \\ -1 \end{bmatrix}$$
+$$\hat{u} = \begin{bmatrix} \frac{3}{5} \\\\ 0 \\\\ \frac{4}{5} \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 2 \\\\ 5 \\\\ -1 \end{bmatrix}$$
 
 1.  **Outer Product Matrix Construction:** Compute the $3 \times 3$ projection matrix $\mathbf{P}$ representing the projection operator onto $\hat{u}$ using the outer product formula:
     $$\mathbf{P} = \hat{u}\hat{u}^T$$

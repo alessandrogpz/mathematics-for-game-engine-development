@@ -48,10 +48,10 @@ $$\vec{v}' = \mathbf{I}\vec{v} - 2(\vec{a}\vec{a}^T)\vec{v}$$
 $$\vec{v}' = (\mathbf{I} - 2\vec{a}\vec{a}^T)\vec{v}$$
 
 Expanding this into explicit $3 \times 3$ coordinate form:
-$$\mathbf{M}_{\text{reflect}}(\vec{a}) = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} - 2 \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\ a_x a_y & a_y^2 & a_y a_z \\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix}$$
+$$\mathbf{M}_{\text{reflect}}(\vec{a}) = \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \end{bmatrix} - 2 \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\\\ a_x a_y & a_y^2 & a_y a_z \\\\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix}$$
 
 This yields the complete **Plane Reflection Matrix**:
-$$\mathbf{M}_{\text{reflect}}(\vec{a}) = \begin{bmatrix} 1 - 2a_x^2 & -2a_x a_y & -2a_x a_z \\ -2a_x a_y & 1 - 2a_y^2 & -2a_y a_z \\ -2a_x a_z & -2a_y a_z & 1 - 2a_z^2 \end{bmatrix}$$
+$$\mathbf{M}_{\text{reflect}}(\vec{a}) = \begin{bmatrix} 1 - 2a_x^2 & -2a_x a_y & -2a_x a_z \\\\ -2a_x a_y & 1 - 2a_y^2 & -2a_y a_z \\\\ -2a_x a_z & -2a_y a_z & 1 - 2a_z^2 \end{bmatrix}$$
 
 ---
 
@@ -63,7 +63,7 @@ $$\det\big(\mathbf{M}_{\text{reflect}}(\vec{a})\big) = -1$$
 ### Intuitive Axis Alignment Approach
 To understand why the determinant is always $-1$, we can align our coordinate system so that the normal vector points perfectly along a coordinate axis (e.g., the $x$-axis, $\vec{a} = [1, 0, 0]^T$). 
 *   Reflecting across the plane perpendicular to the $x$-axis (the $yz$-plane) simply negates the $x$-coordinate while leaving the $y$ and $z$ coordinates untouched:
-    $$\mathbf{M}_{\text{reflect}}(\vec{x}) = \begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+    $$\mathbf{M}_{\text{reflect}}(\vec{x}) = \begin{bmatrix} -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \end{bmatrix}$$
 *   Evaluating the determinant:
     $$\det\big(\mathbf{M}_{\text{reflect}}(\vec{x})\big) = (-1)(1)(1) - 0 = -1$$
 
@@ -112,7 +112,7 @@ This defines the **Axis Reflection (Involution) Matrix**:
 $$\mathbf{M}_{\text{invol}}(\vec{a}) = 2\vec{a}\vec{a}^T - \mathbf{I}$$
 
 Expanding this into coordinate form:
-$$\mathbf{M}_{\text{invol}}(\vec{a}) = \begin{bmatrix} 2a_x^2 - 1 & 2a_x a_y & 2a_x a_z \\ 2a_x a_y & 2a_y^2 - 1 & 2a_y a_z \\ 2a_x a_z & 2a_y a_z & 2a_z^2 - 1 \end{bmatrix}$$
+$$\mathbf{M}_{\text{invol}}(\vec{a}) = \begin{bmatrix} 2a_x^2 - 1 & 2a_x a_y & 2a_x a_z \\\\ 2a_x a_y & 2a_y^2 - 1 & 2a_y a_z \\\\ 2a_x a_z & 2a_y a_z & 2a_z^2 - 1 \end{bmatrix}$$
 
 ---
 

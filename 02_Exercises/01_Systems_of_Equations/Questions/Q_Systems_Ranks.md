@@ -8,8 +8,8 @@ tags: [exercise, question, ranks, consistency]
 Solve the following system of linear equations using Gauss-Jordan elimination:
 $$
 \begin{cases} 
-x + 2y + z = 4 \\
-3x + 8y + 7z = 20 \\
+x + 2y + z = 4 \\\\
+3x + 8y + 7z = 20 \\\\
 2x + 7y + 9z = 23 
 \end{cases}
 $$

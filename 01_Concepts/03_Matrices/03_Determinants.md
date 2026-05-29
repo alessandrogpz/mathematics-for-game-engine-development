@@ -17,7 +17,7 @@ $$\det(A) = \sum_{j=1}^n A_{ij} C_{ij}$$
 Where $C_{ij} = (-1)^{i+j} M_{ij}$, and $M_{ij}$ is the **minor** (the determinant of the submatrix after removing row $i$ and column $j$).
 
 ### Sign Table for Cofactors
-$$\begin{bmatrix} + & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
+$$\begin{bmatrix} + & - & + \\\\ - & + & - \\\\ + & - & + \end{bmatrix}$$
 
 ## Gauss-Jordan Elimination Method
 You can transform a matrix into **row echelon form** using row operations. The determinant is then the product of the diagonal elements, adjusted for the operations performed:

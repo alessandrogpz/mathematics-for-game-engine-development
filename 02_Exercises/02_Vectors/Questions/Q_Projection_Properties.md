@@ -9,7 +9,7 @@ This exercise explores the fundamental algebraic and geometric properties of vec
 
 ## Part 1: Calculation
 Let $\vec{u} = \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}$ be the vector defining our line of projection. We want to project the following vectors onto $\vec{u}$:
-$$\vec{v} = \begin{bmatrix} 3 \\ 0 \\ 1 \end{bmatrix} \quad \text{and} \quad \vec{w} = \begin{bmatrix} -1 \\ 4 \\ 2 \end{bmatrix}$$
+$$\vec{v} = \begin{bmatrix} 3 \\\\ 0 \\\\ 1 \end{bmatrix} \quad \text{and} \quad \vec{w} = \begin{bmatrix} -1 \\\\ 4 \\\\ 2 \end{bmatrix}$$
 
 1. **Individual Projections:** Calculate the vector projections $\vec{p}_v = \text{proj}_{\vec{u}}\vec{v}$ and $\vec{p}_w = \text{proj}_{\vec{u}}\vec{w}$.
 2. **Linearity:** Calculate the projection of their sum: $\vec{p}_{v+w} = \text{proj}_{\vec{u}}(\vec{v} + \vec{w})$. Verify that $\vec{p}_{v+w} = \vec{p}_v + \vec{p}_w$.

@@ -16,7 +16,7 @@ This exercise explores reflections across a plane and reflections across an axis
 
 ## Part 1: Calculation
 Suppose we have an arbitrary vector $\vec{v}$ and a unit direction vector $\vec{a}$ representing the normal of a plane passing through the origin:
-$$\vec{v} = \begin{bmatrix} 2 \\ -1 \\ 3 \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$$
+$$\vec{v} = \begin{bmatrix} 2 \\\\ -1 \\\\ 3 \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 0 \\\\ 0 \\\\ 1 \end{bmatrix}$$
 
 1.  **Plane Reflection Matrix:** Construct the $3 \times 3$ plane reflection matrix $\mathbf{M}_{\text{reflect}}(\vec{a})$ representing a mirror reflection across the plane perpendicular to $\vec{a}$ using:
     $$\mathbf{M}_{\text{reflect}}(\vec{a}) = \mathbf{I} - 2\vec{a}\vec{a}^T$$

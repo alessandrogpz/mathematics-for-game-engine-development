@@ -9,7 +9,7 @@ tags: [exercise, solution, dot-product, angle, orthogonality]
 ## Part 1: Calculation
 
 We are given two vectors:
-$$\vec{a} = \begin{bmatrix} 2 \\ -1 \\ 2 \end{bmatrix} \quad \text{and} \quad \vec{b} = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}$$
+$$\vec{a} = \begin{bmatrix} 2 \\\\ -1 \\\\ 2 \end{bmatrix} \quad \text{and} \quad \vec{b} = \begin{bmatrix} 1 \\\\ 1 \\\\ 0 \end{bmatrix}$$
 
 ### 1. Calculate the dot product $\vec{a} \cdot \vec{b}$
 Using the algebraic definition of the dot product:

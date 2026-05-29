@@ -23,7 +23,7 @@ To understand this formula, we must break down three core concepts: **minors**, 
 The **minor** $M_{ij}$ of an element $a_{ij}$ in an $n \times n$ matrix $A$ is the determinant of the $(n-1) \times (n-1)$ submatrix that remains after deleting the $i$-th row and $j$-th column.
 
 For example, in a $3 \times 3$ matrix, the minor of $a_{11}$ is:
-$$A = \begin{bmatrix} \color{red}{a_{11}} & \color{gray}{a_{12}} & \color{gray}{a_{13}} \\ \color{gray}{a_{21}} & a_{22} & a_{23} \\ \color{gray}{a_{31}} & a_{32} & a_{33} \end{bmatrix} \implies M_{11} = \det\begin{bmatrix} a_{22} & a_{23} \\ a_{32} & a_{33} \end{bmatrix}$$
+$$A = \begin{bmatrix} \color{red}{a_{11}} & \color{gray}{a_{12}} & \color{gray}{a_{13}} \\\\ \color{gray}{a_{21}} & a_{22} & a_{23} \\\\ \color{gray}{a_{31}} & a_{32} & a_{33} \end{bmatrix} \implies M_{11} = \det\begin{bmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \end{bmatrix}$$
 
 ---
 
@@ -33,10 +33,10 @@ A **cofactor** $C_{ij}$ is simply a "signed minor." It is obtained by multiplyin
 $$C_{ij} = (-1)^{i+j} M_{ij}$$
 
 The signs follow a checkerboard pattern:
-$$\begin{bmatrix} + & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
+$$\begin{bmatrix} + & - & + \\\\ - & + & - \\\\ + & - & + \end{bmatrix}$$
 
 The **Cofactor Matrix** $C$ is the matrix formed by replacing every element $a_{ij}$ of the original matrix $A$ with its corresponding cofactor $C_{ij}$:
-$$C = \begin{bmatrix} C_{11} & C_{12} & \dots & C_{1n} \\ C_{21} & C_{22} & \dots & C_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ C_{n1} & C_{n2} & \dots & C_{nn} \end{bmatrix}$$
+$$C = \begin{bmatrix} C_{11} & C_{12} & \dots & C_{1n} \\\\ C_{21} & C_{22} & \dots & C_{2n} \\\\ \vdots & \vdots & \ddots & \vdots \\\\ C_{n1} & C_{n2} & \dots & C_{nn} \end{bmatrix}$$
 
 ---
 

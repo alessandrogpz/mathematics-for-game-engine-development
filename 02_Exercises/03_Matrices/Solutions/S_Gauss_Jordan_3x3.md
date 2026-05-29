@@ -9,33 +9,33 @@ tags: [exercise, solution, matrix-inversion, gauss-jordan, elementary-matrices]
 ## Part 1: Calculation
 
 We want to find the inverse of the matrix $\mathbf{A}$ using the Gauss-Jordan elimination method:
-$$\mathbf{A} = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 1 & 0 \\ 3 & 0 & 1 \end{bmatrix}$$
+$$\mathbf{A} = \begin{bmatrix} 1 & 0 & 2 \\\\ 0 & 1 & 0 \\\\ 3 & 0 & 1 \end{bmatrix}$$
 
 ### Step 1: Set up the Augmented Matrix $[\mathbf{A} \mid \mathbf{I}]$
 We append the $3 \times 3$ Identity matrix to the right of $\mathbf{A}$:
-$$[\mathbf{A} \mid \mathbf{I}] = \left[\begin{array}{ccc|ccc} 1 & 0 & 2 & 1 & 0 & 0 \\ 0 & 1 & 0 & 0 & 1 & 0 \\ 3 & 0 & 1 & 0 & 0 & 1 \end{array}\right]$$
+$$[\mathbf{A} \mid \mathbf{I}] = \left[\begin{array}{ccc|ccc} 1 & 0 & 2 & 1 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 1 & 0 \\\\ 3 & 0 & 1 & 0 & 0 & 1 \end{array}\right]$$
 
 ### Step 2: Row Elimination to Reach Reduced Row Echelon Form (RREF)
 
 *   **Operation 1:** Eliminate the $3$ in column 1, row 3.
     $$\text{Row}_3 - 3\text{Row}_1 \to \text{Row}_3$$
-    $$\left[\begin{array}{ccc|ccc} 1 & 0 & 2 & 1 & 0 & 0 \\ 0 & 1 & 0 & 0 & 1 & 0 \\ 0 & 0 & -5 & -3 & 0 & 1 \end{array}\right]$$
+    $$\left[\begin{array}{ccc|ccc} 1 & 0 & 2 & 1 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & -5 & -3 & 0 & 1 \end{array}\right]$$
 
 *   **Operation 2:** Scale rows to eliminate fractional arithmetic during the next elimination step (an excellent technique!).
     $$5\text{Row}_1 \to \text{Row}_1 \quad \text{and} \quad 2\text{Row}_3 \to \text{Row}_3$$
-    $$\left[\begin{array}{ccc|ccc} 5 & 0 & 10 & 5 & 0 & 0 \\ 0 & 1 & 0 & 0 & 1 & 0 \\ 0 & 0 & -10 & -6 & 0 & 2 \end{array}\right]$$
+    $$\left[\begin{array}{ccc|ccc} 5 & 0 & 10 & 5 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & -10 & -6 & 0 & 2 \end{array}\right]$$
 
 *   **Operation 3:** Eliminate the $10$ in column 3, row 1.
     $$\text{Row}_1 + \text{Row}_3 \to \text{Row}_1$$
-    $$\left[\begin{array}{ccc|ccc} 5 & 0 & 0 & -1 & 0 & 2 \\ 0 & 1 & 0 & 0 & 1 & 0 \\ 0 & 0 & -10 & -6 & 0 & 2 \end{array}\right]$$
+    $$\left[\begin{array}{ccc|ccc} 5 & 0 & 0 & -1 & 0 & 2 \\\\ 0 & 1 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & -10 & -6 & 0 & 2 \end{array}\right]$$
 
 *   **Operation 4:** Normalize the diagonal elements back to $1$.
     $$\frac{1}{5}\text{Row}_1 \to \text{Row}_1 \quad \text{and} \quad -\frac{1}{10}\text{Row}_3 \to \text{Row}_3$$
-    $$\left[\begin{array}{ccc|ccc} 1 & 0 & 0 & -1/5 & 0 & 2/5 \\ 0 & 1 & 0 & 0 & 1 & 0 \\ 0 & 0 & 1 & 3/5 & 0 & -1/5 \end{array}\right]$$
+    $$\left[\begin{array}{ccc|ccc} 1 & 0 & 0 & -1/5 & 0 & 2/5 \\\\ 0 & 1 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 1 & 3/5 & 0 & -1/5 \end{array}\right]$$
 
 ### Conclusion: The Inverse Matrix $\mathbf{A}^{-1}$
 Since the left side has been successfully transformed into the Identity matrix $\mathbf{I}$, the right side is the inverse $\mathbf{A}^{-1}$:
-$$\mathbf{A}^{-1} = \begin{bmatrix} -1/5 & 0 & 2/5 \\ 0 & 1 & 0 \\ 3/5 & 0 & -1/5 \end{bmatrix} = \begin{bmatrix} -0.2 & 0 & 0.4 \\ 0 & 1 & 0 \\ 0.6 & 0 & -0.2 \end{bmatrix}$$
+$$\mathbf{A}^{-1} = \begin{bmatrix} -1/5 & 0 & 2/5 \\\\ 0 & 1 & 0 \\\\ 3/5 & 0 & -1/5 \end{bmatrix} = \begin{bmatrix} -0.2 & 0 & 0.4 \\\\ 0 & 1 & 0 \\\\ 0.6 & 0 & -0.2 \end{bmatrix}$$
 
 
 ---
