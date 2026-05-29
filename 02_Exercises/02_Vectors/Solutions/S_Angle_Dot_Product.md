@@ -9,11 +9,18 @@ tags: [exercise, solution, dot-product, angle, orthogonality]
 ## Part 1: Calculation
 
 We are given two vectors:
-$$\vec{a} = \begin{bmatrix} 2 \\\\ -1 \\\\ 2 \end{bmatrix} \quad \text{and} \quad \vec{b} = \begin{bmatrix} 1 \\\\ 1 \\\\ 0 \end{bmatrix}$$
+
+$$
+\vec{a} = \begin{bmatrix} 2 \\\\ -1 \\\\ 2 \end{bmatrix} \quad \text{and} \quad \vec{b} = \begin{bmatrix} 1 \\\\ 1 \\\\ 0 \end{bmatrix}
+$$
 
 ### 1. Calculate the dot product $\vec{a} \cdot \vec{b}$
 Using the algebraic definition of the dot product:
-$$\vec{a} \cdot \vec{b} = \sum_{i=1}^3 a_i b_i = (2)(1) + (-1)(1) + (2)(0) = 2 - 1 + 0 = 1$$
+
+$$
+\vec{a} \cdot \vec{b} = \sum_{i=1}^3 a_i b_i = (2)(1) + (-1)(1) + (2)(0) = 2 - 1 + 0 = 1
+$$
+
 Thus, $\vec{a} \cdot \vec{b} = 1$.
 
 ---
@@ -22,20 +29,39 @@ Thus, $\vec{a} \cdot \vec{b} = 1$.
 Using the vector magnitude formula $\|\vec{v}\| = \sqrt{\sum_{i=1}^n v_i^2}$:
 
 *   **For Vector $\vec{a}$:**
-    $$\|\vec{a}\| = \sqrt{2^2 + (-1)^2 + 2^2} = \sqrt{4 + 1 + 4} = \sqrt{9} = 3$$
+    
+$$
+\|\vec{a}\| = \sqrt{2^2 + (-1)^2 + 2^2} = \sqrt{4 + 1 + 4} = \sqrt{9} = 3
+$$
+
 *   **For Vector $\vec{b}$:**
-    $$\|\vec{b}\| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{1 + 1 + 0} = \sqrt{2}$$
+    
+$$
+\|\vec{b}\| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{1 + 1 + 0} = \sqrt{2}
+$$
 
 ---
 
 ### 3. Find the angle $\theta$ between $\vec{a}$ and $\vec{b}$
 We use the geometric definition of the dot product:
-$$\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos\theta$$
+
+$$
+\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos\theta
+$$
 
 Substitute our calculated values into the formula:
-$$1 = 3\sqrt{2} \cos\theta$$
-$$\cos\theta = \frac{1}{3\sqrt{2}} = \frac{\sqrt{2}}{6}$$
-$$\theta = \cos^{-1}\left(\frac{\sqrt{2}}{6}\right) \approx 76.37^\circ$$
+
+$$
+1 = 3\sqrt{2} \cos\theta
+$$
+
+$$
+\cos\theta = \frac{1}{3\sqrt{2}} = \frac{\sqrt{2}}{6}
+$$
+
+$$
+\theta = \cos^{-1}\left(\frac{\sqrt{2}}{6}\right) \approx 76.37^\circ
+$$
 
 The angle between the vectors is approximately **$76.37^\circ$** (or $1.33$ radians).
 
@@ -67,13 +93,22 @@ If $\vec{a} \cdot \vec{c} = 0$, the geometric relationship is that **$\vec{a}$ a
 
 **Answer:**
 The scalar projection of vector $\vec{a}$ onto vector $\vec{b}$ (often denoted as $\text{comp}_{\vec{b}}\vec{a}$) represents the length of the shadow cast by $\vec{a}$ onto $\vec{b}$:
-$$\text{comp}_{\vec{b}}\vec{a} = \|\vec{a}\|\cos\theta$$
+
+$$
+\text{comp}_{\vec{b}}\vec{a} = \|\vec{a}\|\cos\theta
+$$
 
 Comparing this with the geometric definition of the dot product:
-$$\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos\theta$$
+
+$$
+\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos\theta
+$$
 
 We can rewrite the dot product as:
-$$\vec{a} \cdot \vec{b} = \text{comp}_{\vec{b}}\vec{a} \cdot \|\vec{b}\|$$
+
+$$
+\vec{a} \cdot \vec{b} = \text{comp}_{\vec{b}}\vec{a} \cdot \|\vec{b}\|
+$$
 
 **Geometric Interpretation:** The dot product is the scalar projection of $\vec{a}$ onto $\vec{b}$, scaled by the magnitude of $\vec{b}$. If $\vec{b}$ is a unit vector ($\|\vec{b}\| = 1$), the dot product is exactly equal to the scalar projection of $\vec{a}$ onto $\vec{b}$.
 
@@ -82,7 +117,6 @@ $$\vec{a} \cdot \vec{b} = \text{comp}_{\vec{b}}\vec{a} \cdot \|\vec{b}\|$$
 ```cpp
 // Optional C++ snippet here
 ```
-
 
 ---
 

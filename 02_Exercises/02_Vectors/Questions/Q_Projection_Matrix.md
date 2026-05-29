@@ -11,14 +11,29 @@ This exercise explores representing vector projections onto unit vectors using t
 
 ## Part 1: Calculation
 We are given a unit direction vector $\hat{u}$ and an arbitrary vector $\vec{a}$:
-$$\hat{u} = \begin{bmatrix} \frac{3}{5} \\\\ 0 \\\\ \frac{4}{5} \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 2 \\\\ 5 \\\\ -1 \end{bmatrix}$$
+
+$$
+\hat{u} = \begin{bmatrix} \frac{3}{5} \\\\ 0 \\\\ \frac{4}{5} \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 2 \\\\ 5 \\\\ -1 \end{bmatrix}
+$$
 
 1.  **Outer Product Matrix Construction:** Compute the $3 \times 3$ projection matrix $\mathbf{P}$ representing the projection operator onto $\hat{u}$ using the outer product formula:
-    $$\mathbf{P} = \hat{u}\hat{u}^T$$
+    
+$$
+\mathbf{P} = \hat{u}\hat{u}^T
+$$
+
 2.  **Matrix Projection Calculation:** Multiply this matrix by $\vec{a}$ to calculate the projected vector:
-    $$\vec{p} = \mathbf{P}\vec{a}$$
+    
+$$
+\vec{p} = \mathbf{P}\vec{a}
+$$
+
 3.  **Classical Formula Verification:** Calculate the same vector projection using the classical dot product formula:
-    $$\text{proj}_{\hat{u}}\vec{a} = (\vec{a} \cdot \hat{u})\hat{u}$$
+    
+$$
+\text{proj}_{\hat{u}}\vec{a} = (\vec{a} \cdot \hat{u})\hat{u}
+$$
+
     Verify that both methods yield the exact same resulting vector.
 
 ---

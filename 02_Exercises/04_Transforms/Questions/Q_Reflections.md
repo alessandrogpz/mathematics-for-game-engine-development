@@ -16,13 +16,24 @@ This exercise explores reflections across a plane and reflections across an axis
 
 ## Part 1: Calculation
 Suppose we have an arbitrary vector $\vec{v}$ and a unit direction vector $\vec{a}$ representing the normal of a plane passing through the origin:
-$$\vec{v} = \begin{bmatrix} 2 \\\\ -1 \\\\ 3 \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 0 \\\\ 0 \\\\ 1 \end{bmatrix}$$
+
+$$
+\vec{v} = \begin{bmatrix} 2 \\\\ -1 \\\\ 3 \end{bmatrix} \quad \text{and} \quad \vec{a} = \begin{bmatrix} 0 \\\\ 0 \\\\ 1 \end{bmatrix}
+$$
 
 1.  **Plane Reflection Matrix:** Construct the $3 \times 3$ plane reflection matrix $\mathbf{M}_{\text{reflect}}(\vec{a})$ representing a mirror reflection across the plane perpendicular to $\vec{a}$ using:
-    $$\mathbf{M}_{\text{reflect}}(\vec{a}) = \mathbf{I} - 2\vec{a}\vec{a}^T$$
+    
+$$
+\mathbf{M}_{\text{reflect}}(\vec{a}) = \mathbf{I} - 2\vec{a}\vec{a}^T
+$$
+
 2.  **Plane Reflection Calculation:** Multiply this matrix by $\vec{v}$ to calculate the reflected vector $\vec{v}'_{\text{plane}}$.
 3.  **Axis Reflection Matrix:** Construct the $3 \times 3$ axis reflection (involution) matrix $\mathbf{M}_{\text{invol}}(\vec{a})$ representing a reflection across the line defined by $\vec{a}$ (equivalent to a $180^\circ$ rotation about $\vec{a}$) using:
-    $$\mathbf{M}_{\text{invol}}(\vec{a}) = 2\vec{a}\vec{a}^T - \mathbf{I}$$
+    
+$$
+\mathbf{M}_{\text{invol}}(\vec{a}) = 2\vec{a}\vec{a}^T - \mathbf{I}
+$$
+
 4.  **Axis Reflection Calculation:** Multiply this matrix by $\vec{v}$ to calculate the reflected vector $\vec{v}'_{\text{axis}}$.
 
 ---

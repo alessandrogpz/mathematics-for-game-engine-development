@@ -8,7 +8,10 @@ Two matrices $A$ and $B$ can only be multiplied if the number of columns in $A$ 
 
 ## General Formula
 The entry $(AB)_{ij}$ is calculated by taking the dot product of the $i$-th row of $A$ and the $j$-th column of $B$:
-$$(AB)_{ij} = \sum_{k=1}^n A_{ik} B_{kj}$$
+
+$$
+(AB)_{ij} = \sum_{k=1}^n A_{ik} B_{kj}
+$$
 
 ## Key Properties
 | Property | Formula / Description |

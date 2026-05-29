@@ -4,14 +4,21 @@ A system of linear equations is a collection of one or more linear equations inv
 
 ## Matrix Representation
 A system of $m$ equations with $n$ variables can be written as $A\vec{x} = \vec{b}$:
-$$\begin{bmatrix} a_{11} & a_{12} & \dots & a_{1n} \\\\ a_{21} & a_{22} & \dots & a_{2n} \\\\ \vdots & \vdots & \ddots & \vdots \\\\ a_{m1} & a_{m2} & \dots & a_{mn} \end{bmatrix} \begin{bmatrix} x_1 \\\\ x_2 \\\\ \vdots \\\\ x_n \end{bmatrix} = \begin{bmatrix} b_1 \\\\ b_2 \\\\ \vdots \\\\ b_m \end{bmatrix}$$
+
+$$
+\begin{bmatrix} a_{11} & a_{12} & \dots & a_{1n} \\\\ a_{21} & a_{22} & \dots & a_{2n} \\\\ \vdots & \vdots & \ddots & \vdots \\\\ a_{m1} & a_{m2} & \dots & a_{mn} \end{bmatrix} \begin{bmatrix} x_1 \\\\ x_2 \\\\ \vdots \\\\ x_n \end{bmatrix} = \begin{bmatrix} b_1 \\\\ b_2 \\\\ \vdots \\\\ b_m \end{bmatrix}
+$$
+
 - $A$ is the **coefficient matrix**.
 - $\vec{x}$ is the **variable vector**.
 - $\vec{b}$ is the **constant vector**.
 
 ## Augmented Matrix
 To solve the system, we often combine $A$ and $\vec{b}$ into an **augmented matrix**:
-$$[A | \vec{b}] = \begin{bmatrix} a_{11} & a_{12} & \dots & a_{1n} & | & b_1 \\\\ a_{21} & a_{22} & \dots & a_{2n} & | & b_2 \\\\ \vdots & \vdots & \ddots & \vdots & | & \vdots \\\\ a_{m1} & a_{m2} & \dots & a_{mn} & | & b_m \end{bmatrix}$$
+
+$$
+[A | \vec{b}] = \begin{bmatrix} a_{11} & a_{12} & \dots & a_{1n} & | & b_1 \\\\ a_{21} & a_{22} & \dots & a_{2n} & | & b_2 \\\\ \vdots & \vdots & \ddots & \vdots & | & \vdots \\\\ a_{m1} & a_{m2} & \dots & a_{mn} & | & b_m \end{bmatrix}
+$$
 
 ## Types of Solutions
 1. **Consistent System:** Has at least one solution.

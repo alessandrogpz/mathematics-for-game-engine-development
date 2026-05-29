@@ -9,7 +9,10 @@ Think of the scalar triple product as the 3D version of the cross-product's area
 - **Coplanarity:** If the result is **zero**, it means all three vectors lie in the same 2D plane (the box has no height).
 
 ## Formula
-$$[\vec{a}, \vec{b}, \vec{c}] = (\vec{a} \times \vec{b}) \cdot \vec{c}$$
+
+$$
+[\vec{a}, \vec{b}, \vec{c}] = (\vec{a} \times \vec{b}) \cdot \vec{c}
+$$
 
 ## Properties
 | Property | Formula / Description |

@@ -4,9 +4,16 @@ An orthogonal matrix is a square matrix whose columns and rows are orthogonal un
 
 ## Definition
 A square matrix $Q$ is orthogonal if:
-$$Q^T Q = Q Q^T = I$$
+
+$$
+Q^T Q = Q Q^T = I
+$$
+
 This implies that the transpose of an orthogonal matrix is equal to its inverse:
-$$Q^{-1} = Q^T$$
+
+$$
+Q^{-1} = Q^T
+$$
 
 ## Key Properties
 | Property | Formula / Description |

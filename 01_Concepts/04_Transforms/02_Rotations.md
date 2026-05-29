@@ -13,18 +13,30 @@ A rotation about the $x$, $y$, or $z$ axis occurs in the plane formed by the *ot
 
 Let's derive the transformation matrix for a vector $\vec{v}$ rotated through an angle $\theta$ **about the $z$-axis**:
 *   Using the standard orthogonal basis vectors $\vec{i}$, $\vec{j}$, and $\vec{k}$ parallel to the coordinate axes, we express any vector $\vec{v}$ as:
-    $$\vec{v} = v_x \vec{i} + v_y \vec{j} + v_z \vec{k}$$
+    
+$$
+\vec{v} = v_x \vec{i} + v_y \vec{j} + v_z \vec{k}
+$$
+
 *   Since the rotation is *about* the $z$-axis, the basis vector $\vec{k}$ is parallel to the axis of rotation. Therefore, **the $z$-component $v_z$ remains unchanged**.
 *   The basis vectors $\vec{i}$ and $\vec{j}$ lie in the $xy$-plane of rotation and are both rotated by the angle $\theta$.
 
 ### Step 1: Rotating the $\vec{i}$ Basis Component ($v_x\vec{i}$)
 Rotating the positive x-axis basis vector $\vec{i}$ by an angle $\theta$ sweeps it into the first quadrant. Using right-triangle trigonometry, we decompose the rotated vector into its new components along $\vec{i}$ and $\vec{j}$:
 
-$$\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}} \implies \text{Adjacent} = v_x\cos\theta \quad (\text{along } \vec{i})$$
-$$\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}} \implies \text{Opposite} = v_x\sin\theta \quad (\text{along } \vec{j})$$
+$$
+\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}} \implies \text{Adjacent} = v_x\cos\theta \quad (\text{along } \vec{i})
+$$
+
+$$
+\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}} \implies \text{Opposite} = v_x\sin\theta \quad (\text{along } \vec{j})
+$$
 
 Thus, the rotated $x$-component is:
-$$v_x\vec{i}' = v_x\cos\theta\vec{i} + v_x\sin\theta\vec{j}$$
+
+$$
+v_x\vec{i}' = v_x\cos\theta\vec{i} + v_x\sin\theta\vec{j}
+$$
 
 <center>
 	<img src="../../98_Assets/Concepts/vxi.webp" width="400" height="300">
@@ -36,26 +48,42 @@ $$v_x\vec{i}' = v_x\cos\theta\vec{i} + v_x\sin\theta\vec{j}$$
 Rotating the positive y-axis basis vector $\vec{j}$ by an angle $\theta$ sweeps it into the second quadrant. 
 *   **Sign Correction:** Because the vector swings to the left of the positive y-axis, its new component along the $\vec{i}$ axis points in the negative direction:
 
-$$\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}} \implies \text{Adjacent} = v_y\cos\theta \quad (\text{along } \vec{j})$$
-$$\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}} \implies \text{Opposite} = v_y\sin\theta \quad (\text{along } -\vec{i})$$
+$$
+\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}} \implies \text{Adjacent} = v_y\cos\theta \quad (\text{along } \vec{j})
+$$
+
+$$
+\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}} \implies \text{Opposite} = v_y\sin\theta \quad (\text{along } -\vec{i})
+$$
 
 Thus, the rotated $y$-component is:
-$$v_y\vec{j}' = -v_y\sin\theta\vec{i} + v_y\cos\theta\vec{j}$$
+
+$$
+v_y\vec{j}' = -v_y\sin\theta\vec{i} + v_y\cos\theta\vec{j}
+$$
 
 <center>
 	<img src="../../98_Assets/Concepts/vyj.webp" width="400" height="300">
 </center>
 
-
 ---
 
 ### Step 3: Combining the Rotated Components
 By summing the transformed parts, the final rotated vector $\vec{v}'$ is:
-$$\vec{v}' = v_x\vec{i}' + v_y\vec{j}' + v_z\vec{k}$$
-$$\vec{v}' = (v_x\cos\theta - v_y\sin\theta)\vec{i} + (v_x\sin\theta + v_y\cos\theta)\vec{j} + v_z\vec{k}$$
+
+$$
+\vec{v}' = v_x\vec{i}' + v_y\vec{j}' + v_z\vec{k}
+$$
+
+$$
+\vec{v}' = (v_x\cos\theta - v_y\sin\theta)\vec{i} + (v_x\sin\theta + v_y\cos\theta)\vec{j} + v_z\vec{k}
+$$
 
 We can express this system of linear equations as a matrix-vector product:
-$$\begin{bmatrix} v'_x \\\\ v'_y \\\\ v'_z \end{bmatrix} = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\\\ \sin\theta & \cos\theta & 0 \\\\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} v_x \\\\ v_y \\\\ v_z \end{bmatrix}$$
+
+$$
+\begin{bmatrix} v'_x \\\\ v'_y \\\\ v'_z \end{bmatrix} = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\\\ \sin\theta & \cos\theta & 0 \\\\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} v_x \\\\ v_y \\\\ v_z \end{bmatrix}
+$$
 
 This $3 \times 3$ matrix is the **general transformation matrix for rotating through an angle $\theta$ about the $z$-axis**.
 
@@ -67,15 +95,24 @@ Applying this identical geometric derivation to rotations about the other coordi
 
 ### Rotation About the $x$-Axis ($\mathbf{M}_{\text{rot } x}$)
 Rotates vectors within the $yz$-plane:
-$$\mathbf{M}_{\text{rot } x} = \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & \cos\theta & -\sin\theta \\\\ 0 & \sin\theta & \cos\theta \end{bmatrix}$$
+
+$$
+\mathbf{M}_{\text{rot } x} = \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & \cos\theta & -\sin\theta \\\\ 0 & \sin\theta & \cos\theta \end{bmatrix}
+$$
 
 ### Rotation About the $y$-Axis ($\mathbf{M}_{\text{rot } y}$)
 Rotates vectors within the $zx$-plane:
-$$\mathbf{M}_{\text{rot } y} = \begin{bmatrix} \cos\theta & 0 & \sin\theta \\\\ 0 & 1 & 0 \\\\ -\sin\theta & 0 & \cos\theta \end{bmatrix}$$
+
+$$
+\mathbf{M}_{\text{rot } y} = \begin{bmatrix} \cos\theta & 0 & \sin\theta \\\\ 0 & 1 & 0 \\\\ -\sin\theta & 0 & \cos\theta \end{bmatrix}
+$$
 
 ### Rotation About the $z$-Axis ($\mathbf{M}_{\text{rot } z}$)
 Rotates vectors within the $xy$-plane:
-$$\mathbf{M}_{\text{rot } z} = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\\\ \sin\theta & \cos\theta & 0 \\\\ 0 & 0 & 1 \end{bmatrix}$$
+
+$$
+\mathbf{M}_{\text{rot } z} = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\\\ \sin\theta & \cos\theta & 0 \\\\ 0 & 0 & 1 \end{bmatrix}
+$$
 
 > [!IMPORTANT]
 > Because coordinate systems are cyclic ($x \to y \to z \to x$), rotating in the $zx$-plane causes the negative sign to appear in the bottom-left entry $(3, 1)$ instead of the top-right entry $(1, 3)$ in $\mathbf{M}_{\text{rot } y}$.
@@ -117,7 +154,7 @@ We need to break $\vec{v}$ into two distinct components:
 - **Perpendicular Piece ($v_{\perp a}$):** The rejection of $\vec{v}$ from $\vec{a}$ (the piece shooting off at $90^\circ$ from $\vec{a}$). This is the piece that rotates.
     
 <center>
-	<img src="../../98_Assets/Concepts/decomposing_v.webp" width="400" height="300">
+	<img src="../../98_Assets/Concepts/decomposing_v.webp" width="350" height="350">
 </center>
 
 ### Step 2: Rotating the Perpendicular Piece
@@ -135,7 +172,9 @@ Now we need to rotate $v_{\perp a}$. We need a local x-axis and y-axis:
 
 By applying standard 2D rotation ($\cos\theta$ for the x-axis and $\sin\theta$ for the y-axis), the new position of the rotating piece is defined as:
 
-$$v' = v_{\parallel a} + v_{\perp a}\cos\theta + (\vec{a} \times \vec{v})\sin\theta$$
+$$
+v' = v_{\parallel a} + v_{\perp a}\cos\theta + (\vec{a} \times \vec{v})\sin\theta
+$$
 
 <center>
 	<img src="../../98_Assets/Concepts/decomosing_rotated_v.webp" width="400" height="300">
@@ -146,18 +185,27 @@ We know that $v = v_{\parallel a} + v_{\perp a}$, therefore $v_{\perp a} = v - v
 
 Making the necessary substitutions to the formula, we get the final rotation formula:
 
-$$v' = (\vec{v} \cdot \vec{a})\vec{a} + (\vec{v} - (\vec{v} \cdot \vec{a})\vec{a})\cos\theta + (\vec{a} \times \vec{v})\sin\theta$$
+$$
+v' = (\vec{v} \cdot \vec{a})\vec{a} + (\vec{v} - (\vec{v} \cdot \vec{a})\vec{a})\cos\theta + (\vec{a} \times \vec{v})\sin\theta
+$$
 
 Further reduction yields:
 
-$$v' = \vec{v}\cos\theta + (\vec{v} \cdot \vec{a})\vec{a}(1 - \cos\theta) + (\vec{a} \times \vec{v})\sin\theta$$
+$$
+v' = \vec{v}\cos\theta + (\vec{v} \cdot \vec{a})\vec{a}(1 - \cos\theta) + (\vec{a} \times \vec{v})\sin\theta
+$$
 
 ### Step 4: Matrix Formulation
 
 The projection $(\vec{v} \cdot \vec{a})\vec{a}$ and the cross product $(\vec{a} \times \vec{v})$ can be expressed by a 3x3 matrix multiplying the vector. The identity matrix is inserted so all terms have a 3x3 matrix.
 
-$$v' = \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \end{bmatrix} \vec{v}\cos\theta + \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\\\ a_x a_y & a_y^2 & a_y a_z \\\\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix} \vec{v}(1 - \cos\theta) + \begin{bmatrix} 0 & -a_z & a_y \\\\ a_z & 0 & -a_x \\\\ -a_y & a_x & 0 \end{bmatrix} \vec{v}\sin\theta$$
+$$
+v' = \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \end{bmatrix} \vec{v}\cos\theta + \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\\\ a_x a_y & a_y^2 & a_y a_z \\\\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix} \vec{v}(1 - \cos\theta) + \begin{bmatrix} 0 & -a_z & a_y \\\\ a_z & 0 & -a_x \\\\ -a_y & a_x & 0 \end{bmatrix} \vec{v}\sin\theta
+$$
 
 We can combine everything into a single matrix:
 
-$$M_{\text{rot}}(\theta, \vec{a}) = \begin{bmatrix} \cos\theta + (1 - \cos\theta)a_x^2 & (1 - \cos\theta)a_x a_y - \sin\theta a_z & (1 - \cos\theta)a_x a_z + \sin\theta a_y \\\\ (1 - \cos\theta)a_x a_y + \sin\theta a_z & \cos\theta + (1 - \cos\theta)a_y^2 & (1 - \cos\theta)a_y a_z - \sin\theta a_x \\\\ (1 - \cos\theta)a_x a_z - \sin\theta a_y & (1 - \cos\theta)a_y a_z + \sin\theta a_x & \cos\theta + (1 - \cos\theta)a_z^2 \end{bmatrix}$$
+$$
+M_{\text{rot}}(\theta, \vec{a}) = \begin{bmatrix} \cos\theta + (1 - \cos\theta)a_x^2 & (1 - \cos\theta)a_x a_y - \sin\theta a_z & (1 - \cos\theta)a_x a_z + \sin\theta a_y \\\\ (1 - \cos\theta)a_x a_y + \sin\theta a_z & \cos\theta + (1 - \cos\theta)a_y^2 & (1 - \cos\theta)a_y a_z - \sin\theta a_x \\\\ (1 - \cos\theta)a_x a_z - \sin\theta a_y & (1 - \cos\theta)a_y a_z + \sin\theta a_x & \cos\theta + (1 - \cos\theta)a_z^2 \end{bmatrix}
+$$
+

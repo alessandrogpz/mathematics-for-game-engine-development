@@ -11,10 +11,16 @@ Unlike the dot product which gives a number, the cross product gives a **new vec
 ## Definitions
 
 ### Algebraic Definition
-$$\vec{a} \times \vec{b} = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)$$
+
+$$
+\vec{a} \times \vec{b} = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)
+$$
 
 ### Geometric Definition
-$$\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$$
+
+$$
+\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)
+$$
 
 ## Key Properties
 | Property | Formula / Description |

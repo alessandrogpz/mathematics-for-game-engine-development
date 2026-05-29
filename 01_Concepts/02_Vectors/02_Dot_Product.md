@@ -11,10 +11,16 @@ Think of the dot product as a measure of how much one vector "points" in the dir
 ## Definitions
 
 ### Algebraic Definition
-$$\vec{a} \cdot \vec{b} = \sum_{i=1}^n a_i b_i = a_1b_1 + a_2b_2 + \dots + a_nb_n$$
+
+$$
+\vec{a} \cdot \vec{b} = \sum_{i=1}^n a_i b_i = a_1b_1 + a_2b_2 + \dots + a_nb_n
+$$
 
 ### Geometric Definition
-$$\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos(\theta)$$
+
+$$
+\vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos(\theta)
+$$
 
 ## Key Properties
 | Property | Formula |

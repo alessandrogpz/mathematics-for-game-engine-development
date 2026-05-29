@@ -6,6 +6,7 @@ tags: [exercise, question, ranks, consistency]
 # Question
 ## Part 1: Calculation
 Solve the following system of linear equations using Gauss-Jordan elimination:
+
 $$
 \begin{cases} 
 x + 2y + z = 4 \\\\
