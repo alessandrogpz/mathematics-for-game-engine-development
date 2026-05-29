@@ -11,4 +11,4 @@ tags: [exercise, solution, projection]
 // Optional C++ snippet here
 ```
 
-**Back to Question:** [[Q_Vector_Projection]] **Related Concepts:** [[05_Vector_Projection]]
+**Back to Question:** [[Q_Vector_Projection]] **Related Concepts:** [[06_Vector_Projection]]

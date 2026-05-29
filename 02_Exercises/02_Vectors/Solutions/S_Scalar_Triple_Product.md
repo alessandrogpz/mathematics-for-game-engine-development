@@ -11,4 +11,4 @@ tags: [exercise, solution, scalar-triple-product, volume]
 // Optional C++ snippet here
 ```
 
-**Back to Question:** [[Q_Scalar_Triple_Product]] **Related Concepts:** [[04_Scalar_Triple_Product]]
+**Back to Question:** [[Q_Scalar_Triple_Product]] **Related Concepts:** [[05_Scalar_Triple_Product]]

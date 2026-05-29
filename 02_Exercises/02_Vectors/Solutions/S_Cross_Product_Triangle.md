@@ -12,4 +12,4 @@ tags: [exercise, solution, cross-product, triangle-area]
 // Optional C++ snippet here
 ```
 
-**Back to Question:** [[Q_Cross_Product_Triangle]] **Related Concepts:** [[03_Cross_Product]]
+**Back to Question:** [[Q_Cross_Product_Triangle]] **Related Concepts:** [[04_Cross_Product]]

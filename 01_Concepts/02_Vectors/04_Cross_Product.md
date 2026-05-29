@@ -26,4 +26,4 @@ $$\|\vec{a} \times \vec{b}\| = \|\vec{a}\| \|\vec{b}\| \sin(\theta)$$
 ## Visualizing the Result (Right-Hand Rule)
 - Point fingers in direction of $\vec{a}$.
 - Curl fingers toward $\vec{b}$.
-- Thumb points in direction of $\vec{a} \times \vec{b}$.
+- Thumb points in direction of $\vec{a} \times \vec{b}$ (see [[03_Coordinate_Systems]] for left-hand vs. right-hand systems).

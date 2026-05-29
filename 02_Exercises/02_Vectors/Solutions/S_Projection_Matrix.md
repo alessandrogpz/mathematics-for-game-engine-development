@@ -41,4 +41,4 @@ This solution note is scaffolded to record your step-by-step derivations.
 
 ---
 
-**Back to Question:** [[Q_Projection_Matrix]] | **Related Concepts:** [[05_Vector_Projection]]
+**Back to Question:** [[Q_Projection_Matrix]] | **Related Concepts:** [[06_Vector_Projection]]

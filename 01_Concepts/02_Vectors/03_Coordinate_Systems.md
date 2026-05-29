@@ -13,4 +13,4 @@ Commonly used in some computer graphics applications (like DirectX or Unity's de
 - **Cross Product:** In a left-hand system, the result of the standard cross product formula points in the opposite direction relative to the $z$-axis orientation.
 
 ## Why It Matters
-When working with **Cross Products**, the resulting vector $\vec{a} \times \vec{b}$ is defined to follow the **Right-Hand Rule**. If you are working in a Left-Handed coordinate system, you must be careful as your visual intuition for "up" or "forward" might be inverted compared to the mathematical result.
+When working with **Cross Products** (see [[04_Cross_Product]]), the resulting vector $\vec{a} \times \vec{b}$ is defined to follow the **Right-Hand Rule**. If you are working in a Left-Handed coordinate system, you must be careful as your visual intuition for "up" or "forward" might be inverted compared to the mathematical result.

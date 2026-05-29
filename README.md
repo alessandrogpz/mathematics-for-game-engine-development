@@ -93,4 +93,4 @@ When you study a new topic or find a good textbook exercise, add it to your data
    ```
 2. Open the new files inside Obsidian (they are pre-filled with frontmatter and bi-directional links).
 3. Fill in the exercise description in the **Question** note, and write the mathematical steps in the **Solution** note.
-4. Link the solution to its theory concept (e.g. `[[05_Vector_Projection]]`) to bind it to your knowledge graph.
+4. Link the solution to its theory concept (e.g. `[[06_Vector_Projection]]`) to bind it to your knowledge graph.
