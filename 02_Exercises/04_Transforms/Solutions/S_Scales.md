@@ -5,7 +5,7 @@ tags: [exercise, solution, scaling, arbitrary-scale, uniform-scale]
 
 # Solution: Scaling in 3D Space
 
-This solution note provides the mathematical derivations, explicit matrix constructions, and vector verifications for your practice exercises.
+This solution note provides the mathematical derivations, explicit matrix constructions, vector verifications, and conceptual operator connections for your practice exercises.
 
 ---
 
@@ -152,13 +152,74 @@ This perfectly matches the matrix multiplication result from Step 2!
 ## Part 2: Conceptual Understanding
 
 ### 1. Determinant of Scaling
-[Insert your geometric explanation of how a 1D stretch along $\vec{a}$ scales 3D volume by $s$ here]
+
+*   **Geometric Representation of the Determinant:**
+    The determinant of any transformation matrix represents the volume scaling factor of the transformation on the 3D space.
+*   **1D Stretch:**
+    Arbitrary scaling along the axis $\vec{a}$ stretches (or compresses) space by a factor of exactly $s$ in a single 1D direction.
+*   **Orthogonal Preservation:**
+    In the 2D plane orthogonal to $\vec{a}$, space is completely untouched—meaning the scale factors in the two perpendicular directions are both exactly $1$.
+*   **Net Volume Change:**
+    The net change in volume for any 3D region is the product of the scaling factors along three mutually perpendicular axes (the scaling axis $\vec{a}$ and two orthogonal axes):
+    $$
+    \text{Volume scaling factor} = s \cdot 1 \cdot 1 = s
+    $$
+
+Therefore, the determinant of the arbitrary scaling matrix is exactly $s$:
+
+$$
+\det\big(\mathbf{M}_{\text{scale}}(s, \vec{a})\big) = s
+$$
+
+---
 
 ### 2. Operator Unification ($s = 0$)
-[Insert your analysis of the matrix when $s = 0$, its resulting equation, and its relationship to the plane projection matrix here]
+
+Setting the scale factor $s = 0$ in the general arbitrary scaling matrix:
+
+$$
+\mathbf{M}_{\text{scale}}(0, \vec{a}) = \mathbf{I} + (0-1)\vec{a}\vec{a}^T = \mathbf{I} - \vec{a}\vec{a}^T
+$$
+
+Expanding this into coordinate components:
+
+$$
+\mathbf{M}_{\text{scale}}(0, \vec{a}) = \begin{bmatrix} 1 - a_x^2 & -a_x a_y & -a_x a_z \\\\ -a_x a_y & 1 - a_y^2 & -a_y a_z \\\\ -a_x a_z & -a_y a_z & 1 - a_z^2 \end{bmatrix}
+$$
+
+*   **Geometric Transformation:**
+    Setting $s = 0$ completely flattens (projects) all 3D vectors onto the 2D plane passing through the origin perpendicular to $\vec{a}$. 
+*   **Relationship to Projections:**
+    This matrix is exactly the **Orthogonal Rejection Matrix** (often denoted as $\text{Rej}_{\vec{a}}\vec{v} = \mathbf{I} - \vec{a}\vec{a}^T$). Geometrically, it represents an orthogonal projection onto the plane perpendicular to the normal vector $\vec{a}$:
+    $$
+    \vec{v}' = 0\vec{v}_{\parallel a} + \vec{v}_{\perp a} = \vec{v}_{\perp a} = \text{proj}_{\perp a}\vec{v}
+    $$
+    This elegantly unifies arbitrary scaling with **vector projections**.
+
+---
 
 ### 3. Operator Unification ($s = -1$)
-[Insert your comparison of the scaling operator when $s = -1$ to the plane reflection matrix $\mathbf{M}_{\text{reflect}}(\vec{a})$ here]
+
+Setting the scale factor $s = -1$ in the general arbitrary scaling matrix:
+
+$$
+\mathbf{M}_{\text{scale}}(-1, \vec{a}) = \mathbf{I} + (-1-1)\vec{a}\vec{a}^T = \mathbf{I} - 2\vec{a}\vec{a}^T
+$$
+
+Expanding this into coordinate components:
+
+$$
+\mathbf{M}_{\text{scale}}(-1, \vec{a}) = \begin{bmatrix} 1 - 2a_x^2 & -2a_x a_y & -2a_x a_z \\\\ -2a_x a_y & 1 - 2a_y^2 & -2a_y a_z \\\\ -2a_x a_z & -2a_y a_z & 1 - 2a_z^2 \end{bmatrix}
+$$
+
+*   **Geometric Transformation:**
+    Setting $s = -1$ negates (reverses) only the component of a vector that lies parallel to the axis $\vec{a}$ while leaving the perpendicular component completely untouched:
+    $$
+    \vec{v}' = -1\vec{v}_{\parallel a} + \vec{v}_{\perp a} = \vec{v}_{\perp a} - \vec{v}_{\parallel a}
+    $$
+*   **Relationship to Reflections:**
+    This formula is identical to the **Plane Reflection Matrix** $\mathbf{M}_{\text{reflect}}(\vec{a})$ which mirrors vectors across the plane passing through the origin perpendicular to the normal vector $\vec{a}$. 
+    This reveals that a mirror reflection is simply a **special case of non-uniform scaling** where the scale factor in the direction orthogonal to the mirror plane is exactly $-1$.
 
 ---
 
