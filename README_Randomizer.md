@@ -13,13 +13,7 @@ A powerful Python command-line utility to manage, filter, and practice math exer
 
 ## Default Study Practice
 
-If you run the script **without any filtering or count flags** (e.g. `python3 randomizer.py` or `python3 randomizer.py --practice`), it will automatically and randomly select one of three balanced study categories to keep your study sessions structured:
-
-*   **Study Category A:** 3 Easy questions.
-*   **Study Category B:** 1 Medium and 1 Easy question.
-*   **Study Category C:** 1 Hard question.
-
-The category is selected randomly (1/3 chance for each), and the questions themselves are randomly sampled from their respective difficulty pools. If the repository doesn't contain enough questions of a particular difficulty, the script safely falls back to selecting all available questions in that pool without throwing errors.
+If you run the script **without any filtering or count flags** (e.g. `python3 randomizer.py` or `python3 randomizer.py --practice`), it will automatically and randomly select exactly **one random question** with an **equal chance** between the available difficulty levels (Easy, Medium, or Hard) to keep your study sessions focused and balanced.
 
 ---
 

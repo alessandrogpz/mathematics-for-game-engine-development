@@ -206,10 +206,8 @@ def safe_sample(population, k):
 
 def get_default_distribution_questions(base_path="02_Exercises"):
     """
-    Scans the repository and randomly picks one of three study categories:
-    - Category A: 3 Easy questions
-    - Category B: 1 Medium and 1 Easy question
-    - Category C: 1 Hard question
+    Scans the repository and randomly picks exactly one question,
+    with an equal (1/3) chance for each difficulty level (Easy, Medium, Hard).
     """
     all_questions = []
     for root, dirs, files in os.walk(base_path):
@@ -234,23 +232,32 @@ def get_default_distribution_questions(base_path="02_Exercises"):
             elif diff_clean == "hard":
                 hard_q.append(q_path)
                 
-    # Randomly select one of the three study categories (A, B, or C)
-    category = random.choice(["A", "B", "C"])
+    # Determine which difficulties have at least one question available
+    available_difficulties = []
+    if easy_q:
+        available_difficulties.append("Easy")
+    if medium_q:
+        available_difficulties.append("Medium")
+    if hard_q:
+        available_difficulties.append("Hard")
+        
+    if not available_difficulties:
+        return [], "No questions found"
+        
+    # Pick a difficulty level with equal probability
+    chosen_difficulty = random.choice(available_difficulties)
     
     selected = []
-    if category == "A":
-        selected.extend(safe_sample(easy_q, 3))
-        desc = "Study Category A (3 Easy)"
-    elif category == "B":
-        selected.extend(safe_sample(medium_q, 1))
-        selected.extend(safe_sample(easy_q, 1))
-        desc = "Study Category B (1 Medium, 1 Easy)"
-    else:
-        selected.extend(safe_sample(hard_q, 1))
-        desc = "Study Category C (1 Hard)"
+    if chosen_difficulty == "Easy":
+        selected.append(random.choice(easy_q))
+    elif chosen_difficulty == "Medium":
+        selected.append(random.choice(medium_q))
+    elif chosen_difficulty == "Hard":
+        selected.append(random.choice(hard_q))
         
-    random.shuffle(selected)
+    desc = f"Random {chosen_difficulty} Question"
     return selected, desc
+
 
 def get_random_questions(count=None, topic_query=None, difficulty_filter=None, tag_filter=None, practice=False, base_path="02_Exercises"):
     """
