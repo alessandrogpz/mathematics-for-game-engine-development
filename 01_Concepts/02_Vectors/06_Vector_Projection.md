@@ -141,10 +141,75 @@ $$
 In 3D math and game engines, the outer product is primarily used to represent a **subspace** (like a line or a plane) in matrix form.
 
 When you calculate the outer product of a unit vector with itself ($\hat{u}\hat{u}^T$):
+ 
+ * The resulting matrix represents the 1D line defined by $\hat{u}$.
+ * It acts as a geometric filter.
+ * Multiplying any coordinate by this matrix strips away all spatial data perpendicular to the line, leaving only the exact shadow (projection) that rests on the line.
+ 
+---
 
-* The resulting matrix represents the 1D line defined by $\hat{u}$.
-* It acts as a geometric filter.
-* Multiplying any coordinate by this matrix strips away all spatial data perpendicular to the line, leaving only the exact shadow (projection) that rests on the line.
+## 6. Vector Rejection
+
+While vector projection finds the component of a vector $\vec{a}$ that is parallel to the direction of $\vec{b}$, **vector rejection** finds the component of $\vec{a}$ that is **perpendicular** (orthogonal) to $\vec{b}$.
+
+### Conceptual Understanding: "The Residual"
+Think of vector rejection as removing the parallel projection component from the original vector.
+*   **What it tells us:** It represents the part of $\vec{a}$ that acts completely orthogonal to $\vec{b}$.
+*   **Physical Meaning:** In game physics and graphics, if $\vec{b}$ is a surface normal vector, the vector projection is the component perpendicular to the surface (penetration), and the vector rejection is the component **parallel to the surface** (sliding direction along the plane).
+
+### Algebraic Formula
+Vector rejection (often denoted as $\text{rej}_{\vec{b}}\vec{a}$) is calculated by subtracting the vector projection from the original vector:
+
+$$
+\text{rej}_{\vec{b}}\vec{a} = \vec{a} - \text{proj}_{\vec{b}}\vec{a}
+$$
+
+Substituting the vector projection formula:
+
+$$
+\text{rej}_{\vec{b}}\vec{a} = \vec{a} - \left( \frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|^2} \right) \vec{b}
+$$
+
+---
+
+## 7. Matrix Representation of Vector Rejection (Orthogonal Rejection Operator)
+
+Just like vector projection can be expressed using a projection matrix, vector rejection can be expressed using an orthogonal rejection matrix.
+
+### Substitution & Derivation
+Assuming projection onto a unit vector $\hat{u}$ (where $\|\hat{u}\|^2 = 1$):
+1.  **Express Projection as Matrix Product:**
+    We substitute the projection matrix $(\hat{u}\hat{u}^T)$ into the rejection formula:
+    $$
+    \text{rej}_{\hat{u}}\vec{a} = \vec{a} - (\hat{u}\hat{u}^T)\vec{a}
+    $$
+2.  **Factor Out the Vector $\vec{a}$:**
+    Using the identity matrix $\mathbf{I}$, we rewrite $\vec{a} = \mathbf{I}\vec{a}$:
+    $$
+    \text{rej}_{\hat{u}}\vec{a} = \mathbf{I}\vec{a} - (\hat{u}\hat{u}^T)\vec{a}
+    $$
+    $$
+    \text{rej}_{\hat{u}}\vec{a} = (\mathbf{I} - \hat{u}\hat{u}^T)\vec{a}
+    $$
+
+Here, the isolated term $(\mathbf{I} - \hat{u}\hat{u}^T)$ is the **Orthogonal Rejection Matrix** (or projection operator onto the perpendicular subspace):
+
+$$
+\mathbf{P}_{\perp u} = \mathbf{I} - \hat{u}\hat{u}^T
+$$
+
+### Explicit Matrix Expansion
+Expanding $\mathbf{I} - \hat{u}\hat{u}^T$ into explicit $3 \times 3$ coordinate form:
+
+$$
+\mathbf{P}_{\perp u} = \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \end{bmatrix} - \begin{bmatrix} u_x^2 & u_x u_y & u_x u_z \\\\ u_x u_y & u_y^2 & u_y u_z \\\\ u_x u_z & u_y u_z & u_z^2 \end{bmatrix}
+$$
+
+$$
+\mathbf{P}_{\perp u} = \begin{bmatrix} 1 - u_x^2 & -u_x u_y & -u_x u_z \\\\ -u_x u_y & 1 - u_y^2 & -u_y u_z \\\\ -u_x u_z & -u_y u_z & 1 - u_z^2 \end{bmatrix}
+$$
+
+This $3 \times 3$ matrix represents the **orthogonal rejection operator**. Multiplying any vector $\vec{a}$ by this matrix strips away all component data parallel to $\hat{u}$, leaving only the perpendicular component lying in the subspace orthogonal to $\hat{u}$.
 
 ---
 
