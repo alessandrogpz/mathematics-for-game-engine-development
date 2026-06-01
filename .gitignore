@@ -11,10 +11,12 @@ ENV/
 Thumbs.db
 
 # Obsidian
-# Note: Usually you WANT to commit .obsidian for your settings/plugins, 
-# but you might want to ignore workspace-specific state.
+# Note: Commit settings but ignore third-party code, caches, and local workspace state.
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/plugins/
+Daily_Practice.md
 
 # Local Memory/Temp (if any)
 .gemini/
