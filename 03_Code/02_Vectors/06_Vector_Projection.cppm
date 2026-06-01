@@ -1,11 +1,37 @@
 // Related Concept: [[01_Concepts/02_Vectors/06_Vector_Projection|06_Vector_Projection]]
 module;
-#include <iostream>
 
 export module vectors_projection;
 
+import vectors_basics;
+import vectors_dot_product;
+
 export namespace vectors {
-    void test_vectors_projection() {
-        std::cout << "Vectors - Vector Projection Module" << std::endl;
+
+    [[nodiscard]]
+    double scalarProj ( const vector3 a, const vector3 b ) {
+
+        const double magB = b.magnitude();
+        if (magB == 0.0)
+            return 0.0;
+
+        return dot(a, b) / magB;
     }
+
+    [[nodiscard]]
+    vector3 vecProj ( const vector3 a, const vector3 b ) {
+        const double magB = b.magnitude();
+        if (magB == 0.0)
+            return {0.0, 0.0, 0.0};
+
+        const double sProj = scalarProj(a, b);
+        return b * (sProj / magB);
+    }
+
+    [[nodiscard]]
+    vector3 vecRej ( const vector3 a, const vector3 b) {
+        return a - vecProj(a, b);
+    }
+
+    //TODO Matrix Representation vecProj (Outer Product) & vecRej (Orthogonal Rejection)
 }
