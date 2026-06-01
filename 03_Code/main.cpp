@@ -1,22 +1,7 @@
 #include <iostream>
 
-// Import C++23 modules
-import systems_linear_systems;
-import vectors_basics;
-import vectors_dot_product;
-import vectors_coordinate_systems;
-import vectors_cross_product;
-import vectors_scalar_triple_product;
-import vectors_projection;
-import matrices_basics;
-import matrices_multiplication;
-import matrices_determinants;
-import matrices_inversion;
-import matrices_orthogonal;
-import transforms_matrices;
-import transforms_rotations;
-import transforms_reflections;
-import transforms_scales;
+// Import the single C++23 umbrella module
+import linear_algebra;
 
 int main() {
     std::cout << "==========================================" << std::endl;
@@ -26,34 +11,49 @@ int main() {
 
     std::cout << "[Testing] ";
     systems::test_systems_linear_systems();
+    
     std::cout << "[Testing] ";
     vectors::test_vectors_basics();
+    
     std::cout << "[Testing] ";
     vectors::test_vectors_dot_product();
+    
     std::cout << "[Testing] ";
     vectors::test_vectors_coordinate_systems();
+    
     std::cout << "[Testing] ";
     vectors::test_vectors_cross_product();
+    
     std::cout << "[Testing] ";
     vectors::test_vectors_scalar_triple_product();
+    
     std::cout << "[Testing] ";
     vectors::test_vectors_projection();
+    
     std::cout << "[Testing] ";
     matrices::test_matrices_basics();
+    
     std::cout << "[Testing] ";
     matrices::test_matrices_multiplication();
+    
     std::cout << "[Testing] ";
     matrices::test_matrices_determinants();
+    
     std::cout << "[Testing] ";
     matrices::test_matrices_inversion();
+    
     std::cout << "[Testing] ";
     matrices::test_matrices_orthogonal();
+    
     std::cout << "[Testing] ";
     transforms::test_transforms_matrices();
+    
     std::cout << "[Testing] ";
     transforms::test_transforms_rotations();
+    
     std::cout << "[Testing] ";
     transforms::test_transforms_reflections();
+    
     std::cout << "[Testing] ";
     transforms::test_transforms_scales();
 

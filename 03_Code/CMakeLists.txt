@@ -18,6 +18,7 @@ add_executable(LinearAlgebra main.cpp)
 target_sources(LinearAlgebra
   PUBLIC
     FILE_SET CXX_MODULES FILES
+      "linear_algebra.cppm"
       "01_Systems_of_Equations/01_Linear_Systems.cppm"
       "02_Vectors/01_Basics.cppm"
       "02_Vectors/02_Dot_Product.cppm"
