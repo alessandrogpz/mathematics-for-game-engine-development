@@ -54,4 +54,4 @@ $$
 2.  **Geometric Intuition:** Explain the geometric meaning of your resulting matrix $\mathbf{S}_B$. Why does stretching space along the x-axis in system $A$ correspond to this specific operation in system $B$?
 
 ---
-**Check Answer:** [[S_Orthogonal_Transforms]]
+**Check Answer:** [[S_Orthogonal_Transforms]] | **Related Concepts:** [[01_Transformation_Matrices]]

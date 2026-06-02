@@ -16,4 +16,4 @@ A triangle is defined in 3D space by the points $A(1, 0, 1)$, $B(3, 2, 1)$, and 
 3. Does the cross product exist for 2D vectors? If so, how do we typically represent the result?
 
 ---
-**Check Answer:** [[S_Cross_Product_Triangle]]
+**Check Answer:** [[S_Cross_Product_Triangle]] | **Related Concepts:** [[04_Cross_Product]]

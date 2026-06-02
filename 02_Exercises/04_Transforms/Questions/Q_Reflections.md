@@ -43,4 +43,4 @@ $$
 2.  **Composition of Reflections:** What geometric transformation is produced if you perform two plane reflections consecutively across the exact same plane? Prove this algebraically by calculating the matrix product $\mathbf{M}_{\text{reflect}}(\vec{a})\mathbf{M}_{\text{reflect}}(\vec{a})$.
 
 ---
-**Check Answer:** [[S_Reflections]]
+**Check Answer:** [[S_Reflections]] | **Related Concepts:** [[03_Reflections]]

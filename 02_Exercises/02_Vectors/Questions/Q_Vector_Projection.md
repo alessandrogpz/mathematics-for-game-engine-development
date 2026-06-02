@@ -15,4 +15,4 @@ You have a velocity vector $\vec{v} = \begin{bmatrix} 4 \\ -3 \\ 1 \end{bmatrix}
 3. How can you use the vector projection to find the component of $\vec{v}$ that is parallel to the surface (perpendicular to $\vec{n}$)?
 
 ---
-**Check Answer:** [[S_Vector_Projection]]
+**Check Answer:** [[S_Vector_Projection]] | **Related Concepts:** [[06_Vector_Projection]]

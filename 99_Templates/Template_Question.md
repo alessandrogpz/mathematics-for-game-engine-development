@@ -11,4 +11,5 @@ tags: [exercise, question]
 [Insert theory/concept-based questions here]
 
 ---
-**Check Answer:** [[Solution_Name]]
+**Check Answer:** [[Solution_Name]] | **Related Concepts:** [[Link to relevant concept note]]
+

@@ -16,4 +16,4 @@ Given vectors $\vec{a} = (3, -1, 2)$ and $\vec{b} = (1, 2, 2)$:
 3. If the dot product $\vec{a} \cdot \vec{b}$ were negative, what would that tell you about the direction of the "shadow" (projection) relative to $\vec{b}$?
 
 ---
-**Check Answer:** [[S_Projection_Orthogonality]]
+**Check Answer:** [[S_Projection_Orthogonality]] | **Related Concepts:** [[06_Vector_Projection]]

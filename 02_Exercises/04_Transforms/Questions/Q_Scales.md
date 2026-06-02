@@ -42,4 +42,4 @@ $$
 
 ---
 
-**Check Answer:** [[S_Scales]]
+**Check Answer:** [[S_Scales]] | **Related Concepts:** [[04_Scales]]

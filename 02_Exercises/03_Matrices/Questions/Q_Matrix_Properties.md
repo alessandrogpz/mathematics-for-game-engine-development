@@ -17,4 +17,4 @@ Consider the matrix $A = \begin{bmatrix} 2 & 0 & 1 \\ 0 & 3 & 0 \\ 1 & 0 & 2 \en
 3. Why does a matrix with a determinant of $0$ have a nullity greater than $0$? (Reference the Rank-Nullity theorem).
 
 ---
-**Check Answer:** [[S_Matrix_Properties]]
+**Check Answer:** [[S_Matrix_Properties]] | **Related Concepts:** [[03_Determinants]]

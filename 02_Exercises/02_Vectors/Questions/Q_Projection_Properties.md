@@ -32,4 +32,5 @@ $$
    Prove that the vector projection operator is idempotent.
 
 ---
-**Check Answer:** [[S_Projection_Properties]]
+**Check Answer:** [[S_Projection_Properties]] | **Related Concepts:** [[06_Vector_Projection]]
+

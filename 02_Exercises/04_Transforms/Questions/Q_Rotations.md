@@ -49,4 +49,4 @@ $$
     *   Multiply $\mathbf{M}_{\text{rot}}(\theta, \vec{a})\vec{v}$ to verify it yields the same rotated vector $\vec{v}'$ calculated in Step 2.
 
 ---
-**Check Answer:** [[S_Rotations]]
+**Check Answer:** [[S_Rotations]] | **Related Concepts:** [[02_Rotations]]

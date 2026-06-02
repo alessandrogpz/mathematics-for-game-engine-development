@@ -17,4 +17,4 @@ $$
 3. If $A$ is an $n \times n$ matrix, how many row operations (at most) would you expect to perform to reach the identity matrix?
 
 ---
-**Check Answer:** [[S_Gauss_Jordan_3x3]]
+**Check Answer:** [[S_Gauss_Jordan_3x3]] | **Related Concepts:** [[03_Matrices]]

@@ -14,4 +14,4 @@ $\vec{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$, $\vec{v} = \begin{bmatrix
 3. Does the order of operations $(\vec{u} \times \vec{v}) \cdot \vec{w}$ matter? What about the cyclic order of the vectors themselves?
 
 ---
-**Check Answer:** [[S_Scalar_Triple_Product]]
+**Check Answer:** [[S_Scalar_Triple_Product]] | **Related Concepts:** [[05_Scalar_Triple_Product]]

@@ -6,4 +6,4 @@ tags: [exercise, solution]
 ## Derivation
 [Insert step-by-step LaTeX math here]
 
-**Back to Question:** [[Q_Projection_Properties]] **Related Concepts:** [[Link to relevant concept note]]
+**Back to Question:** [[Q_Projection_Properties]] | **Related Concepts:** [[06_Vector_Projection]]

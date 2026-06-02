@@ -22,4 +22,4 @@ $$
 4. If you changed the result of the third equation from $23$ to $25$, how would the ranks change, and what would that imply about the solutions?
 
 ---
-**Check Answer:** [[S_Systems_Ranks]]
+**Check Answer:** [[S_Systems_Ranks]] | **Related Concepts:** [[01_Linear_Systems]]

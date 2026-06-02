@@ -16,4 +16,4 @@ Given vectors $\vec{a} = \begin{bmatrix} 2 \\ -1 \\ 2 \end{bmatrix}$ and $\vec{b
 3. How does the dot product relate to the concept of "projection" that we studied?
 
 ---
-**Check Answer:** [[S_Angle_Dot_Product]]
+**Check Answer:** [[S_Angle_Dot_Product]] | **Related Concepts:** [[02_Dot_Product]]

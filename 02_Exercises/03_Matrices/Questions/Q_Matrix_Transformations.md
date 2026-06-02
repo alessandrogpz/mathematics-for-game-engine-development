@@ -18,4 +18,4 @@ Construct the three distinct $3 \times 3$ matrices, multiply them together to cr
 3. What is the geometric interpretation of the determinant of the combined transformation matrix $M$ (ignoring the translation component)?
 
 ---
-**Check Answer:** [[S_Matrix_Transformations]]
+**Check Answer:** [[S_Matrix_Transformations]] | **Related Concepts:** [[02_Matrix_Multiplication]]

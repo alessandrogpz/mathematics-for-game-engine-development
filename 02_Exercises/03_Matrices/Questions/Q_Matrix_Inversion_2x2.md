@@ -16,4 +16,4 @@ Given matrix $M = \begin{bmatrix} 4 & 7 \\ 2 & 6 \end{bmatrix}$:
 3. Prove that for any $2 \times 2$ matrix  $M$, the inverse matrix $M^{-1}$ exists if and only if $ad - bc \neq 0$.
 
 ---
-**Check Answer:** [[S_Matrix_Inversion_2x2]]
+**Check Answer:** [[S_Matrix_Inversion_2x2]] | **Related Concepts:** [[03_Determinants]]
