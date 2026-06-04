@@ -34,8 +34,6 @@ export namespace vectors {
         return a - vecProj(a, b);
     }
 
-    //TODO Matrix Representation vecProj (Outer Product) & vecRej (Orthogonal Rejection)
-
     [[nodiscard]]
     vector3 projMatrix(const vector3 a, const vector3 b)
     {
