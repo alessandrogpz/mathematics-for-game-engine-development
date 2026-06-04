@@ -26,4 +26,6 @@ export namespace matrices {
 
         return r_diag - l_diag;
     }
+
+
 }

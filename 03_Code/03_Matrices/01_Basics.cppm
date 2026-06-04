@@ -52,21 +52,6 @@ export namespace matrices {
             return result;
         }
 
-        // 4. Matrix Transposition
-        [[nodiscard]]
-        Matrix3x3 transpose() const
-        {
-            Matrix3x3 t{};
-            for ( int row = 0; row < 3; row++ )
-            {
-                for ( int column = 0; column < 3; column++ )
-                {
-                    t[column, row] = (*this)[row, column];
-                }
-            }
-            return t;
-        }
-
         // 5. Trace of a Matrix (Sum of main diagonal elements)
         [[nodiscard]]
         double trace() const {
@@ -82,19 +67,34 @@ export namespace matrices {
             i[2, 2] = 1.0;
             return i;
         }
+    };
 
-        // 7. 3x3 ASCII Matrix Printer
-        void print() const
+    // 4. Matrix Transposition
+    [[nodiscard]]
+    Matrix3x3 transpose(const Matrix3x3& m)
+    {
+        Matrix3x3 t{};
+        for ( int row = 0; row < 3; row++ )
         {
-            for (size_t row = 0; row < 3; ++row)
+            for ( int column = 0; column < 3; column++ )
             {
-                std::cout << "[ ";
-                for (size_t col = 0; col < 3; ++col)
-                {
-                    std::cout << std::format("{:>8.4f} ", (*this)[row, col]);
-                }
-                std::cout << "]" << std::endl;
+                t[column, row] = m[row, column];
             }
         }
-    };
+        return t;
+    }
+
+    // 7. 3x3 ASCII Matrix Printer
+    void print(const Matrix3x3& m)
+    {
+        for (size_t row = 0; row < 3; ++row)
+        {
+            std::cout << "[ ";
+            for (size_t col = 0; col < 3; ++col)
+            {
+                std::cout << std::format("{:>8.4f} ", m[row, col]);
+            }
+            std::cout << "]" << std::endl;
+        }
+    }
 }
