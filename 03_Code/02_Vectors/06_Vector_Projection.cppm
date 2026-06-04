@@ -62,9 +62,9 @@ export namespace vectors {
     }
 
     [[nodiscard]]
-    matrices::Matrix3x3 orthogonalRejMatrix (const matrices::Matrix3x3& P)
+    matrices::Matrix3x3 orthogonalRejMatrix (const vector3 b)
     {
-        return matrices::Matrix3x3::identity() - P;
+        return matrices::Matrix3x3::identity() - projMatrix(b);
     }
 
     [[nodiscard]]
