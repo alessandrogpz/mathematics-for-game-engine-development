@@ -35,7 +35,7 @@ export namespace vectors {
     }
 
     [[nodiscard]]
-    vector3 projMatrix(const vector3 a, const vector3 b)
+    matrices::Matrix3x3 projMatrix(const vector3 b)
     {
         const vector3 u = b.normalized();
         matrices::Matrix3x3 P{};
@@ -52,7 +52,7 @@ export namespace vectors {
         P[2, 1] = u.z * u.y;
         P[2, 2] = u.z * u.z;
 
-        return P * a;
+        return P;
     }
 
 }
