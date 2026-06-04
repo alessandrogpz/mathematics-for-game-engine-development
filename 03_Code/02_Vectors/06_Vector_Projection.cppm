@@ -5,6 +5,7 @@ export module vectors_projection;
 
 import vectors_basics;
 import vectors_dot_product;
+import matrices_basics;
 
 export namespace vectors {
 
@@ -34,4 +35,26 @@ export namespace vectors {
     }
 
     //TODO Matrix Representation vecProj (Outer Product) & vecRej (Orthogonal Rejection)
+
+    [[nodiscard]]
+    vector3 projMatrix(const vector3 a, const vector3 b)
+    {
+        const vector3 u = b.normalized();
+        matrices::Matrix3x3 P{};
+
+        P[0, 0] = u.x * u.x;
+        P[0, 1] = u.x * u.y;
+        P[0, 2] = u.x * u.z;
+
+        P[1, 0] = u.y * u.x;
+        P[1, 1] = u.y * u.y;
+        P[1, 2] = u.y * u.z;
+
+        P[2, 0] = u.z * u.x;
+        P[2, 1] = u.z * u.y;
+        P[2, 2] = u.z * u.z;
+
+        return P * a;
+    }
+
 }
