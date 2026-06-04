@@ -30,9 +30,12 @@ $$
 | **Vector Triple Product** | $\vec{a} \times (\vec{b} \times \vec{c}) = \vec{b}(\vec{a} \cdot \vec{c}) - \vec{c}(\vec{a} \cdot \vec{b})$ |
 
 ## Visualizing the Result (Right-Hand Rule)
-- Point fingers in direction of $\vec{a}$.
-- Curl fingers toward $\vec{b}$.
-- Thumb points in direction of $\vec{a} \times \vec{b}$ (see [[03_Coordinate_Systems]] for left-hand vs. right-hand systems).
+Using your **right hand**, orient your fingers to find the direction of $\vec{a} \times \vec{b}$:
+*   **Thumb:** Point in the direction of the first vector $\vec{a}$.
+*   **Index Finger:** Point in the direction of the second vector $\vec{b}$.
+*   **Middle Finger:** Points perpendicular to your palm, indicating the direction of the cross product vector $\vec{a} \times \vec{b}$.
+
+*(For more details on coordinate systems, see [[03_Coordinate_Systems]]).*
 
 ## Matrix Representation of Cross Product (Skew-Symmetric Matrix)
 
