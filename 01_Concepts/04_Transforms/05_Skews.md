@@ -121,8 +121,10 @@ $$
 Thus, the **Skew Matrix** is defined as:
 
 $$
-\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T
+\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T = \mathbf{I} + \tan\theta \, (\vec{a} \otimes \vec{b})
 $$
+
+Where $\vec{a} \otimes \vec{b}$ represents the tensor product (equivalent to the outer product $\vec{a}\vec{b}^T$) of the two vectors.
 
 ---
 
@@ -145,11 +147,19 @@ $$
 ## 6. Key Properties of Skew Matrices
 
 * **Volume Preservation:** 
-  The determinant of a skew matrix is always $+1$:
+  The determinant of a skew matrix is always $+1$. We can prove this algebraically using the **matrix determinant lemma**, which states that for any column vectors $\vec{u}, \vec{v}$ of the same size:
   $$
-  \det\big(\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\big) = 1
+  \det(\mathbf{I} + \vec{u}\vec{v}^T) = 1 + \vec{u} \cdot \vec{v}
   $$
-  This property shows that skew transformations are **volume-preserving** (or area-preserving in 2D).
+  Applying this lemma to our skew matrix definition $\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + (\tan\theta \, \vec{a})\vec{b}^T$:
+  $$
+  \det\big(\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\big) = 1 + \tan\theta \, (\vec{a} \cdot \vec{b})
+  $$
+  Since the slide direction $\vec{a}$ and the perpendicular measurement axis $\vec{b}$ are orthogonal ($\vec{a} \cdot \vec{b} = 0$), this simplifies to:
+  $$
+  \det\big(\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\big) = 1 + \tan\theta \, (0) = 1
+  $$
+  This algebraic proof confirms that skew transformations are strictly volume-preserving.
 * **Inverse Matrix:** 
   To undo a skew of angle $\theta$ along $\vec{a}$ relative to $\vec{b}$, we skew in the opposite direction (by $-\theta$):
   $$
@@ -157,9 +167,6 @@ $$
   $$
 
 ---
+## Code Implementation
 
-## Practice Exercises
-
-* **Question Note:** [[Q_Skews]]
-* **Solution Note:** [[S_Skews]]
-
+*   **C++ Source Code:** [[03_Code/04_Transforms/05_Skews.cppm|05_Skews.cppm]]
