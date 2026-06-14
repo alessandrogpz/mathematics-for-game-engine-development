@@ -41,19 +41,19 @@ In a standard matrix multiplication, we cannot directly divide one coordinate by
 Suppose we want a matrix $\mathbf{P}$ that transforms our point such that:
 
 $$
-\mathbf{P}\begin{bmatrix} x \\ y \\ z \\ 1 \end{bmatrix} = \begin{bmatrix} dx \\ dy \\ Az + B \\ -z \end{bmatrix}
+\mathbf{P}\begin{bmatrix} x \\\\ y \\\\ z \\\\ 1 \end{bmatrix} = \begin{bmatrix} dx \\\\ dy \\\\ Az + B \\\\ -z \end{bmatrix}
 $$
 
 Applying homogeneous division (dividing by the output $w' = -z$) yields the projected coordinate:
 
 $$
-\begin{bmatrix} dx / -z \\ dy / -z \\ (Az+B) / -z \\ 1 \end{bmatrix} = \begin{bmatrix} -d \frac{x}{z} \\ -d \frac{y}{z} \\ \text{depth} \\ 1 \end{bmatrix}
+\begin{bmatrix} dx / -z \\\\ dy / -z \\\\ (Az+B) / -z \\\\ 1 \end{bmatrix} = \begin{bmatrix} -d \frac{x}{z} \\\\ -d \frac{y}{z} \\\\ \text{depth} \\\\ 1 \end{bmatrix}
 $$
 
 This matches the similar triangle formulas exactly! We can write this linear matrix equation as:
 
 $$
-\mathbf{P} = \begin{bmatrix} d & 0 & 0 & 0 \\ 0 & d & 0 & 0 \\ 0 & 0 & A & B \\ 0 & 0 & -1 & 0 \end{bmatrix}
+\mathbf{P} = \begin{bmatrix} d & 0 & 0 & 0 \\\\ 0 & d & 0 & 0 \\\\ 0 & 0 & A & B \\\\ 0 & 0 & -1 & 0 \end{bmatrix}
 $$
 
 ---
@@ -85,7 +85,7 @@ $$
 Additionally, to account for field of view ($\theta$) and the aspect ratio ($r = \text{width}/\text{height}$), the focal length is defined as $d = \cot(\theta/2)$, and the horizontal scale is adjusted by $1/r$. This yields the standard **Perspective Projection Matrix**:
 
 $$
-\mathbf{P} = \begin{bmatrix} \frac{\cot(\theta/2)}{r} & 0 & 0 & 0 \\ 0 & \cot(\theta/2) & 0 & 0 \\ 0 & 0 & -\frac{f+n}{f-n} & -\frac{2fn}{f-n} \\ 0 & 0 & -1 & 0 \end{bmatrix}
+\mathbf{P} = \begin{bmatrix} \frac{\cot(\theta/2)}{r} & 0 & 0 & 0 \\\\ 0 & \cot(\theta/2) & 0 & 0 \\\\ 0 & 0 & -\frac{f+n}{f-n} & -\frac{2fn}{f-n} \\\\ 0 & 0 & -1 & 0 \end{bmatrix}
 $$
 
 ---

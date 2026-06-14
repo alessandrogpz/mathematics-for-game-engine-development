@@ -11,13 +11,13 @@ Homogeneous coordinates represent $n$-dimensional points using $n+1$ components,
 In 3D projective space $\mathbb{P}^3$, a point is defined by a 4-component vector:
 
 $$
-\vec{p} = \begin{bmatrix} x \cr y \cr z \cr w \end{bmatrix} \quad (\text{where } w \neq 0)
+\vec{p} = \begin{bmatrix} x \\\\ y \\\\ z \\\\ w \end{bmatrix} \quad (\text{where } w \neq 0)
 $$
 
 Unlike Euclidean space, homogeneous coordinates are characterized by **scale invariance**. Multiplying the entire coordinate vector by any non-zero scalar $k$ does not change the geometric point it represents:
 
 $$
-\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} \equiv \begin{bmatrix} kx \\ ky \\ kz \\ kw \end{bmatrix} \quad \text{for any } k \neq 0
+\begin{bmatrix} x \\\\ y \\\\ z \\\\ w \end{bmatrix} \equiv \begin{bmatrix} kx \\\\ ky \\\\ kz \\\\ kw \end{bmatrix} \quad \text{for any } k \neq 0
 $$
 
 Because of this property, a single point in 3D Euclidean space corresponds to an **entire line (ray) passing through the origin in 4D space**.
@@ -44,7 +44,7 @@ Here, our 2D Euclidean world is represented as the flat plane $z = 1$ embedded i
 For any given point $v$ in this plane:
 
 $$
-\vec{v} = \begin{bmatrix} x \\ y \\ z \end{bmatrix} \quad \text{and since } z = 1: \quad \vec{v} = \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}
+\vec{v} = \begin{bmatrix} x \\\\ y \\\\ z \end{bmatrix} \quad \text{and since } z = 1: \quad \vec{v} = \begin{bmatrix} x \\\\ y \\\\ 1 \end{bmatrix}
 $$
 
 Any 3D homogeneous coordinate $[x, y, z]^T$ represents a ray (line) passing through the origin in 3D space:
@@ -56,7 +56,7 @@ Any 3D homogeneous coordinate $[x, y, z]^T$ represents a ray (line) passing thro
 Geometrically, converting any point in this 3D projective space back onto our 2D plane requires us to scale it back to the 2D $x,y$ plane we defined. We accomplish this by dividing each of the vector's components by its $z$ component. This process is called **Homogeneous Division** (or perspective division):
 
 $$
-\begin{bmatrix} x \\ y \\ z \end{bmatrix} \xrightarrow{\text{Divide by } z} \begin{bmatrix} x/z \\ y/z \\ 1 \end{bmatrix}
+\begin{bmatrix} x \\\\ y \\\\ z \end{bmatrix} \xrightarrow{\text{Divide by } z} \begin{bmatrix} x/z \\\\ y/z \\\\ 1 \end{bmatrix}
 $$
 
 Once $z = 1$, the first two components $[x/z, y/z]^T$ represent the standard 2D Euclidean coordinates of the point on our projection plane. In our example, $z$ is already $1$, but this division mathematically projects any point along the ray (where $z \neq 1$) back onto the plane.
@@ -70,13 +70,13 @@ What happens if the $w$ component of a homogeneous coordinate is exactly $0$?
 If we take the limit as $w$ approaches $0$ for a point with a positive $w$:
 
 $$
-\lim_{w \to 0} \begin{bmatrix} x/w \\ y/w \\ z/w \end{bmatrix} = \infty \cdot \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+\lim_{w \to 0} \begin{bmatrix} x/w \\\\ y/w \\\\ z/w \end{bmatrix} = \infty \cdot \begin{bmatrix} x \\\\ y \\\\ z \end{bmatrix}
 $$
 
 The point moves infinitely far away along the direction vector $[x, y, z]^T$. Therefore, a homogeneous coordinate with $w = 0$:
 
 $$
-\vec{v} = \begin{bmatrix} x \\ y \\ z \\ 0 \end{bmatrix}
+\vec{v} = \begin{bmatrix} x \\\\ y \\\\ z \\\\ 0 \end{bmatrix}
 $$
 
 represents a **Point at Infinity** (also known as an **Ideal Point**). 
@@ -85,7 +85,7 @@ represents a **Point at Infinity** (also known as an **Ideal Point**).
 In computer graphics, a direction vector (or velocity) has no defined position. It only has magnitude and direction. Since a point at infinity is infinitely far away, shifting it by a finite translation $\vec{t}$ has no effect on its position:
 
 $$
-\mathbf{T}(\vec{t})\vec{v} = \begin{bmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \\ 0 \end{bmatrix} = \begin{bmatrix} x \\ y \\ z \\ 0 \end{bmatrix}
+\mathbf{T}(\vec{t})\vec{v} = \begin{bmatrix} 1 & 0 & 0 & t_x \\\\ 0 & 1 & 0 & t_y \\\\ 0 & 0 & 1 & t_z \\\\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\\\ y \\\\ z \\\\ 0 \end{bmatrix} = \begin{bmatrix} x \\\\ y \\\\ z \\\\ 0 \end{bmatrix}
 $$
 
 This provides the mathematical explanation for why directions (vectors) are defined with $w = 0$ and remain invariant under translation.
@@ -110,7 +110,7 @@ The mathematical link between affine translations in $N$ dimensions and linear t
 Consider the $3 \times 3$ matrix:
 
 $$
-\mathbf{H} = \begin{bmatrix} 1 & 0 & T_x \\ 0 & 1 & T_y \\ 0 & 0 & 1 \end{bmatrix}
+\mathbf{H} = \begin{bmatrix} 1 & 0 & T_x \\\\ 0 & 1 & T_y \\\\ 0 & 0 & 1 \end{bmatrix}
 $$
 
 Depending on how you interpret the vectors it acts upon, this matrix has two identical algebraic but distinct geometric meanings:
@@ -118,7 +118,7 @@ Depending on how you interpret the vectors it acts upon, this matrix has two ide
 1. **In 2D Homogeneous Coordinates ($w=1$):**
    It represents a **2D Translation** by the vector $[T_x, T_y]^T$:
    $$
-   \begin{bmatrix} 1 & 0 & T_x \\ 0 & 1 & T_y \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = \begin{bmatrix} x + T_x \\ y + T_y \\ 1 \end{bmatrix}
+   \begin{bmatrix} 1 & 0 & T_x \\\\ 0 & 1 & T_y \\\\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\\\ y \\\\ 1 \end{bmatrix} = \begin{bmatrix} x + T_x \\\\ y + T_y \\\\ 1 \end{bmatrix}
    $$
 
    <center>
@@ -128,7 +128,7 @@ Depending on how you interpret the vectors it acts upon, this matrix has two ide
 2. **In 3D Euclidean Coordinates:**
    It represents a **3D Shear (Skew)** transformation along the $xy$-plane, where the shear displacement is proportional to the $z$ coordinate:
    $$
-   \begin{bmatrix} 1 & 0 & T_x \\ 0 & 1 & T_y \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} x + T_x z \\ y + T_y z \\ z \end{bmatrix}
+   \begin{bmatrix} 1 & 0 & T_x \\\\ 0 & 1 & T_y \\\\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} x \\\\ y \\\\ z \end{bmatrix} = \begin{bmatrix} x + T_x z \\\\ y + T_y z \\\\ z \end{bmatrix}
    $$
    Here, points are shifted parallel to the $x$-axis by $T_x \cdot z$ and parallel to the $y$-axis by $T_y \cdot z$.
 
