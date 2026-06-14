@@ -113,6 +113,31 @@ $$
 \mathbf{H} = \begin{bmatrix} 1 & 0 & T_x \\\\ 0 & 1 & T_y \\\\ 0 & 0 & 1 \end{bmatrix}
 $$
 
+### Derivation from the General Skew Formula
+We can derive this exact matrix using the general 3D skew formula from [[05_Skews.md|05_Skews]]:
+
+$$
+\mathbf{M}_{\text{skew}} = \mathbf{I} + \tan\theta \, (\vec{a}\vec{b}^T)
+$$
+
+If we define:
+* **The slide direction** to be parallel to the $xy$-plane: $\vec{a} = \begin{bmatrix} \lambda_x & \lambda_y & 0 \end{bmatrix}^T$
+* **The measurement axis** to be the $z$-axis: $\vec{b} = \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}^T$
+
+The outer product of these two vectors is:
+
+$$
+\vec{a}\vec{b}^T = \begin{bmatrix} \lambda_x \\\\ \lambda_y \\\\ 0 \end{bmatrix} \begin{bmatrix} 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 0 & \lambda_x \\\\ 0 & 0 & \lambda_y \\\\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+Substituting this into the general skew matrix formula yields:
+
+$$
+\mathbf{H} = \mathbf{I} + \tan\theta \, (\vec{a}\vec{b}^T) = \begin{bmatrix} 1 & 0 & \lambda_x \tan\theta \\\\ 0 & 1 & \lambda_y \tan\theta \\\\ 0 & 0 & 1 \end{bmatrix}
+$$
+
+By setting the shear displacement amounts in the $x$ and $y$ directions to $T_x = \lambda_x \tan\theta$ and $T_y = \lambda_y \tan\theta$, we arrive precisely at our matrix $\mathbf{H}$.
+
 Depending on how you interpret the vectors it acts upon, this matrix has two identical algebraic but distinct geometric meanings:
 
 ### 1. In 2D Homogeneous Coordinates ($w=1$): 2D Translation
