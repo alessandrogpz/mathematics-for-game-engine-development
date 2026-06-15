@@ -164,6 +164,8 @@ Here, points are shifted parallel to the $x$-axis by $T_x \cdot z$ and parallel 
 	<img src="../../98_Assets/Concepts/shear_3d_euclidean.webp" width="1000" height="250">
 </center>
 
+Just as this 3D example uses the extra vertical axis ($z$) to perform a 2D translation via a 3D shear, the exact same principle applies when translating an object in **3D space**: we lift our 3D coordinates into a 4-dimensional projective space ($\mathbb{P}^3$) and use the 4th dimension ($w$) to translate them. Although we cannot geometrically visualize this 4D space, the mathematics is identical—our 3D Euclidean world is represented as the hyperplane $w = 1$ in 4D space, and we translate our 3D objects using 4D linear matrix operations.
+
 ### The Equivalence
 This equivalence is the fundamental secret of homogeneous coordinates: **a translation in $N$ dimensions is mathematically identical to a shear transformation in $(N+1)$-dimensional space.**
 
