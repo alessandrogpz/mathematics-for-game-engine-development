@@ -39,7 +39,7 @@ Let's assume we have a 2D space containing a green square object $v$. Any point 
 
 In a homogeneous coordinate system, we can observe this 2D plane as a projection in 3D space.
 
-Here, our 2D Euclidean world is represented as the flat plane $z = 1$ embedded in 3D space (where the $z$-axis acts as our homogeneous component, which is typically labeled $w$ in general projective systems). All points of the object $v$ can still be represented by $x$ and $y$, but they are now at the depth coordinate $z = 1$. 
+Here, our 2D Euclidean world is represented as the flat gray plane $z = 1$ embedded in 3D space (where the $z$-axis acts as our homogeneous component, typically labeled $w$ in general projective systems, and the yellow line along the vertical axis highlights the $z = 1$ offset). All points of the object $v$ can still be represented by $x$ and $y$, but they now sit at the depth coordinate $z = 1$. 
 
 For any given point $v$ in this plane:
 
@@ -148,7 +148,7 @@ $$
 $$
 
 <center>
-	<img src="../../98_Assets/Concepts/translation_2d_homogeneous.webp" width="500" height="350">
+	<img src="../../98_Assets/Concepts/translation_2d_homogeneous.webp" width="600" height="250">
 </center>
 
 ### 2. In 3D Euclidean Coordinates: 3D Shear (Skew)
@@ -161,7 +161,7 @@ $$
 Here, points are shifted parallel to the $x$-axis by $T_x \cdot z$ and parallel to the $y$-axis by $T_y \cdot z$.
 
 <center>
-	<img src="../../98_Assets/Concepts/shear_3d_euclidean.webp" width="500" height="350">
+	<img src="../../98_Assets/Concepts/shear_3d_euclidean.webp" width="1000" height="250">
 </center>
 
 ### The Equivalence
