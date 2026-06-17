@@ -9,8 +9,9 @@ In game engines, 3D graphics, and physical simulations, we frequently represent 
 ### Affine Transformations
 A position vector $\vec{p}_A$ in coordinate system $A$ is transformed to $\vec{p}_B$ in coordinate system $B$ by reorienting its axes and shifting its origin. This combined rotation, scaling, and translation is called an **affine transformation**:
 
+**(2.1)**
 $$
-\vec{p}_B = \mathbf{M}\vec{p}_A + \vec{t} \tag{2.1}
+\vec{p}_B = \mathbf{M}\vec{p}_A + \vec{t}
 $$
 
 Where:
@@ -20,8 +21,9 @@ Where:
 ### The Inverse Affine Transformation
 If the matrix $\mathbf{M}$ is invertible, we can solve Equation (2.1) for $\vec{p}_A$ to find the reverse transformation (from system $B$ back to system $A$):
 
+**(2.2)**
 $$
-\vec{p}_A = \mathbf{M}^{-1}(\vec{p}_B - \vec{t}) \tag{2.2}
+\vec{p}_A = \mathbf{M}^{-1}(\vec{p}_B - \vec{t})
 $$
 
 > [!NOTE]
@@ -36,8 +38,9 @@ $$
 
 then the transformation of the canonical basis vectors yields the columns of $\mathbf{M}$:
 
+**(2.3)**
 $$
-\mathbf{M}\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \end{bmatrix} = \vec{a}, \quad \mathbf{M}\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} = \vec{b}, \quad \mathbf{M}\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \end{bmatrix} = \vec{c} \tag{2.3}
+\mathbf{M}\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \end{bmatrix} = \vec{a}, \quad \mathbf{M}\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} = \vec{b}, \quad \mathbf{M}\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \end{bmatrix} = \vec{c}
 $$
 
 For any arbitrary vector:
@@ -48,8 +51,9 @@ $$
 
 the transformation $\mathbf{M}\vec{v}$ represents a **linear combination** of these new basis axes:
 
+**(2.4)**
 $$
-\mathbf{M}\vec{v} = v_x\vec{a} + v_y\vec{b} + v_z\vec{c} \tag{2.4}
+\mathbf{M}\vec{v} = v_x\vec{a} + v_y\vec{b} + v_z\vec{c}
 $$
 
 ---
@@ -66,8 +70,9 @@ $$
 
 Computing $\mathbf{M}^T\mathbf{M}$ yields:
 
+**(2.5)**
 $$
-\mathbf{M}^T\mathbf{M} = \begin{bmatrix} \leftarrow & \vec{a}^T & \rightarrow \\\\ \leftarrow & \vec{b}^T & \rightarrow \\\\ \leftarrow & \vec{c}^T & \rightarrow \end{bmatrix} \begin{bmatrix} \uparrow & \uparrow & \uparrow \\\\ \vec{a} & \vec{b} & \vec{c} \\\\ \downarrow & \downarrow & \downarrow \end{bmatrix} = \begin{bmatrix} \vec{a}^2 & \vec{a} \cdot \vec{b} & \vec{a} \cdot \vec{c} \\\\ \vec{b} \cdot \vec{a} & \vec{b}^2 & \vec{b} \cdot \vec{c} \\\\ \vec{c} \cdot \vec{a} & \vec{c} \cdot \vec{b} & \vec{c}^2 \end{bmatrix} \tag{2.5}
+\mathbf{M}^T\mathbf{M} = \begin{bmatrix} \leftarrow & \vec{a}^T & \rightarrow \\\\ \leftarrow & \vec{b}^T & \rightarrow \\\\ \leftarrow & \vec{c}^T & \rightarrow \end{bmatrix} \begin{bmatrix} \uparrow & \uparrow & \uparrow \\\\ \vec{a} & \vec{b} & \vec{c} \\\\ \downarrow & \downarrow & \downarrow \end{bmatrix} = \begin{bmatrix} \vec{a}^2 & \vec{a} \cdot \vec{b} & \vec{a} \cdot \vec{c} \\\\ \vec{b} \cdot \vec{a} & \vec{b}^2 & \vec{b} \cdot \vec{c} \\\\ \vec{c} \cdot \vec{a} & \vec{c} \cdot \vec{b} & \vec{c}^2 \end{bmatrix}
 $$
 
 Since the columns are unit vectors ($\|\vec{a}\|^2 = \vec{a}^2 = 1$) and mutually perpendicular ($\vec{a} \cdot \vec{b} = 0$), this simplifies directly to the Identity matrix $\mathbf{I}$:
@@ -87,8 +92,9 @@ The following statements are mathematically identical for a square matrix $\math
 Orthogonal transformations preserve the geometric relationships between vectors:
 *   **Preservation of Dot Product:** The dot product of two transformed vectors is equal to their original dot product:
     
+**(2.6)**
 $$
-(\mathbf{M}\vec{a}) \cdot (\mathbf{M}\vec{b}) = (\mathbf{M}\vec{a})^T(\mathbf{M}\vec{b}) = \vec{a}^T\mathbf{M}^T\mathbf{M}\vec{b} = \vec{a}^T\vec{b} = \vec{a} \cdot \vec{b} \tag{2.6}
+(\mathbf{M}\vec{a}) \cdot (\mathbf{M}\vec{b}) = (\mathbf{M}\vec{a})^T(\mathbf{M}\vec{b}) = \vec{a}^T\mathbf{M}^T\mathbf{M}\vec{b} = \vec{a}^T\vec{b} = \vec{a} \cdot \vec{b}
 $$
 
 *   **Preservation of Length:** Because dot products are preserved, the length of any vector is invariant under an orthogonal transform: $\|\mathbf{M}\vec{v}\| = \|\vec{v}\|$.
@@ -103,8 +109,9 @@ $$
 
 When a vector $\vec{v}$ undergoes sequential transformations—first by $\mathbf{M}_1$, then by $\mathbf{M}_2$—we calculate the final vector $\vec{v}'$ as:
 
+**(2.7)**
 $$
-\vec{v}' = \mathbf{M}_2(\mathbf{M}_1\vec{v}) \tag{2.7}
+\vec{v}' = \mathbf{M}_2(\mathbf{M}_1\vec{v})
 $$
 
 Because matrix multiplication is associative, we can group the matrices together first to pre-multiply them into a single transform matrix $\mathbf{N} = \mathbf{M}_2\mathbf{M}_1$:
@@ -125,8 +132,9 @@ $$
 
 Suppose we have a transformation $\mathbf{A}$ that is defined and expressed in coordinate system $A$. If we want to apply the equivalent transformation in coordinate system $B$, we must perform a **similarity transformation**:
 
+**(2.8)**
 $$
-\mathbf{B} = \mathbf{M}\mathbf{A}\mathbf{M}^{-1} \tag{2.8}
+\mathbf{B} = \mathbf{M}\mathbf{A}\mathbf{M}^{-1}
 $$
 
 Where $\mathbf{M}$ is the matrix that transforms vectors from coordinate system $A$ to coordinate system $B$ ($\vec{p}_B = \mathbf{M}\vec{p}_A$).
