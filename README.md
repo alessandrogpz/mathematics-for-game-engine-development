@@ -9,7 +9,7 @@ This repository is designed to integrate seamlessly with **Obsidian**, utilizing
 The workspace is organized into modular directories with numbered prefixes to maintain a structured order in your file explorer:
 
 ```text
-Linear Algebra/
+LinearAlgebra/
 ├── 01_Concepts/               # Theoretical notes organized by mathematical topics
 │   ├── 01_Systems_of_Equations/
 │   ├── 02_Vectors/            # e.g., Dot Product, Cross Product, Projections
@@ -23,9 +23,11 @@ Linear Algebra/
 │   ├── 03_Matrices/
 │   └── 04_Transforms/
 ├── 03_Code/                   # (Optional) Code implementations (C++, Python, etc.)
-├── 99_Templates/              # Templates for new Questions and Solutions
+├── 99_Templates/              # Templates and formatting guides
 │   ├── Template_Question.md
-│   └── Template_Solution.md
+│   ├── Template_Solution.md
+│   ├── Math_Formatting_Conventions.md # Reference guide for Obsidian & GitHub math syntax
+│   └── __template__usage__.md
 ├── Raw Anotations/            # Unorganized scratch notes, screenshots, or raw imports
 ├── randomizer.py              # CLI tool to filter questions and scaffold new ones
 ├── README_Randomizer.md       # Help/Documentation for the CLI tool
@@ -77,7 +79,7 @@ Spend 15–30 minutes a day solving random exercises using the `randomizer.py` t
    ```bash
    python3 randomizer.py -n 3 --practice
    ```
-2. Open **Obsidian** and open the newly created [Daily_Practice.md](file:///home/aper/Documents/Linear%20Algebra/Daily_Practice.md) in your root folder.
+2. Open **Obsidian** and open the newly created [Daily_Practice.md](file:///home/aper/Documents/LinearAlgebra/Daily_Practice.md) in your root folder.
 3. Because of **transclusions (`![[Q_...]]`)**, you will see all 3 questions rendered inline inside the single daily practice note!
 4. Write down your solutions on paper or scratchpad, then click the **Check Answer** links to instantly verify your derivations.
 5. Delete or commit `Daily_Practice.md` when done.
