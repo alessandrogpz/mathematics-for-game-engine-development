@@ -101,15 +101,15 @@ To represent this transformation as a single $3 \times 3$ matrix $\mathbf{M}_{\t
 
 1. **Identity Matrix Substitution:** Represent the vector $\vec{v}$ using the identity matrix $\mathbf{I}$:
    
-   $$
-   \vec{v} = \mathbf{I}\vec{v}
-   $$
+$$
+\vec{v} = \mathbf{I}\vec{v}
+$$
    
 2. **Outer Product Substitution:** Express the dot product $\vec{b} \cdot \vec{v}$ as $\vec{b}^T \vec{v}$:
    
-   $$
-   (\vec{b} \cdot \vec{v})\vec{a} = \vec{a}(\vec{b}^T\vec{v}) = (\vec{a}\vec{b}^T)\vec{v}
-   $$
+$$
+(\vec{b} \cdot \vec{v})\vec{a} = \vec{a}(\vec{b}^T\vec{v}) = (\vec{a}\vec{b}^T)\vec{v}
+$$
 
 Substituting these back into the equation:
 
@@ -152,29 +152,29 @@ $$
 * **Volume Preservation:** 
   The determinant of a skew matrix is always $+1$. We can prove this algebraically using the **matrix determinant lemma**, which states that for any column vectors $\vec{u}, \vec{v}$ of the same size:
   
-  $$
-  \det(\mathbf{I} + \vec{u}\vec{v}^T) = 1 + \vec{u} \cdot \vec{v}
-  $$
+$$
+\det(\mathbf{I} + \vec{u}\vec{v}^T) = 1 + \vec{u} \cdot \vec{v}
+$$
   
   Applying this lemma to our skew matrix definition $\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + (\tan\theta \, \vec{a})\vec{b}^T$:
   
-  $$
-  \det\big(\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\big) = 1 + \tan\theta \, (\vec{a} \cdot \vec{b})
-  $$
+$$
+\det\big(\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\big) = 1 + \tan\theta \, (\vec{a} \cdot \vec{b})
+$$
   
   Since the slide direction $\vec{a}$ and the perpendicular measurement axis $\vec{b}$ are orthogonal ($\vec{a} \cdot \vec{b} = 0$), this simplifies to:
   
-  $$
-  \det\big(\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\big) = 1 + \tan\theta \, (0) = 1
-  $$
+$$
+\det\big(\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\big) = 1 + \tan\theta \, (0) = 1
+$$
   
   This algebraic proof confirms that skew transformations are strictly volume-preserving.
 * **Inverse Matrix:** 
   To undo a skew of angle $\theta$ along $\vec{a}$ relative to $\vec{b}$, we skew in the opposite direction (by $-\theta$):
   
-  $$
-  \mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})^{-1} = \mathbf{M}_{\text{skew}}(-\theta, \vec{a}, \vec{b})
-  $$
+$$
+\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})^{-1} = \mathbf{M}_{\text{skew}}(-\theta, \vec{a}, \vec{b})
+$$
 
 ---
 ## Code Implementation

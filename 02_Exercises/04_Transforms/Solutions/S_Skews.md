@@ -48,26 +48,26 @@ From the geometry of a skew transformation:
 *   The height of the vector relative to the measurement axis $\vec{b}$ is its projection: $\vec{v}_{\parallel \vec{b}} = \text{Comp}_{\vec{b}} \vec{v} = (\vec{b} \cdot \vec{v})$.
 *   The displacement is along the direction $\vec{a}$, proportional to the height and the skew factor $K = \tan\theta$:
     
-    $$
-    \text{displacement} = (\vec{b} \cdot \vec{v})\tan\theta \, \vec{a}
-    $$
+$$
+\text{displacement} = (\vec{b} \cdot \vec{v})\tan\theta \, \vec{a}
+$$
     
 *   Therefore:
     
-    $$
-    \vec{v}' = \vec{v} + (\vec{b} \cdot \vec{v})\tan\theta \, \vec{a}
-    $$
+$$
+\vec{v}' = \vec{v} + (\vec{b} \cdot \vec{v})\tan\theta \, \vec{a}
+$$
     
 *   Using the algebraic identity $(\vec{b} \cdot \vec{v})\vec{a} = \vec{a}(\vec{b}^T \vec{v}) = (\vec{a}\vec{b}^T)\vec{v}$, we get:
     
-    $$
-    \vec{v}' = \vec{v} + (\vec{a}\vec{b}^T)\vec{v}\tan\theta = (\mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T)\vec{v}
-    $$
+$$
+\vec{v}' = \vec{v} + (\vec{a}\vec{b}^T)\vec{v}\tan\theta = (\mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T)\vec{v}
+$$
     
     
-    $$
-    \mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T
-    $$
+$$
+\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T
+$$
 
 ### 2. Transform a Vector
 To calculate the transformed vector $\vec{v}'$ for the input vector $\vec{v} = [2, 3, 5]^T$:
@@ -85,16 +85,16 @@ $$
 
 1. **Calculate the Dot Product (Projection Height):**
    
-   $$
-   \vec{b} \cdot \vec{v} = \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} \cdot \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix} = (0)(2) + (1)(3) + (0)(5) = 3
-   $$
+$$
+\vec{b} \cdot \vec{v} = \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} \cdot \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix} = (0)(2) + (1)(3) + (0)(5) = 3
+$$
 
 2. **Evaluate the Equation:**
    Substitute the components ($\vec{b} \cdot \vec{v} = 3$, $\tan(45^\circ) = 1$, and $\vec{a} = [1, 0, 0]^T$):
    
-   $$
-   \vec{v}' = \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix} + (3)(1)\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix} + \begin{bmatrix} 3 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 5 \\\\ 3 \\\\ 5 \end{bmatrix}
-   $$
+$$
+\vec{v}' = \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix} + (3)(1)\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix} + \begin{bmatrix} 3 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 5 \\\\ 3 \\\\ 5 \end{bmatrix}
+$$
 
 Both the matrix multiplication result and the geometric formula yield the identical result:
 
@@ -176,17 +176,17 @@ A skew slides points parallel to the direction vector $\vec{a}$ by an amount pro
 1. **Volume Preservation:**
    Mathematically, the determinant of a general matrix of the form $\mathbf{I} + \mathbf{u}\mathbf{v}^T$ is given by $1 + \mathbf{u} \cdot \mathbf{v}$. For our skew matrix:
    
-   $$
-   \det(\mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T) = 1 + \tan\theta \, (\vec{a} \cdot \vec{b})
-   $$
+$$
+\det(\mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T) = 1 + \tan\theta \, (\vec{a} \cdot \vec{b})
+$$
    
    If $\vec{a} \cdot \vec{b} \neq 0$, the determinant is no longer $1$, meaning the transformation scales the volume of the space and is no longer a pure shear.
 2. **Opposite Skew Inversion:**
    As shown in the algebraic proof above, the product of opposite skews is:
    
-   $$
-   \mathbf{M}_{\text{skew}}(\theta) \mathbf{M}_{\text{skew}}(-\theta) = \mathbf{I} - \tan^2\theta \, (\vec{a} \cdot \vec{b}) \, \vec{a}\vec{b}^T
-   $$
+$$
+\mathbf{M}_{\text{skew}}(\theta) \mathbf{M}_{\text{skew}}(-\theta) = \mathbf{I} - \tan^2\theta \, (\vec{a} \cdot \vec{b}) \, \vec{a}\vec{b}^T
+$$
    
    If $\vec{a} \cdot \vec{b} \neq 0$, this does not simplify to the Identity matrix $\mathbf{I}$, meaning a skew of angle $-\theta$ would no longer act as the inverse operation.
 3. **Parallel Limit:**

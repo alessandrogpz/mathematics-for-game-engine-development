@@ -20,21 +20,21 @@ $$
 
 1. **Construct the Skew Matrix:** Construct the explicit $3 \times 3$ skew matrix $\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})$ using the outer-product formulation:
    
-   $$
-   \mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T
-   $$
+$$
+\mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b}) = \mathbf{I} + \tan\theta \, \vec{a}\vec{b}^T
+$$
    
 2. **Transform a Vector:** Calculate the skewed vector $\vec{v}' = \mathbf{M}_{\text{skew}}(\theta, \vec{a}, \vec{b})\vec{v}$ for the input vector:
    
-   $$
-   \vec{v} = \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix}
-   $$
+$$
+\vec{v} = \begin{bmatrix} 2 \\\\ 3 \\\\ 5 \end{bmatrix}
+$$
    
 3. **Geometric Verification:** Verify the result by calculating:
    
-   $$
-   \vec{v}' = \vec{v} + (\vec{b} \cdot \vec{v})\tan\theta \, \vec{a}
-   $$
+$$
+\vec{v}' = \vec{v} + (\vec{b} \cdot \vec{v})\tan\theta \, \vec{a}
+$$
    
    and checking that it matches your matrix multiplication result.
 

@@ -13,15 +13,15 @@ This solution note provides the mathematical derivations, calculations, and conc
 
 *   **Input Velocity Vector:**
     
-    $$
-    \vec{v} = \begin{bmatrix} 4 \\\\ -3 \\\\ 1 \end{bmatrix}
-    $$
+$$
+\vec{v} = \begin{bmatrix} 4 \\\\ -3 \\\\ 1 \end{bmatrix}
+$$
     
 *   **Surface Normal Vector (Unit Vector):**
     
-    $$
-    \vec{n} = \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} \implies \|\vec{n}\| = 1
-    $$
+$$
+\vec{n} = \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} \implies \|\vec{n}\| = 1
+$$
 
 #### 1. Scalar Projection
 The scalar projection $\text{comp}_{\vec{n}}\vec{v}$ of $\vec{v}$ onto $\vec{n}$ is computed as:
@@ -79,9 +79,9 @@ $$
 Where:
 *   $\vec{v}_{\text{normal}}$ is perpendicular to the surface (parallel to $\vec{n}$). This is exactly the vector projection:
     
-    $$
-    \vec{v}_{\text{normal}} = \text{proj}_{\vec{n}}\vec{v}
-    $$
+$$
+\vec{v}_{\text{normal}} = \text{proj}_{\vec{n}}\vec{v}
+$$
     
 *   $\vec{v}_{\text{parallel}}$ is parallel to the surface (perpendicular to $\vec{n}$). 
 

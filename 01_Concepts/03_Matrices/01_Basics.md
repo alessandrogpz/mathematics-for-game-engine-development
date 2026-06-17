@@ -7,21 +7,21 @@ For addition and subtraction, both matrices must have the same dimensions ($m \t
 
 - **Addition:**
   
-  $$
-  (A + B)_{ij} = A_{ij} + B_{ij}
-  $$
+$$
+(A + B)_{ij} = A_{ij} + B_{ij}
+$$
   
 - **Subtraction:**
   
-  $$
-  (A - B)_{ij} = A_{ij} - B_{ij}
-  $$
+$$
+(A - B)_{ij} = A_{ij} - B_{ij}
+$$
   
 - **Scalar Multiplication:**
   
-  $$
-  (sA)_{ij} = s(A_{ij})
-  $$
+$$
+(sA)_{ij} = s(A_{ij})
+$$
 
 ## Basic Properties
 | Property | Description | Formula |
@@ -36,9 +36,9 @@ The transpose of a matrix $M$, denoted as $M^T$, is created by swapping its rows
 - Rows of $M$ become columns in $M^T$.
 - Element relation:
   
-  $$
-  (M^T)_{ij} = M_{ji}
-  $$
+$$
+(M^T)_{ij} = M_{ji}
+$$
 
 **Example:**
 

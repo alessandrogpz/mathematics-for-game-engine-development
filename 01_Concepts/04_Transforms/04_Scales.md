@@ -54,15 +54,15 @@ Geometrically, this is achieved by decomposing a vector $\vec{v}$ into its paral
 Using the parallel and perpendicular vector projections:
 1. **Parallel Component ($\vec{v}_{\parallel a}$):** The component of $\vec{v}$ along the scaling direction $\vec{a}$.
    
-   $$
-   \vec{v}_{\parallel a} = (\vec{v} \cdot \vec{a})\vec{a}
-   $$
+$$
+\vec{v}_{\parallel a} = (\vec{v} \cdot \vec{a})\vec{a}
+$$
    
 2. **Perpendicular Component ($\vec{v}_{\perp a}$):** The component of $\vec{v}$ orthogonal to the scaling direction $\vec{a}$ (which must remain unscaled).
    
-   $$
-   \vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a} = \vec{v} - (\vec{v} \cdot \vec{a})\vec{a}
-   $$
+$$
+\vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a} = \vec{v} - (\vec{v} \cdot \vec{a})\vec{a}
+$$
 
 <center>
 	<img src="../../98_Assets/Concepts/scale_arbitrary.webp" height="300">
@@ -84,21 +84,21 @@ We can express the vector scaling equation in matrix form using the outer produc
 1. **Substitute Matrix Equivalents:** 
    We rewrite the parallel component using the outer product projection matrix ($\vec{a}\vec{a}^T$) and the perpendicular component using the orthogonal rejection matrix ($\mathbf{I} - \vec{a}\vec{a}^T$):
    
-   $$
-   \vec{v}' = s(\vec{a}\vec{a}^T)\vec{v} + (\mathbf{I} - \vec{a}\vec{a}^T)\vec{v}
-   $$
+$$
+\vec{v}' = s(\vec{a}\vec{a}^T)\vec{v} + (\mathbf{I} - \vec{a}\vec{a}^T)\vec{v}
+$$
    
 2. **Factor Out the Vector $\vec{v}$:**
    
-   $$
-   \vec{v}' = \big(s\vec{a}\vec{a}^T + \mathbf{I} - \vec{a}\vec{a}^T\big)\vec{v}
-   $$
+$$
+\vec{v}' = \big(s\vec{a}\vec{a}^T + \mathbf{I} - \vec{a}\vec{a}^T\big)\vec{v}
+$$
    
 3. **Combine Outer Product Terms:**
    
-   $$
-   \vec{v}' = \big(\mathbf{I} + (s-1)\vec{a}\vec{a}^T\big)\vec{v}
-   $$
+$$
+\vec{v}' = \big(\mathbf{I} + (s-1)\vec{a}\vec{a}^T\big)\vec{v}
+$$
 
 Thus, the general **Arbitrary Scale Matrix** is:
 

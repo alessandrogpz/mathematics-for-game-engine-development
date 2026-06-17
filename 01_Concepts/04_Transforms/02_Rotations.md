@@ -228,41 +228,41 @@ To factor out the vector $\vec{v}$ so that a single rotation matrix can operate 
 1. **The $\cos\theta$ term:**  
    Any vector multiplied by the identity matrix $\mathbf{I}$ remains unchanged ($\vec{v} = \mathbf{I}\vec{v}$).
    
-   $$
-   \vec{v}\cos\theta \implies \mathbf{I}\vec{v}\cos\theta
-   $$
+$$
+\vec{v}\cos\theta \implies \mathbf{I}\vec{v}\cos\theta
+$$
 
 2. **The $(1 - \cos\theta)$ term (Dot Product to Outer Product):**  
    The dot product of two column vectors can be written as a matrix multiplication using a transpose: $\vec{v} \cdot \vec{a} = \vec{a} \cdot \vec{v} = \vec{a}^T\vec{v}$. Substituting this back into the expression yields:
    
-   $$
-   (\vec{v} \cdot \vec{a})\vec{a} = \vec{a}(\vec{a}^T\vec{v}) = (\vec{a}\vec{a}^T)\vec{v}
-   $$
+$$
+(\vec{v} \cdot \vec{a})\vec{a} = \vec{a}(\vec{a}^T\vec{v}) = (\vec{a}\vec{a}^T)\vec{v}
+$$
    
    Here, $\vec{a}\vec{a}^T$ is a $3 \times 3$ outer-product matrix:
    
-   $$
-   \vec{a}\vec{a}^T = \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\\\ a_x a_y & a_y^2 & a_y a_z \\\\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix}
-   $$
+$$
+\vec{a}\vec{a}^T = \begin{bmatrix} a_x^2 & a_x a_y & a_x a_z \\\\ a_x a_y & a_y^2 & a_y a_z \\\\ a_x a_z & a_y a_z & a_z^2 \end{bmatrix}
+$$
    
    Thus:
    
-   $$
-   (\vec{v} \cdot \vec{a})\vec{a}(1 - \cos\theta) \implies (\vec{a}\vec{a}^T)\vec{v}(1 - \cos\theta)
-   $$
+$$
+(\vec{v} \cdot \vec{a})\vec{a}(1 - \cos\theta) \implies (\vec{a}\vec{a}^T)\vec{v}(1 - \cos\theta)
+$$
 
 3. **The $\sin\theta$ term (Cross Product to Skew-Symmetric Matrix):**  
    A cross product with a fixed vector $\vec{a}$ can be represented as a matrix-vector multiplication using the cross-product matrix notation $[\vec{a}]_\times$ (a skew-symmetric matrix):
    
-   $$
-   \vec{a} \times \vec{v} \implies [\vec{a}]_\times\vec{v}
-   $$
+$$
+\vec{a} \times \vec{v} \implies [\vec{a}]_\times\vec{v}
+$$
    
    Where:
    
-   $$
-   [\vec{a}]_\times = \begin{bmatrix} 0 & -a_z & a_y \\\\ a_z & 0 & -a_x \\\\ -a_y & a_x & 0 \end{bmatrix}
-   $$
+$$
+[\vec{a}]_\times = \begin{bmatrix} 0 & -a_z & a_y \\\\ a_z & 0 & -a_x \\\\ -a_y & a_x & 0 \end{bmatrix}
+$$
 
 #### Sub-Step 3: Combine the Terms
 Substitute the three matrix expressions back into the rearranged equation:

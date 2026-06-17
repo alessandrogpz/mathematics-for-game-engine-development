@@ -101,18 +101,18 @@ Here is the geometric intuition explaining why the rotated vector $\vec{v}'$ mak
         *   **The $X$-axis swings to the positive $Z$-axis:** The original $X$ coordinate was $1$. It rotates $90^\circ$ to become your new $Z$ coordinate ($1$).
         *   This matches the calculated result:
             
-            $$
-            \vec{v}' = \begin{bmatrix} -1 \\\\ 0 \\\\ 1 \end{bmatrix}
-            $$
+$$
+\vec{v}' = \begin{bmatrix} -1 \\\\ 0 \\\\ 1 \end{bmatrix}
+$$
             
     *   **Under the Standard Cyclic Convention (Clockwise looking down $+y$):**
         *   **The $Z$-axis swings to the positive $X$-axis:** The original $Z$ coordinate was $1$. It rotates $90^\circ$ to become your new $X$ coordinate ($1$).
         *   **The $X$-axis swings to the negative $Z$-axis:** The original $X$ coordinate was $1$. It rotates $90^\circ$ and lands on the negative side of the $Z$-axis, becoming $-1$.
         *   This yields the standard cyclic result:
             
-            $$
-            \vec{v}' = \begin{bmatrix} 1 \\\\ 0 \\\\ -1 \end{bmatrix}
-            $$
+$$
+\vec{v}' = \begin{bmatrix} 1 \\\\ 0 \\\\ -1 \end{bmatrix}
+$$
 
 ---
 

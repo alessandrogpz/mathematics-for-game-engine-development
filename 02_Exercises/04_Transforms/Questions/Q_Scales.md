@@ -20,21 +20,21 @@ $$
 
 1. **Construct the Scale Matrix:** Construct the explicit $3 \times 3$ arbitrary scale matrix $\mathbf{M}_{\text{scale}}(s, \vec{a})$ using the outer-product formulation:
    
-   $$
-   \mathbf{M}_{\text{scale}}(s, \vec{a}) = \mathbf{I} + (s-1)\vec{a}\vec{a}^T
-   $$
+$$
+\mathbf{M}_{\text{scale}}(s, \vec{a}) = \mathbf{I} + (s-1)\vec{a}\vec{a}^T
+$$
    
 2. **Transform a Vector:** Calculate the scaled vector $\vec{v}' = \mathbf{M}_{\text{scale}}(s, \vec{a})\vec{v}$ for the input vector:
    
-   $$
-   \vec{v} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}
-   $$
+$$
+\vec{v} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}
+$$
    
 3. **Geometric Verification:** Calculate the parallel component $\vec{v}_{\parallel a}$ and perpendicular component $\vec{v}_{\perp a}$ of $\vec{v}$ relative to $\vec{a}$, and verify that:
    
-   $$
-   \vec{v}' = s\vec{v}_{\parallel a} + \vec{v}_{\perp a}
-   $$
+$$
+\vec{v}' = s\vec{v}_{\parallel a} + \vec{v}_{\perp a}
+$$
    
    matches the matrix-vector multiplication result from Step 2.
 

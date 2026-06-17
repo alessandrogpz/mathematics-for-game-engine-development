@@ -123,15 +123,15 @@ $$
 If we define:
 * **The slide direction** to be parallel to the $xy$-plane:
   
-  $$
-  \vec{a} = \begin{bmatrix} \lambda_x & \lambda_y & 0 \end{bmatrix}^T
-  $$
+$$
+\vec{a} = \begin{bmatrix} \lambda_x & \lambda_y & 0 \end{bmatrix}^T
+$$
   
 * **The measurement axis** to be the $z$-axis:
   
-  $$
-  \vec{b} = \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}^T
-  $$
+$$
+\vec{b} = \begin{bmatrix} 0 & 0 & 1 \end{bmatrix}^T
+$$
 
 The outer product of these two vectors is:
 

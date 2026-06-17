@@ -22,27 +22,27 @@ $$
 To represent this transformation in matrix form, we decompose the input vector $\vec{v}$ into:
 *   **Parallel Component ($\vec{v}_{\parallel a}$):** The projection of $\vec{v}$ onto the unit vector $\vec{a}$:
     
-    $$
-    \vec{v}_{\parallel a} = \text{proj}_{\vec{a}}\vec{v} = (\vec{v} \cdot \vec{a})\vec{a}
-    $$
+$$
+\vec{v}_{\parallel a} = \text{proj}_{\vec{a}}\vec{v} = (\vec{v} \cdot \vec{a})\vec{a}
+$$
     
     Using matrix notation for the dot product of $3 \times 1$ column vectors $\vec{v}$ and $\vec{a}$:
     
-    $$
-    \vec{v} \cdot \vec{a} = \vec{a}^T\vec{v}
-    $$
+$$
+\vec{v} \cdot \vec{a} = \vec{a}^T\vec{v}
+$$
     
     Substituting this back into the projection formula:
     
-    $$
-    \vec{v}_{\parallel a} = (\vec{a}^T\vec{v})\vec{a} = \vec{a}(\vec{a}^T\vec{v}) = (\vec{a}\vec{a}^T)\vec{v}
-    $$
+$$
+\vec{v}_{\parallel a} = (\vec{a}^T\vec{v})\vec{a} = \vec{a}(\vec{a}^T\vec{v}) = (\vec{a}\vec{a}^T)\vec{v}
+$$
     
 *   **Perpendicular Component ($\vec{v}_{\perp a}$):** The component orthogonal to the scaling direction $\vec{a}$:
     
-    $$
-    \vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a} = \mathbf{I}\vec{v} - (\vec{a}\vec{a}^T)\vec{v} = (\mathbf{I} - \vec{a}\vec{a}^T)\vec{v}
-    $$
+$$
+\vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a} = \mathbf{I}\vec{v} - (\vec{a}\vec{a}^T)\vec{v} = (\mathbf{I} - \vec{a}\vec{a}^T)\vec{v}
+$$
 
 Substituting these back into the main scaling equation:
 
@@ -143,33 +143,33 @@ We verify this result by decomposing the vector $\vec{v}$ into parallel and perp
 
 *   **Parallel Component ($\vec{v}_{\parallel a}$):**
     
-    $$
-    \vec{v}_{\parallel a} = (\vec{v} \cdot \vec{a})\vec{a}
-    $$
+$$
+\vec{v}_{\parallel a} = (\vec{v} \cdot \vec{a})\vec{a}
+$$
     
     Since the dot product $\vec{v} \cdot \vec{a} = 0$:
     
-    $$
-    \vec{v}_{\parallel a} = 0 \cdot \vec{a} = \begin{bmatrix} 0 \\\\ 0 \\\\ 0 \end{bmatrix}
-    $$
+$$
+\vec{v}_{\parallel a} = 0 \cdot \vec{a} = \begin{bmatrix} 0 \\\\ 0 \\\\ 0 \end{bmatrix}
+$$
     
 *   **Perpendicular Component ($\vec{v}_{\perp a}$):**
     
-    $$
-    \vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix} - \begin{bmatrix} 0 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}
-    $$
+$$
+\vec{v}_{\perp a} = \vec{v} - \vec{v}_{\parallel a} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix} - \begin{bmatrix} 0 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}
+$$
 
 *   **Decomposition Verification:**
     Applying the scale factor $s = 3$ to only the parallel component and adding the perpendicular component:
     
-    $$
-    \vec{v}' = s\vec{v}_{\parallel a} + \vec{v}_{\perp a}
-    $$
+$$
+\vec{v}' = s\vec{v}_{\parallel a} + \vec{v}_{\perp a}
+$$
     
     
-    $$
-    \vec{v}' = 3\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \end{bmatrix} + \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}
-    $$
+$$
+\vec{v}' = 3\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \end{bmatrix} + \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}
+$$
 
 This perfectly matches the matrix multiplication result from Step 2!
 
@@ -188,9 +188,9 @@ This perfectly matches the matrix multiplication result from Step 2!
 *   **Net Volume Change:**
     The net change in volume for any 3D region is the product of the scaling factors along three mutually perpendicular axes (the scaling axis $\vec{a}$ and two orthogonal axes):
     
-    $$
-    \text{Volume scaling factor} = s \cdot 1 \cdot 1 = s
-    $$
+$$
+\text{Volume scaling factor} = s \cdot 1 \cdot 1 = s
+$$
 
 Therefore, the determinant of the arbitrary scaling matrix is exactly $s$:
 
@@ -219,9 +219,9 @@ $$
 *   **Relationship to Projections:**
     This matrix is exactly the **Orthogonal Rejection Matrix** (often denoted as $\text{Rej}_{\vec{a}}\vec{v} = \mathbf{I} - \vec{a}\vec{a}^T$). Geometrically, it represents an orthogonal projection onto the plane perpendicular to the normal vector $\vec{a}$:
     
-    $$
-    \vec{v}' = 0\vec{v}_{\parallel a} + \vec{v}_{\perp a} = \vec{v}_{\perp a} = \text{proj}_{\perp a}\vec{v}
-    $$
+$$
+\vec{v}' = 0\vec{v}_{\parallel a} + \vec{v}_{\perp a} = \vec{v}_{\perp a} = \text{proj}_{\perp a}\vec{v}
+$$
     
     This elegantly unifies arbitrary scaling with **vector projections**.
 
@@ -244,9 +244,9 @@ $$
 *   **Geometric Transformation:**
     Setting $s = -1$ negates (reverses) only the component of a vector that lies parallel to the axis $\vec{a}$ while leaving the perpendicular component completely untouched:
     
-    $$
-    \vec{v}' = -1\vec{v}_{\parallel a} + \vec{v}_{\perp a} = \vec{v}_{\perp a} - \vec{v}_{\parallel a}
-    $$
+$$
+\vec{v}' = -1\vec{v}_{\parallel a} + \vec{v}_{\perp a} = \vec{v}_{\perp a} - \vec{v}_{\parallel a}
+$$
     
 *   **Relationship to Reflections:**
     This formula is identical to the **Plane Reflection Matrix** $\mathbf{M}_{\text{reflect}}(\vec{a})$ which mirrors vectors across the plane passing through the origin perpendicular to the normal vector $\vec{a}$. 

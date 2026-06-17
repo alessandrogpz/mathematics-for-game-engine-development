@@ -160,16 +160,16 @@ Just like vector projection, vector rejection can be represented as a matrix-vec
 Assuming projection onto a unit vector $\hat{u}$:
 1. **Substitute the Projection Matrix:**
    
-   $$
-   \text{rej}_{\hat{u}}\vec{a} = \vec{a} - (\hat{u}\hat{u}^T)\vec{a}
-   $$
+$$
+\text{rej}_{\hat{u}}\vec{a} = \vec{a} - (\hat{u}\hat{u}^T)\vec{a}
+$$
    
 2. **Factor Out the Vector $\vec{a}$:**
    By inserting the identity matrix $\mathbf{I}$ (since $\vec{a} = \mathbf{I}\vec{a}$):
    
-   $$
-   \text{rej}_{\hat{u}}\vec{a} = \mathbf{I}\vec{a} - (\hat{u}\hat{u}^T)\vec{a} = (\mathbf{I} - \hat{u}\hat{u}^T)\vec{a}
-   $$
+$$
+\text{rej}_{\hat{u}}\vec{a} = \mathbf{I}\vec{a} - (\hat{u}\hat{u}^T)\vec{a} = (\mathbf{I} - \hat{u}\hat{u}^T)\vec{a}
+$$
 
 Where the isolated term $(\mathbf{I} - \hat{u}\hat{u}^T)$ is the **Orthogonal Rejection Matrix** $\mathbf{P}_{\perp u}$:
 
