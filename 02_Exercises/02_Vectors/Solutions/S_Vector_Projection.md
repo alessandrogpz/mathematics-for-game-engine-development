@@ -11,8 +11,17 @@ This solution note provides the mathematical derivations, calculations, and conc
 
 ## Part 1: Calculation
 
-*   **Input Velocity Vector:** $\vec{v} = \begin{bmatrix} 4 \\\\ -3 \\\\ 1 \end{bmatrix}$
-*   **Surface Normal Vector (Unit Vector):** $\vec{n} = \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} \implies \|\vec{n}\| = 1$
+*   **Input Velocity Vector:**
+    
+    $$
+    \vec{v} = \begin{bmatrix} 4 \\\\ -3 \\\\ 1 \end{bmatrix}
+    $$
+    
+*   **Surface Normal Vector (Unit Vector):**
+    
+    $$
+    \vec{n} = \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} \implies \|\vec{n}\| = 1
+    $$
 
 #### 1. Scalar Projection
 The scalar projection $\text{comp}_{\vec{n}}\vec{v}$ of $\vec{v}$ onto $\vec{n}$ is computed as:

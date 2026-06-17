@@ -132,7 +132,11 @@ All principal rotation matrices are **orthogonal matrices**, meaning they exhibi
 > *   **Orientation Preservation:** The determinant (which represents the spatial volume scaling factor) is exactly $+1$ ($\det(\mathbf{M}) = +1$), confirming that the transform does not involve a reflection.
 > 
 > **Concrete Dimensional Cases:**
-> *   **In 2D ($2 \times 2$):** For $\mathbf{M} = \begin{bmatrix} a & b \\\\ c & d \end{bmatrix}$, the determinant is represented exactly by your formula—the **difference of its cross-multiplication products** must be $+1$ ($ad - bc = 1$).
+> *   **In 2D ($2 \times 2$):** For the matrix:
+>     $$
+>     \mathbf{M} = \begin{bmatrix} a & b \\\\ c & d \end{bmatrix}
+>     $$
+>     the determinant is represented exactly by your formula—the **difference of its cross-multiplication products** must be $+1$ ($ad - bc = 1$).
 > *   **In 3D ($3 \times 3$):** The determinant represents the volume of the unit box formed by the three columns. It is evaluated by summing three weighted $2 \times 2$ cross-multiplication differences, and must also equal $+1$.
 
 ---

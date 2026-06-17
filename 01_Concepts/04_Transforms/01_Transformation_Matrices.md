@@ -28,13 +28,25 @@ $$
 > In game engine programming, we often combine $\mathbf{M}$ and $\vec{t}$ into a single $4 \times 4$ homogeneous transformation matrix so that translations can be treated as standard matrix multiplications. Until then, we assume coordinate systems share the same origin ($\vec{t} = \vec{0}$) and focus purely on linear transformations.
 
 ### Column-Vector Basis Interpretation
-For a pure linear transformation $\vec{v}_B = \mathbf{M}\vec{v}_A$, the columns of $\mathbf{M}$ represent the basis vectors of system $A$ expressed relative to system $B$. If we let $\mathbf{M} = \begin{bmatrix} \vec{a} & \vec{b} & \vec{c} \end{bmatrix}$, then:
+For a pure linear transformation $\vec{v}_B = \mathbf{M}\vec{v}_A$, the columns of $\mathbf{M}$ represent the basis vectors of system $A$ expressed relative to system $B$. If we define:
+
+$$
+\mathbf{M} = \begin{bmatrix} \vec{a} & \vec{b} & \vec{c} \end{bmatrix}
+$$
+
+then the transformation of the canonical basis vectors yields the columns of $\mathbf{M}$:
 
 $$
 \mathbf{M}\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \end{bmatrix} = \vec{a}, \quad \mathbf{M}\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} = \vec{b}, \quad \mathbf{M}\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \end{bmatrix} = \vec{c} \tag{2.3}
 $$
 
-For any arbitrary vector $\vec{v} = \begin{bmatrix} v_x \\\\ v_y \\\\ v_z \end{bmatrix}$, the transformation $\mathbf{M}\vec{v}$ represents a **linear combination** of these new basis axes:
+For any arbitrary vector:
+
+$$
+\vec{v} = \begin{bmatrix} v_x \\\\ v_y \\\\ v_z \end{bmatrix}
+$$
+
+the transformation $\mathbf{M}\vec{v}$ represents a **linear combination** of these new basis axes:
 
 $$
 \mathbf{M}\vec{v} = v_x\vec{a} + v_y\vec{b} + v_z\vec{c} \tag{2.4}
@@ -46,7 +58,13 @@ $$
 
 An **orthogonal matrix** is a square matrix whose columns form an orthonormal set (mutually perpendicular unit-length vectors). In game physics and graphics, pure rotation matrices are orthogonal.
 
-Let $\mathbf{M} = \begin{bmatrix} \vec{a} & \vec{b} & \vec{c} \end{bmatrix}$ be a matrix with orthonormal columns. Computing $\mathbf{M}^T\mathbf{M}$ yields:
+Let $\mathbf{M}$ be a matrix with orthonormal columns:
+
+$$
+\mathbf{M} = \begin{bmatrix} \vec{a} & \vec{b} & \vec{c} \end{bmatrix}
+$$
+
+Computing $\mathbf{M}^T\mathbf{M}$ yields:
 
 $$
 \mathbf{M}^T\mathbf{M} = \begin{bmatrix} \leftarrow & \vec{a}^T & \rightarrow \\\\ \leftarrow & \vec{b}^T & \rightarrow \\\\ \leftarrow & \vec{c}^T & \rightarrow \end{bmatrix} \begin{bmatrix} \uparrow & \uparrow & \uparrow \\\\ \vec{a} & \vec{b} & \vec{c} \\\\ \downarrow & \downarrow & \downarrow \end{bmatrix} = \begin{bmatrix} \vec{a}^2 & \vec{a} \cdot \vec{b} & \vec{a} \cdot \vec{c} \\\\ \vec{b} \cdot \vec{a} & \vec{b}^2 & \vec{b} \cdot \vec{c} \\\\ \vec{c} \cdot \vec{a} & \vec{c} \cdot \vec{b} & \vec{c}^2 \end{bmatrix} \tag{2.5}

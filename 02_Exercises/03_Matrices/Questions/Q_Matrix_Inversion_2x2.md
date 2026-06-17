@@ -5,7 +5,12 @@ tags: [exercise, question, inverse, determinant, properties]
 ---
 # Question
 ## Part 1: Calculation
-Given matrix $M = \begin{bmatrix} 4 & 7 \\\\ 2 & 6 \end{bmatrix}$:
+Given matrix:
+
+$$
+M = \begin{bmatrix} 4 & 7 \\\\ 2 & 6 \end{bmatrix}
+$$
+
 1. Calculate the determinant of $M$.
 2. Construct the inverse matrix $M^{-1}$ using the adjugate method.
 3. Verify your answer by calculating the product $M M^{-1}$.

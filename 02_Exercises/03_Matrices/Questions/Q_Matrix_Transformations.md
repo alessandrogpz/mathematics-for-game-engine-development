@@ -5,7 +5,13 @@ tags: [exercise, question, transformation, scaling, rotation, translation, homog
 ---
 # Question
 ## Part 1: Calculation
-A 2D point is located at $(2, 1)$. Using homogeneous coordinates, its column vector is $\vec{p} = \begin{bmatrix} 2 \\\\ 1 \\\\ 1 \end{bmatrix}$. Apply the following operations mathematically in the standard SRT order (Scale, Rotate, Translate):
+A 2D point is located at $(2, 1)$. Using homogeneous coordinates, its column vector is:
+
+$$
+\vec{p} = \begin{bmatrix} 2 \\\\ 1 \\\\ 1 \end{bmatrix}
+$$
+
+Apply the following operations mathematically in the standard SRT order (Scale, Rotate, Translate):
 1. Uniform scale by 3.
 2. Rotate $90^\circ$ counter-clockwise.
 3. Translate by $T_x = 5$ and $T_y = -2$.

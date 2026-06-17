@@ -24,7 +24,13 @@ $$
 | **Efficient Inverse** | $Q^{-1} = Q^T$ (Inversion is just transposition) |
 
 ## Examples
-- **Rotation Matrices:** In 2D, $R_\theta = \begin{bmatrix} \cos\theta & -\sin\theta \\\\ \sin\theta & \cos\theta \end{bmatrix}$ is orthogonal.
+- **Rotation Matrices:** In 2D, the rotation matrix:
+  
+  $$
+  R_\theta = \begin{bmatrix} \cos\theta & -\sin\theta \\\\ \sin\theta & \cos\theta \end{bmatrix}
+  $$
+  
+  is orthogonal.
 - **Reflection Matrices:** Matrices that reflect vectors across a line or plane.
 
 ---

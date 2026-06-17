@@ -28,7 +28,13 @@ $$
 ---
 
 ## Part 2: Rotation About an Arbitrary Axis
-We want to rotate the vector $\vec{v} = \begin{bmatrix} 1 \\\\ 0 \\\\ 1 \end{bmatrix}$ by $\theta = 180^\circ$ (or $\pi$ radians) about the arbitrary unit axis $\vec{a}$ defined as:
+We want to rotate the vector:
+
+$$
+\vec{v} = \begin{bmatrix} 1 \\\\ 0 \\\\ 1 \end{bmatrix}
+$$
+
+by $\theta = 180^\circ$ (or $\pi$ radians) about the arbitrary unit axis $\vec{a}$ defined as:
 
 $$
 \vec{a} = \begin{bmatrix} 0 \\\\ \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} \end{bmatrix}

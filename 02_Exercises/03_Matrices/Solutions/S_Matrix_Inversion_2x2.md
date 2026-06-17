@@ -127,7 +127,13 @@ $$
 To prove this "if and only if" statement, we must show both directions of the logical implication:
 
 1.  **"Only If" Direction (Necessity - If the inverse exists, then $ad - bc \neq 0$):**
-    Assume the $2 \times 2$ matrix $\mathbf{A} = \begin{bmatrix} a & b \\\\ c & d \end{bmatrix}$ is invertible. By definition, there exists an inverse matrix $\mathbf{A}^{-1}$ such that:
+    Assume the $2 \times 2$ matrix:
+
+$$
+\mathbf{A} = \begin{bmatrix} a & b \\\\ c & d \end{bmatrix}
+$$
+
+is invertible. By definition, there exists an inverse matrix $\mathbf{A}^{-1}$ such that:
     
 $$
 \mathbf{A}\mathbf{A}^{-1} = \mathbf{I}

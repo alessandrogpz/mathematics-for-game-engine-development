@@ -76,7 +76,12 @@ $$
 \mathbf{M}_{\text{scale}}(s, \vec{a}) = \begin{bmatrix} (s-1)a_x^2 + 1 & (s-1)a_x a_y & (s-1)a_x a_z \\\\ (s-1)a_x a_y & (s-1)a_y^2 + 1 & (s-1)a_y a_z \\\\ (s-1)a_x a_z & (s-1)a_y a_z & (s-1)a_z^2 + 1 \end{bmatrix}
 $$
 
-Now we substitute our specific values, $s = 3$ and the unit vector $\vec{a} = \begin{bmatrix} 0 \\\\ \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} \end{bmatrix}$:
+Now we substitute our specific values, $s = 3$ and the unit vector:
+
+$$
+\vec{a} = \begin{bmatrix} 0 \\\\ \frac{\sqrt{2}}{2} \\\\ \frac{\sqrt{2}}{2} \end{bmatrix}
+$$
+
 *   $a_x = 0$
 *   $a_y = \frac{\sqrt{2}}{2} \implies a_y^2 = \frac{1}{2}$
 *   $a_z = \frac{\sqrt{2}}{2} \implies a_z^2 = \frac{1}{2}$
@@ -104,7 +109,11 @@ This matrix represents a scaling transformation of scale $s = 3$ along the $\vec
 
 ### 2. Transform a Vector
 
-We calculate the scaled vector $\vec{v}' = \mathbf{M}_{\text{scale}}(3, \vec{a})\vec{v}$ for the input vector $\vec{v} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}$:
+We calculate the scaled vector $\vec{v}' = \mathbf{M}_{\text{scale}}(3, \vec{a})\vec{v}$ for the input vector:
+
+$$
+\vec{v} = \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}
+$$
 
 $$
 \vec{v}' = \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 2 & 1 \\\\ 0 & 1 & 2 \end{bmatrix} \begin{bmatrix} 4 \\\\ 1 \\\\ -1 \end{bmatrix}

@@ -5,7 +5,12 @@ tags: [exercise, question, determinants, trace, rank-nullity]
 ---
 # Question
 ## Part 1: Calculation
-Consider the matrix $A = \begin{bmatrix} 2 & 0 & 1 \\\\ 0 & 3 & 0 \\\\ 1 & 0 & 2 \end{bmatrix}$.
+Consider the matrix:
+
+$$
+A = \begin{bmatrix} 2 & 0 & 1 \\\\ 0 & 3 & 0 \\\\ 1 & 0 & 2 \end{bmatrix}
+$$
+
 1. Calculate $\det(A)$.
 2. Find the Trace of $A$, $\text{tr}(A)$.
 3. Verify the property $\det(kA) = k^n \det(A)$ for $k=2$.

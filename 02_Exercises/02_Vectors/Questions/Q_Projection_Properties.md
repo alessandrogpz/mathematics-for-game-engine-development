@@ -8,7 +8,13 @@ tags: [exercise, question, projection, orthogonality, linearity, idempotency]
 This exercise explores the fundamental algebraic and geometric properties of vector projections, specifically **linearity**, **orthogonal decomposition**, **scaling invariance**, and **idempotency**.
 
 ## Part 1: Calculation
-Let $\vec{u} = \begin{bmatrix} 1 \\\\ 2 \\\\ -1 \end{bmatrix}$ be the vector defining our line of projection. We want to project the following vectors onto $\vec{u}$:
+Let the vector defining our line of projection be:
+
+$$
+\vec{u} = \begin{bmatrix} 1 \\\\ 2 \\\\ -1 \end{bmatrix}
+$$
+
+We want to project the following vectors onto $\vec{u}$:
 
 $$
 \vec{v} = \begin{bmatrix} 3 \\\\ 0 \\\\ 1 \end{bmatrix} \quad \text{and} \quad \vec{w} = \begin{bmatrix} -1 \\\\ 4 \\\\ 2 \end{bmatrix}

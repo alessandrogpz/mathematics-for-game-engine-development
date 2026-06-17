@@ -6,7 +6,10 @@ tags: [exercise, question, scalar-triple-product, volume, coplanarity]
 # Question
 ## Part 1: Calculation
 Calculate the volume of the parallelepiped formed by the following three vectors:
-$\vec{u} = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \end{bmatrix}$, $\vec{v} = \begin{bmatrix} -1 \\\\ 1 \\\\ 2 \end{bmatrix}$, and $\vec{w} = \begin{bmatrix} 2 \\\\ 1 \\\\ 4 \end{bmatrix}$.
+
+$$
+\vec{u} = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \end{bmatrix}, \quad \vec{v} = \begin{bmatrix} -1 \\\\ 1 \\\\ 2 \end{bmatrix}, \quad \text{and} \quad \vec{w} = \begin{bmatrix} 2 \\\\ 1 \\\\ 4 \end{bmatrix}
+$$
 
 ## Part 2: Conceptual Understanding
 1. If the result of the scalar triple product was $0$, what would that tell you about the vectors $\vec{u}, \vec{v},$ and $\vec{w}$?
