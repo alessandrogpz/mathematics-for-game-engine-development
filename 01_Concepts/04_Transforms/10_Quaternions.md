@@ -17,7 +17,7 @@ Consider a 2D unit circle (a 1-sphere, $S^1$) sitting in a 2D plane. We can proj
 
 <center>
   <!-- Placeholder for 1D Projection Diagram: mapping_circle_to_line.webp -->
-  <img src="../../98_Assets/Concepts/mapping_circle_to_line.webp" width="400" height="300" alt="Stereographic projection of a 2D circle onto a 1D line">
+  <img src="../../98_Assets/Concepts/mapping_circle_to_line.webp" width="900" height="300" alt="Stereographic projection of a 2D circle onto a 1D line">
 </center>
 
 As the circle rotates in 2D space, the projected points run along the 1D line:
@@ -27,20 +27,36 @@ As the circle rotates in 2D space, the projected points run along the 1D line:
 
 Multiplying by the imaginary unit $i$ four times ($i^4 = 1$) corresponds to rotating the circle by $90^\circ$ four times in a row, which returns the point on the line to where it started.
 
+<center>
+  <!-- Placeholder for 2D Projection Diagram: rotating_2D_streographic_projection.webp -->
+  <img src="../../98_Assets/Concepts/rotating_2D_streographic_projection.webp" width="400" height="300" alt="Rotating stereographic projection of a 2D sphere onto a 1D line">
+</center>
+
 ### 2D Projection (Rotating a 3D Sphere onto a Plane)
 We can scale this up by projecting a 3D unit sphere (a 2-sphere, $S^2$, defined by $w^2 + x^2 + y^2 = 1$) onto a 2D plane (the $xy$-plane) from the projection source $(-1, 0, 0)$:
+
+<center>
+  <!-- Placeholder for 2D Projection Diagram: mapping_sphere_to_plane_1.webp -->
+  <img src="../../98_Assets/Concepts/mapping_sphere_to_plane_1.webp" width="900" height="200" alt="Stereographic projection of a 3D sphere onto a 2D plane">
+</center>
+
 1. Draw a line from the projection source $(-1, 0, 0)$ through any point on the sphere.
 2. The intersection of this line with the 2D plane is its projected point.
 
 <center>
   <!-- Placeholder for 2D Projection Diagram: mapping_sphere_to_plane.webp -->
-  <img src="../../98_Assets/Concepts/mapping_sphere_to_plane.webp" width="400" height="300" alt="Stereographic projection of a 3D sphere onto a 2D plane">
+  <img src="../../98_Assets/Concepts/mapping_sphere_to_plane.webp" width="450" height="300" alt="Stereographic projection of a 3D sphere onto a 2D plane">
 </center>
 
 Looking at the 2D plane from above:
 *   All points on the unit circle that pass through $i, j, -i, -j$ stay fixed in place.
 *   Points on the hemisphere containing the point $+1$ project **inside** the unit circle.
 *   Points on the hemisphere containing the projection source $-1$ project **outside** the unit circle.
+
+<center>
+  <!-- Placeholder for 2D Projection Diagram: mapping_sphere_to_plane_3.webp -->
+  <img src="../../98_Assets/Concepts/mapping_sphere_to_plane_3.webp" width="400" height="300" alt="Stereographic projection of a 3D sphere onto a 2D plane">
+</center>
 
 When we rotate the 3D sphere, the projected coordinate lines on the 2D plane warp and behave in the same way as they did in the 1D case, preserving angles (conformal mapping).
 
@@ -174,3 +190,10 @@ If we only multiplied once (e.g. $qp$), the resulting quaternion would not be a 
   <!-- Placeholder for Sandwich Rotation Diagram: quaternion_sandwich_rotation.webp -->
   <img src="../../98_Assets/Concepts/quaternion_sandwich_rotation.webp" width="400" height="300" alt="Geometric visualization of the double multiplication pulling and projecting a vector back to 3D space">
 </center>
+
+---
+
+## References & Additional Resources
+
+*   **Ben Eater & Grant Sanderson (3Blue1Brown) - Quaternions Interactive Visualizations:** [eater.net/quaternions](https://eater.net/quaternions)
+
