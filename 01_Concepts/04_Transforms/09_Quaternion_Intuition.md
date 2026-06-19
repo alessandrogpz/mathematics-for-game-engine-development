@@ -78,7 +78,7 @@ As illustrated in the coordinates breakdown diagram below:
 
 <center>
   <!-- Placeholder for 2D Projection Diagram: mapping_sphere_to_plane.webp -->
-  <img src="../../98_Assets/Concepts/mapping_sphere_to_plane.webp" width="450" height="300" alt="Stereographic projection of a 3D sphere onto a 2D plane">
+  <img src="../../98_Assets/Concepts/mapping_sphere_to_plane.webp" width="450" height="450" alt="Stereographic projection of a 3D sphere onto a 2D plane">
 </center>
 
 Algebraically, the projection of a sphere point $q = w + xi + yj$ onto the $ij$-plane is:
@@ -106,7 +106,7 @@ To see how a 3D rotation corresponds to our 1D continuous flow, we can look at t
 
 <center>
   <!-- Placeholder for Sphere to Line Projection Diagram: mapping_sphere_to_line.webp -->
-  <img src="../../98_Assets/Concepts/mapping_sphere_to_line.webp" width="700" height="300" alt="Mapping sphere coordinates onto 2D projection axes">
+  <img src="../../98_Assets/Concepts/mapping_sphere_to_line.webp" width="750" height="350" alt="Mapping sphere coordinates onto 2D projection axes">
 </center>
 
 Each axis behaves as an independent 1D projection line for rotations in its corresponding plane:
