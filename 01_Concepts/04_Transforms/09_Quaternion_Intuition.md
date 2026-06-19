@@ -2,11 +2,9 @@
 
 Quaternions are a four-dimensional extension of complex numbers. While complex numbers extend the real numbers into a 2D plane ($\mathbb{C} = \mathbb{R} + i\mathbb{R}$), quaternions extend them into a 4D space ($\mathbb{H} = \mathbb{R} + i\mathbb{R} + j\mathbb{R} + k\mathbb{R}$). 
 
-In graphics programming, game engines, physics simulations, and robotics, quaternions are the industry standard for representing 3D rotations. They are preferred over rotation matrices and Euler angles because they are compact (using only 4 numbers instead of 9), interpolate smoothly (via SLERP), and completely avoid **Gimbal Lock**.
+In graphics programming, game engines, physics simulations, and robotics, quaternions are the industry standard for representing 3D rotations. They are preferred over rotation matrices and Euler angles because they are compact (using only 4 numbers instead of 9, from a 3x3 matrix), interpolate smoothly (via SLERP), and completely avoid **Gimbal Lock**.
 
-However, quaternions are notoriously difficult to visualize. **Why do we need a 4D hypersphere to describe 3D rotations?** How does a set of four numbers ($w, i, j, k$) map to a physical rotation axis and angle in our 3D world?
-
-To answer this, we will build our intuition step-by-step using **dimensional projections**. Because we cannot see in 4D, we will start in 2D, project onto 1D, and scale up one dimension at a time until the 4D math becomes clear and tangible.
+To acquire the intuition for quaternions, we will make use of **dimensional projections**. Because we cannot see in 4D, we will start in 2D, project onto 1D, and scale up one dimension at a time until the 4D math becomes clear and tangible.
 
 ---
 
@@ -59,11 +57,6 @@ If we rotate the circle counterclockwise (corresponding to successive multiplica
 4. The projected point then continues flowing upwards from $-\infty$ through $-i$, eventually returning to the center $0$.
 
 Thus, a closed 2D rotation of the circle corresponds to a continuous, upward flow along the 1D line that wraps around at infinity.
-
-> [!NOTE]
-> **Didactical Bridge: Moving from 1D to 2D Projection**
-> We have now established our first visual rule: **a rotation in a 2D plane projects to a linear flow along a 1D coordinate axis that wraps around at infinity.**
-> What happens when we add a second imaginary axis ($j$)? Instead of a 2D circle projecting onto a 1D line, we will project a 3D sphere onto a 2D plane. Let's see how our 1D flows combine to form a 2D plane.
 
 ### 2D Projection (Rotating a 3D Sphere onto a Plane)
 
@@ -122,11 +115,6 @@ Each axis behaves as an independent 1D projection line for rotations in its corr
 
 Thus, the 2D projection plane is formed by two perpendicular 1D projection lines, where rotations in the orthogonal planes project to wrapping flows along the $i$ and $j$ axes.
 
-> [!NOTE]
-> **Didactical Bridge: The Leap into 4D Space**
-> We now have our second rule: **a 3D sphere rotation projects onto a 2D plane as a grid-warping flow along the perpendicular coordinate axes ($i$ and $j$).**
-> Now we are ready for the final step: adding a third imaginary axis ($k$). We will project a 4D unit hypersphere ($w^2 + x^2 + y^2 + z^2 = 1$) onto our 3D space ($ijk$-space). Just as the 2D plane was formed by the perpendicular $i$ and $j$ axes, our 3D space will be spanned by three perpendicular axes ($i$, $j$, and $k$).
-
 ### 3D Projection (Rotating a 4D Hypersphere onto 3D Space)
 
 By extension, a quaternion represents a point on a 4D unit hypersphere (a 3-sphere, $S^3$), defined by:
@@ -170,11 +158,6 @@ Under this multiplication ($i \cdot p$), we can trace the geometric action on ou
     *   This is a pure 2D rotation of the $jk$-plane (the red/blue circle in the diagram) around the $i$-axis by $90^\circ$. The points simply rotate along it without any warping.
 
 Thus, a 4D rotation around the $i$-axis projects to our 3D space as a simultaneous **linear wrapping flow** along the $i$-axis, and a **pure 2D rotation** in the perpendicular $jk$-plane.
-
-> [!NOTE]
-> **Didactical Bridge: Translating 4D Geometry into 3D Physical Rotations**
-> We have now reached the destination of our geometric journey. We understand that a point on the 4D unit hypersphere represents a state of rotation, and moving along the hypersphere projects to combinations of flows and rotations in our 3D space. 
-> But how do we use this algebraic construct in practice? In game engines and physics, we represent this projected geometry as a physical axis of rotation and a rotation value. Let's see how the imaginary components $i, j, k$ and the real component $w$ map directly to physical 3D space.
 
 ---
 
