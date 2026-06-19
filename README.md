@@ -47,8 +47,8 @@ graph TD
     end
 
     subgraph Exercises ["02_Exercises (Practice)"]
-        Q["Question Note<br>(e.g., Q_Orthogonal_Transforms.md)"]
-        S["Solution Note<br>(e.g., S_Orthogonal_Transforms.md)"]
+        Q["Question Note<br>(e.g., Q_01_Transformation_Matrices.md)"]
+        S["Solution Note<br>(e.g., S_01_Transformation_Matrices.md)"]
     end
 
     Q -- "Check Answer" --> S
@@ -58,11 +58,11 @@ graph TD
 
 1. **Question notes (`Q_*.md`)** contain the problem statement (both numerical calculations and conceptual theory in LaTeX). They end with a link to their corresponding solution:
    ```markdown
-   **Check Answer:** [[S_Angle_Dot_Product]]
+   **Check Answer:** [[S_02_Dot_Product]]
    ```
 2. **Solution notes (`S_*.md`)** contain complete, step-by-step mathematical derivations in LaTeX, and an optional code snippet. They link back to the question and **point to the theoretical concept note** in `01_Concepts/`:
    ```markdown
-   **Back to Question:** [[Q_Angle_Dot_Product]] | **Related Concepts:** [[02_Dot_Product]]
+   **Back to Question:** [[Q_02_Dot_Product]] | **Related Concepts:** [[02_Dot_Product]]
    ```
 3. **Obsidian Graph View:** This linking strategy ensures that as you practice, all solved problems form "clusters" around their core mathematical concepts, highlighting which areas you've practiced most and creating a physical web of your knowledge.
 
