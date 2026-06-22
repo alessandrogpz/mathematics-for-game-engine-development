@@ -120,6 +120,54 @@ $$
 
 ---
 
+## 4. 3D Projection: 4D Hypersphere to 3D Space
+
+By extension, a quaternion represents a point on a 4D unit hypersphere (a 3-sphere, $S^3$) defined by $w^2 + x^2 + y^2 + z^2 = 1$ in coordinates $(w, x, y, z)$. We project from a pole on the real axis $w$ onto the 3D hyperplane defined by $w = 0$ (our 3D space, spanned by $i, j, k$).
+
+### Case 1: South Pole Source $(-1, 0, 0, 0)$
+
+The line starting at the South Pole and passing through the hypersphere point $(w, x, y, z)$ is:
+
+$$
+\text{Line}(t) = \begin{bmatrix} -1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} + t \left( \begin{bmatrix} w \\\\ x \\\\ y \\\\ z \end{bmatrix} - \begin{bmatrix} -1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} \right) = \begin{bmatrix} -1 + t(w + 1) \\\\ tx \\\\ ty \\\\ tz \end{bmatrix}
+$$
+
+Setting the first component ($w$-component) to $0$ to find the intersection with the $w = 0$ hyperplane:
+
+$$
+-1 + t(w + 1) = 0 \implies t = \frac{1}{w + 1}
+$$
+
+Substituting this scale factor $t$ into the $x$, $y$, and $z$ components gives the projection onto our 3D space:
+
+$$
+p = \frac{x}{w + 1}i + \frac{y}{w + 1}j + \frac{z}{w + 1}k
+$$
+
+---
+
+### Case 2: North Pole Source $(1, 0, 0, 0)$
+
+For a North Pole source, the line equation starts at $+1$ on the real axis:
+
+$$
+\text{Line}(t) = \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} + t \left( \begin{bmatrix} w \\\\ x \\\\ y \\\\ z \end{bmatrix} - \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} \right) = \begin{bmatrix} 1 + t(w - 1) \\\\ tx \\\\ ty \\\\ tz \end{bmatrix}
+$$
+
+Setting the first component ($w$-component) to $0$:
+
+$$
+1 + t(w - 1) = 0 \implies 1 = t(1 - w) \implies t = \frac{1}{1 - w}
+$$
+
+Substituting this scale factor $t$ into the $x$, $y$, and $z$ components gives the projection:
+
+$$
+p = \frac{x}{1 - w}i + \frac{y}{1 - w}j + \frac{z}{1 - w}k
+$$
+
+---
+
 ## Related Concepts
 
 * [[09_Quaternion_Intuition]]
