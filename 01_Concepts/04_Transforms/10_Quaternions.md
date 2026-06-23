@@ -262,3 +262,10 @@ This ensures the final output remains in the 3D imaginary subspace.
 *   **How to Use Quaternions:** [youtube.com/watch?v=bKd2lPjl92c](https://www.youtube.com/watch?v=bKd2lPjl92c)
 *   **Godot's Quaternion Variant is Beautiful (and misunderstood):** [youtube.com/watch?v=Ri2xIhcii8I](https://www.youtube.com/watch?v=Ri2xIhcii8I)
 
+---
+
+## Code Implementation
+
+*   **C++ Source Code:** [[03_Code/04_Transforms/10_Quaternions.cppm|10_Quaternions.cppm]]
+
+

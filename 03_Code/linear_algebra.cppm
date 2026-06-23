@@ -18,3 +18,4 @@ export import transforms_rotations;
 export import transforms_reflections;
 export import transforms_scales;
 export import transforms_skews;
+export import transforms_quaternions;

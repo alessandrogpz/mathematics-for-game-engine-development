@@ -37,4 +37,5 @@ target_sources(LinearAlgebra
       "04_Transforms/03_Reflections.cppm"
       "04_Transforms/04_Scales.cppm"
       "04_Transforms/05_Skews.cppm"
+      "04_Transforms/10_Quaternions.cppm"
 )
