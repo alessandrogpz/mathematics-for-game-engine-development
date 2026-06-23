@@ -119,13 +119,61 @@ If the point on the sphere is the South Pole itself, the line is tangent to the 
 ## Part 2: Conceptual Understanding
 
 ### 1. Hypersphere Regions Mapping in 3D Space
-[Insert hypersphere to 3D space projection mapping explanations here]
+
+Under stereographic projection from the South Pole $w = -1$, the regions of the 4D unit hypersphere $S^3$ project into our 3D space as follows:
+
+*   **The 3D Equator ($w = 0$):** Maps exactly to the **3D unit sphere** ($x^2 + y^2 + z^2 = 1$) in our 3D world.
+*   **The Hyper-hemisphere containing the North Pole $+1$ ($w > 0$):** Maps **inside** the 3D unit sphere in our 3D world (with the North Pole itself mapping to the origin).
+*   **The Hyper-hemisphere containing the South Pole $-1$ ($w < 0$):** Maps **outside** the 3D unit sphere in our 3D world (with the South Pole itself mapping to infinity).
 
 ### 2. Projected 4D Rotation Flow
-[Insert 4D rotation flow descriptions and trace analysis here]
+
+A 4D rotation by the imaginary unit $i$ (pre-multiplying a quaternion $p$ by $i$) projects to our 3D space as a combination of two distinct geometric behaviors:
+
+1.  **Along the $i$-axis (Real $w$ and Imaginary $i$ components):**
+    Pre-multiplying by $i$ rotates points in the $wi$-plane:
+    
+    $$
+    i \cdot 1 = i, \quad i \cdot i = -1
+    $$
+    
+    In the projected 3D space, this rotation maps to a **continuous linear wrapping flow** along the horizontal $i$-axis. As $i$ rotates:
+    - A point starting at the origin (projection of $+1$) flows along the positive $i$-axis to $i$.
+    - As it continues rotating toward $-1$, it stretches to infinity ($+\infty$), wraps around to $-\infty$, and flows back through $-i$ to return to the origin.
+    
+2.  **In the perpendicular $jk$-plane (Imaginary $j$ and $k$ components):**
+    Pre-multiplying by $i$ rotates points in the $jk$-plane:
+    
+    $$
+    i \cdot j = k, \quad i \cdot k = -j
+    $$
+    
+    In the projected 3D space, this is a **pure 2D rotation** of the $jk$-plane around the $i$-axis by $90^\circ$ without any warping or stretching.
+
+<center>
+  <!-- Placeholder for rotation flow diagram: rotation_flow_i.webp -->
+  <img src="../../../98_Assets/Concepts/rotation_flow_i.webp" width="500" height="350" alt="Rotation flow along the i-axis and rotation in the jk-plane">
+</center>
 
 ### 3. Rotation Axis Normalization
-[Insert axis magnitude calculation and normalization steps here]
+
+Given the unnormalized 3D rotation axis:
+
+$$
+\vec{u}_{\text{raw}} = \begin{bmatrix} -2 \\\\ 2 \\\\ -1 \end{bmatrix}
+$$
+
+*   **Magnitude of $\vec{u}_{\text{raw}}$:**
+    
+    $$
+    \|\vec{u}_{\text{raw}}\| = \sqrt{\sum_{i=1}^3 u_{\text{raw},i}^2} = \sqrt{(-2)^2 + 2^2 + (-1)^2} = \sqrt{4 + 4 + 1} = \sqrt{9} = 3
+    $$
+
+*   **Normalized Unit Vector $\vec{u}$:**
+    
+    $$
+    \vec{u} = \frac{\vec{u}_{\text{raw}}}{\|\vec{u}_{\text{raw}}\|} = \frac{1}{3} \begin{bmatrix} -2 \\\\ 2 \\\\ -1 \end{bmatrix} = \begin{bmatrix} -2/3 \\\\ 2/3 \\\\ -1/3 \end{bmatrix} \approx \begin{bmatrix} -0.67 \\\\ 0.67 \\\\ -0.33 \end{bmatrix}
+    $$
 
 ---
 **Back to Question:** [[Q_09_Quaternion_Intuition]] | **Related Concepts:** [[09_Quaternion_Intuition]]
