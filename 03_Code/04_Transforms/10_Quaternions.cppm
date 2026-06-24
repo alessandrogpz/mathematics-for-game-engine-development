@@ -7,5 +7,7 @@ export module transforms_quaternions;
 import vectors_basics;
 
 export namespace transforms {
-
+    void test_quaternions() {
+        std::cout << "Transforms - Quaternions Module Initialized" << std::endl;
+    }
 }
