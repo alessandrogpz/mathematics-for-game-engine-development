@@ -56,10 +56,65 @@ For any system of linear equations $A\vec{x} = \vec{b}$ with $n$ variables:
 2. **Inconsistent System:** Has no solution (parallel lines/planes that never meet).
 
 ## Solving Methods
-- **Gaussian Elimination:** Transform the augmented matrix into **Row Echelon Form (REF)** using row operations.
-- **Gauss-Jordan Elimination:** Transform the augmented matrix into **Reduced Row Echelon Form (RREF)**.
-- **Matrix Inverse:** If $A$ is square and invertible, $\vec{x} = A^{-1}\vec{b}$.
-- **Cramer's Rule:** Uses determinants (useful for small systems).
+
+### Elementary Row Operations
+To solve a linear system using matrix-based methods, we use three types of **elementary row operations** that do not alter the solution set of the system:
+1. **Row Swapping:** Swap the positions of two rows ($R_i \leftrightarrow R_j$).
+2. **Row Scaling:** Multiply all entries of a row by a non-zero scalar ($R_i \leftarrow cR_i$).
+3. **Row Addition/Subtraction:** Add or subtract a multiple of one row to another ($R_i \leftarrow R_i + cR_j$).
+
+---
+
+### 1. Gaussian Elimination & Row Echelon Form (REF)
+
+**Gaussian Elimination** is the algorithm that performs forward elimination to transform an augmented matrix into **Row Echelon Form (REF)**.
+
+A matrix is in **Row Echelon Form (REF)** if it satisfies the following conditions:
+*   All rows consisting entirely of zeros are at the bottom of the matrix.
+*   The leading entry (the first non-zero number from the left, also called the pivot) of a row is strictly to the right of the leading entry of the row above it.
+*   All entries in a column below a leading entry are zero.
+
+For example, a matrix in REF looks like:
+
+$$
+\begin{bmatrix}
+\mathbf{1} & 2 & 3 & 4 \\\\
+0 & \mathbf{5} & 6 & 7 \\\\
+0 & 0 & 0 & \mathbf{8} \\\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+*Once a matrix is in REF, the system is solved using **backward substitution** (solving for the last variable first and substituting it back into the equations above).*
+
+---
+
+### 2. Gauss-Jordan Elimination & Reduced Row Echelon Form (RREF)
+
+**Gauss-Jordan Elimination** extends Gaussian elimination by performing backward elimination to transform the matrix into **Reduced Row Echelon Form (RREF)**.
+
+A matrix is in **Reduced Row Echelon Form (RREF)** if it satisfies all conditions of REF, plus:
+*   The leading entry in every non-zero row is exactly **1** (called a leading 1).
+*   Each leading 1 is the **only non-zero entry** in its column.
+
+For example, a matrix in RREF looks like:
+
+$$
+\begin{bmatrix}
+\mathbf{1} & 0 & 3 & 0 \\\\
+0 & \mathbf{1} & 6 & 0 \\\\
+0 & 0 & 0 & \mathbf{1} \\\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+*When a system has a unique solution, its coefficient part in RREF becomes the identity matrix ($I$), and the constant column directly reveals the values of the variables without needing backward substitution.*
+
+---
+
+### 3. Other Methods
+- **Matrix Inverse:** If $A$ is square and invertible, the system can be solved directly via $\vec{x} = A^{-1}\vec{b}$.
+- **Cramer's Rule:** Uses determinants to compute each variable individually (best suited for small systems).
 
 ---
 
