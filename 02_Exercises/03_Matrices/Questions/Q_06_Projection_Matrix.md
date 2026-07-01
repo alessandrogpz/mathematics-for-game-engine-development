@@ -1,5 +1,5 @@
 ---
-topic: Vectors
+topic: Matrices
 difficulty: Medium
 tags: [exercise, question, projection, outer-product, matrix-representation]
 ---
@@ -44,4 +44,4 @@ $$
 3.  **Trace of a Projection Matrix:** Find the trace of $\mathbf{P}$ (the sum of its diagonal entries). How does the trace of a projection matrix relate to the dimension of the subspace it projects onto?
 
 ---
-**Check Answer:** [[S_06_Projection_Matrix]] | **Related Concepts:** [[06_Vector_Projection]]
+**Check Answer:** [[S_06_Projection_Matrix]] | **Related Concepts:** [[06_Projection_Matrices]]

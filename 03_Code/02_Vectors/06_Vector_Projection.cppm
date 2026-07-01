@@ -5,7 +5,7 @@ export module vectors_projection;
 
 import vectors_basics;
 import vectors_dot_product;
-import matrices_basics;
+
 
 export namespace vectors {
 
@@ -34,43 +34,5 @@ export namespace vectors {
         return a - vecProj(a, b);
     }
 
-    [[nodiscard]]
-    matrices::Matrix3x3 projMatrix(const vector3 b)
-    {
-        const vector3 u = normalized(b);
-        matrices::Matrix3x3 P{};
-
-        P[0, 0] = u.x * u.x;
-        P[0, 1] = u.x * u.y;
-        P[0, 2] = u.x * u.z;
-
-        P[1, 0] = u.y * u.x;
-        P[1, 1] = u.y * u.y;
-        P[1, 2] = u.y * u.z;
-
-        P[2, 0] = u.z * u.x;
-        P[2, 1] = u.z * u.y;
-        P[2, 2] = u.z * u.z;
-
-        return P;
-    }
-
-    [[nodiscard]]
-    vector3 vecProj (const matrices::Matrix3x3& P, const vector3 a )
-    {
-        return P * a;
-    }
-
-    [[nodiscard]]
-    matrices::Matrix3x3 orthogonalRejMatrix (const vector3 b)
-    {
-        return matrices::Matrix3x3::identity() - projMatrix(b);
-    }
-
-    [[nodiscard]]
-    vector3 vecRej (const matrices::Matrix3x3& P_prep, const vector3 a)
-    {
-        return P_prep * a;
-    }
 
 }

@@ -104,8 +104,8 @@ int main() {
     std::cout << "Algebraic Rejection:  (" << r_alg.x << ", " << r_alg.y << ", " << r_alg.z << ") (Expected: 0, 4, 5)" << std::endl;
 
     // Matrix-based Projection & Rejection
-    matrices::Matrix3x3 P = vectors::projMatrix(axis);
-    matrices::Matrix3x3 P_perp = vectors::orthogonalRejMatrix(axis);
+    matrices::Matrix3x3 P = matrices::projMatrix(axis);
+    matrices::Matrix3x3 P_perp = matrices::orthogonalRejMatrix(axis);
 
     std::cout << "\nProjection Matrix P:" << std::endl;
     matrices::print(P);
@@ -113,8 +113,8 @@ int main() {
     matrices::print(P_perp);
 
     // Overloaded Matrix-Vector Projection & Rejection
-    vectors::vector3 p_mat = vectors::vecProj(P, v);
-    vectors::vector3 r_mat = vectors::vecRej(P_perp, v);
+    vectors::vector3 p_mat = matrices::vecProj(P, v);
+    vectors::vector3 r_mat = matrices::vecRej(P_perp, v);
     std::cout << "Matrix-based Proj (P * v):      (" << p_mat.x << ", " << p_mat.y << ", " << p_mat.z << ") (Expected: 3, 0, 0)" << std::endl;
     std::cout << "Matrix-based Rej (P_perp * v): (" << r_mat.x << ", " << r_mat.y << ", " << r_mat.z << ") (Expected: 0, 4, 5)" << std::endl;
 

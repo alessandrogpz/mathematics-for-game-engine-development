@@ -31,6 +31,7 @@ target_sources(LinearAlgebra
         "03_Matrices/03_Determinants.cppm"
         "03_Matrices/04_Matrix_Inversion.cppm"
         "03_Matrices/05_Orthogonal_Matrices.cppm"
+        "03_Matrices/06_Projection_Matrices.cppm"
         "04_Transforms/01_Transformation_Matrices.cppm"
         "04_Transforms/02_Rotations.cppm"
         "04_Transforms/03_Reflections.cppm"

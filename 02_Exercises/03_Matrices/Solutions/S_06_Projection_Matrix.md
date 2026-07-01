@@ -1,5 +1,5 @@
 ---
-topic: Vectors
+topic: Matrices
 tags: [exercise, solution, projection, outer-product, matrix-representation]
 ---
 
@@ -109,4 +109,4 @@ $$
 
 ---
 
-**Back to Question:** [[Q_06_Projection_Matrix]] | **Related Concepts:** [[06_Vector_Projection]]
+**Back to Question:** [[Q_06_Projection_Matrix]] | **Related Concepts:** [[06_Projection_Matrices]]
