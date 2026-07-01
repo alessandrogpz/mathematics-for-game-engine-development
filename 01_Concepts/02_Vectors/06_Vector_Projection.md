@@ -135,6 +135,31 @@ $$
 \text{proj}_{\hat{u}}\vec{a} = \begin{bmatrix} u_x^2 & u_x u_y & u_x u_z \\\\ u_x u_y & u_y^2 & u_y u_z \\\\ u_x u_z & u_y u_z & u_z^2 \end{bmatrix}\vec{a}
 $$
 
+### Determinant and Trace of a Projection Matrix
+
+A projection matrix $\mathbf{P} = \hat{u}\hat{u}^T$ has unique eigenvalues, determinant, and trace properties that carry significant geometric meaning.
+
+#### 1. Determinant of a Projection Matrix ($\det(\mathbf{P})$)
+For any projection matrix $\mathbf{P}$ that projects onto a proper subspace (like a 1D line or a 2D plane in 3D space), the determinant is always:
+
+$$
+\det(\mathbf{P}) = 0
+$$
+
+*   **Geometric Intuition**: The determinant represents the volume scaling factor of a transformation. A projection matrix flattens 3D space, squishing all 3D volume down to a lower-dimensional subspace (a 2D plane or a 1D line). Because a 1D line or a 2D plane has exactly zero volume in 3D space, the volume scaling factor is zero, meaning the matrix is singular and its determinant must be $0$.
+
+#### 2. Trace of a Projection Matrix ($\text{tr}(\mathbf{P})$)
+The trace of a projection matrix (the sum of its main diagonal elements) is always equal to the **dimension of the subspace** it projects onto:
+
+$$
+\text{tr}(\mathbf{P}) = \text{rank}(\mathbf{P}) = \text{dimension of projected subspace}
+$$
+
+*   **In 3D Space**:
+    - $\text{tr}(\mathbf{P}) = 1$: Projects space onto a 1D line (e.g. $\mathbf{P} = \hat{u}\hat{u}^T$).
+    - $\text{tr}(\mathbf{P}) = 2$: Projects space onto a 2D plane (e.g. the rejection matrix $\mathbf{P}_{\perp u} = \mathbf{I} - \hat{u}\hat{u}^T$, which projects onto the plane orthogonal to $\hat{u}$ and has trace $3 - 1 = 2$).
+    - $\text{tr}(\mathbf{P}) = 3$: Leaves the entire 3D space intact (equivalent to the Identity matrix $\mathbf{I}$, which has trace $3$).
+
 ---
 
 ## 6. Vector Rejection
