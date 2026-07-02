@@ -18,7 +18,7 @@ These solution files still contain `[Insert ...]` placeholders that need LaTeX m
 
 ### Matrices
 - [x] Complete **Projection Matrix** calculation & theory: [S_06_Projection_Matrix.md](02_Exercises/03_Matrices/Solutions/S_06_Projection_Matrix.md)
-- [ ] Complete **Matrix Multiplication** calculations: [S_02_Matrix_Multiplication.md](02_Exercises/03_Matrices/Solutions/S_02_Matrix_Multiplication.md)
+- [x] Complete **Matrix Multiplication** calculations: [S_02_Matrix_Multiplication.md](02_Exercises/03_Matrices/Solutions/S_02_Matrix_Multiplication.md)
 - [ ] Complete **Determinants** calculations: [S_03_Determinants.md](02_Exercises/03_Matrices/Solutions/S_03_Determinants.md)
 
 ### Transforms
