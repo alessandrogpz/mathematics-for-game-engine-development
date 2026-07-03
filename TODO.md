@@ -14,7 +14,7 @@ These solution files still contain `[Insert ...]` placeholders that need LaTeX m
 - [x] Complete **Scalar Triple Product** derivation: [S_05_Scalar_Triple_Product.md](02_Exercises/02_Vectors/Solutions/S_05_Scalar_Triple_Product.md)
 
 - [x] Complete **Projection Orthogonality** proof: [S_06_Projection_Orthogonality.md](02_Exercises/02_Vectors/Solutions/S_06_Projection_Orthogonality.md)
-- [ ] Complete **Projection Matrix Properties** proof: [S_06_Projection_Properties.md](02_Exercises/02_Vectors/Solutions/S_06_Projection_Properties.md)
+- [x] Complete **Projection Properties** proof: [S_06_Projection_Properties.md](02_Exercises/02_Vectors/Solutions/S_06_Projection_Properties.md)
 
 ### Matrices
 - [x] Complete **Projection Matrix** calculation & theory: [S_06_Projection_Matrix.md](02_Exercises/03_Matrices/Solutions/S_06_Projection_Matrix.md)
