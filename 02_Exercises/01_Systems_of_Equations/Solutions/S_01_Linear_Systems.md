@@ -183,4 +183,4 @@ Substituting back:
 - **Implication**: The system remains **consistent** and still has a **unique solution** ($x = 11$, $y = -6$, $z = 5$).
 
 ---
-**Back to Question:** [[Q_01_Linear_Systems]] | **Related Concepts:** [[01_Linear_Systems]], [[06_Rank_Nullity]]
+**Back to Question:** [[Q_01_Linear_Systems]] | **Related Concepts:** [[01_Linear_Systems]], [[07_Rank_Nullity]]

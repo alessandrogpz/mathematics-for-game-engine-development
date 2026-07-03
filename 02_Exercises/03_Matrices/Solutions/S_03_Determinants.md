@@ -157,4 +157,4 @@ $$
     This guarantees the existence of a non-trivial null space (at least one non-zero vector $\vec{x} \neq \vec{0}$ such that $M\vec{x} = \vec{0}$).
 
 ---
-**Back to Question:** [[Q_03_Determinants]] **Related Concepts:** [[03_Determinants]], [[01_Basics]], [[06_Rank_Nullity]]
+**Back to Question:** [[Q_03_Determinants]] **Related Concepts:** [[03_Determinants]], [[01_Basics]], [[07_Rank_Nullity]]
