@@ -5,6 +5,7 @@ include(GoogleTest)
 add_executable(LinearAlgebraTests
     Systems_of_Equations/Linear_Systems_tests.cpp
     Vectors/Basics_tests.cpp
+    Vectors/Coordinate_Systems_tests.cpp
     Vectors/Dot_Product_tests.cpp
     Vectors/Cross_Product_tests.cpp
     Vectors/Vector_Projection_tests.cpp
