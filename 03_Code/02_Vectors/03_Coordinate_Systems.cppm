@@ -1,8 +1,7 @@
 // Related Concept: [[01_Concepts/02_Vectors/03_Coordinate_Systems|03_Coordinate_Systems]]
-module;
-#include <iostream>
-
 export module vectors_coordinate_systems;
+
+import std;
 
 export namespace vectors {
     void test_vectors_coordinate_systems() {

@@ -1,8 +1,7 @@
 // Related Concept: [[01_Concepts/04_Transforms/06_Translations|06_Translations]]
-module;
-#include <iostream>
-
 export module transforms_translations;
+
+import std;
 
 import matrices_basics;
 import vectors_basics;

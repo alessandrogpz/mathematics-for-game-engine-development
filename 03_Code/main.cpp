@@ -1,5 +1,4 @@
-#include <iostream>
-#include <format>
+import std;
 
 // Import the single C++23 umbrella module containing all vector/matrix modules
 import linear_algebra;

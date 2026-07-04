@@ -1,9 +1,7 @@
 // Related Concept: [[01_Concepts/02_Vectors/01_Basics|01_Basics]]
-module;
-#include <cmath>
-#include <iostream>
-
 export module vectors_basics;
+
+import std;
 
 import matrices_basics;
 

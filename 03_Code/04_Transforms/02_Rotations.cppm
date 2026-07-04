@@ -1,10 +1,7 @@
 // Related Concept: [[01_Concepts/04_Transforms/02_Rotations|02_Rotations]]
-module;
-#include <cmath>
-#include <iostream>
-#include <numbers>
-
 export module transforms_rotations;
+
+import std;
 
 import matrices_basics;
 import vectors_basics;

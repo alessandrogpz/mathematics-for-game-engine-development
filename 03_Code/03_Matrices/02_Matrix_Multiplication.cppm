@@ -1,8 +1,7 @@
 // Related Concept: [[01_Concepts/03_Matrices/02_Matrix_Multiplication|02_Matrix_Multiplication]]
-module;
-#include <iostream>
-
 export module matrices_multiplication;
+
+import std;
 
 import vectors_basics;
 import matrices_basics;
@@ -14,9 +13,9 @@ export namespace matrices {
     {
         Matrix4x4 result{};
 
-        for (size_t r = 0; r < 4; ++r)
+        for (std::size_t r = 0; r < 4; ++r)
         {
-            for (size_t c = 0; c < 4; ++c)
+            for (std::size_t c = 0; c < 4; ++c)
             {
                 result[r, c] = a[r, 0] * b[0, c] +
                                a[r, 1] * b[1, c] +

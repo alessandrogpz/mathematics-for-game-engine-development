@@ -1,9 +1,7 @@
 // Related Concept: [[01_Concepts/04_Transforms/05_Skews|05_Skews]]
-module;
-#include <cmath>
-#include <numbers>
-
 export module transforms_skews;
+
+import std;
 
 import matrices_basics;
 import vectors_basics;

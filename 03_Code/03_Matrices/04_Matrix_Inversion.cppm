@@ -1,8 +1,7 @@
 // Related Concept: [[01_Concepts/03_Matrices/04_Matrix_Inversion|04_Matrix_Inversion]]
-module;
-#include <iostream>
-
 export module matrices_inversion;
+
+import std;
 
 import matrices_basics;
 import matrices_determinants;
@@ -22,19 +21,19 @@ export namespace matrices {
         Matrix4x4 inverse{};
 
         // Lambda to get indices of rows/cols excluding a specific row/col
-        auto get_indices_except = [](size_t idx, size_t& i0, size_t& i1, size_t& i2) {
+        auto get_indices_except = [](std::size_t idx, std::size_t& i0, std::size_t& i1, std::size_t& i2) {
             if (idx == 0) { i0 = 1; i1 = 2; i2 = 3; }
             else if (idx == 1) { i0 = 0; i1 = 2; i2 = 3; }
             else if (idx == 2) { i0 = 0; i1 = 1; i2 = 3; }
             else { i0 = 0; i1 = 1; i2 = 2; }
         };
 
-        for (size_t r = 0; r < 4; ++r)
+        for (std::size_t r = 0; r < 4; ++r)
         {
-            for (size_t c = 0; c < 4; ++c)
+            for (std::size_t c = 0; c < 4; ++c)
             {
-                size_t r0, r1, r2;
-                size_t c0, c1, c2;
+                std::size_t r0, r1, r2;
+                std::size_t c0, c1, c2;
                 get_indices_except(r, r0, r1, r2);
                 get_indices_except(c, c0, c1, c2);
 

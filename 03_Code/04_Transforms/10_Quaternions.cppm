@@ -1,10 +1,7 @@
 // Related Concept: [[01_Concepts/04_Transforms/10_Quaternions|10_Quaternions]]
-module;
-#include <iostream>
-#include <cmath>
-#include <numbers>
-
 export module transforms_quaternions;
+
+import std;
 
 import vectors_basics;
 

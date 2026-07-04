@@ -1,8 +1,7 @@
 // Related Concept: [[01_Concepts/04_Transforms/04_Scales|04_Scales]]
-module;
-#include <iostream>
-
 export module transforms_scales;
+
+import std;
 
 import matrices_basics;
 import vectors_basics;

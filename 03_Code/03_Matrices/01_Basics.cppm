@@ -1,9 +1,7 @@
 // Related Concept: [[01_Concepts/03_Matrices/01_Basics|01_Basics]]
-module;
-#include <iostream>
-#include <format>
-
 export module matrices_basics;
+
+import std;
 
 export namespace matrices {
     struct Matrix4x4
@@ -13,12 +11,12 @@ export namespace matrices {
         Matrix4x4() : data{} {}
 
         [[nodiscard]]
-        double& operator[](const size_t row, const size_t col) {
+        double& operator[](const std::size_t row, const std::size_t col) {
             return data[ row * 4 + col ];
         }
 
         [[nodiscard]]
-        const double& operator[](const size_t row, const size_t col) const {
+        const double& operator[](const std::size_t row, const std::size_t col) const {
             return data[ row * 4 + col ];
         }
 
@@ -26,7 +24,7 @@ export namespace matrices {
         [[nodiscard]]
         Matrix4x4 operator+(const Matrix4x4& other) const {
             Matrix4x4 result{};
-            for (size_t i = 0; i < 16; ++i) {
+            for (std::size_t i = 0; i < 16; ++i) {
                 result.data[i] = data[i] + other.data[i];
             }
             return result;
@@ -36,7 +34,7 @@ export namespace matrices {
         [[nodiscard]]
         Matrix4x4 operator-(const Matrix4x4& other) const {
             Matrix4x4 result{};
-            for (size_t i = 0; i < 16; ++i) {
+            for (std::size_t i = 0; i < 16; ++i) {
                 result.data[i] = data[i] - other.data[i];
             }
             return result;
@@ -46,7 +44,7 @@ export namespace matrices {
         [[nodiscard]]
         Matrix4x4 operator*(const double scalar) const {
             Matrix4x4 result{};
-            for (size_t i = 0; i < 16; ++i) {
+            for (std::size_t i = 0; i < 16; ++i) {
                 result.data[i] = data[i] * scalar;
             }
             return result;
@@ -88,10 +86,10 @@ export namespace matrices {
     // 7. 4x4 ASCII Matrix Printer
     void print(const Matrix4x4& m)
     {
-        for (size_t row = 0; row < 4; ++row)
+        for (std::size_t row = 0; row < 4; ++row)
         {
             std::cout << "[ ";
-            for (size_t col = 0; col < 4; ++col)
+            for (std::size_t col = 0; col < 4; ++col)
             {
                 std::cout << std::format("{:>8.4f} ", m[row, col]);
             }
