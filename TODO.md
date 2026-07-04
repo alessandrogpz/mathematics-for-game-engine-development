@@ -24,7 +24,7 @@ These solution files still contain `[Insert ...]` placeholders that need LaTeX m
 ### Transforms
 - [x] Complete **Homogeneous Coordinates** calculations: [S_07_Homogeneous_Coordinates.md](02_Exercises/04_Transforms/Solutions/S_07_Homogeneous_Coordinates.md)
 - [x] Complete **Matrix Composition 4x4** derivation & coding concepts: [S_08_Matrix_Composition_4x4.md](02_Exercises/04_Transforms/Solutions/S_08_Matrix_Composition_4x4.md)
-- [ ] Complete **Quaternions (Part 2)** conceptual understanding (Hamilton's identities proofs, origin of the half-angle): [S_10_Quaternions.md](02_Exercises/04_Transforms/Solutions/S_10_Quaternions.md)
+- [x] Complete **Quaternions (Part 2)** conceptual understanding (Hamilton's identities proofs, origin of the half-angle): [S_10_Quaternions.md](02_Exercises/04_Transforms/Solutions/S_10_Quaternions.md)
 
 ---
 
