@@ -172,4 +172,4 @@ $$
 ---
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/04_Transforms/06_Translations.cppm|06_Translations.cppm]]
+*   **C++ Source Code:** [[03_Code/04_Transforms/Translations.cppm|Translations.cppm]]

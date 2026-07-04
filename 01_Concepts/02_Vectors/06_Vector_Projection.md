@@ -96,4 +96,4 @@ $$
 
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/02_Vectors/06_Vector_Projection.cppm|06_Vector_Projection.cppm]]
+*   **C++ Source Code:** [[03_Code/02_Vectors/Vector_Projection.cppm|Vector_Projection.cppm]]

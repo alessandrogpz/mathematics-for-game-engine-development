@@ -26,4 +26,4 @@ $$
 
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/03_Matrices/02_Matrix_Multiplication.cppm|02_Matrix_Multiplication.cppm]]
+*   **C++ Source Code:** [[03_Code/03_Matrices/Matrix_Multiplication.cppm|Matrix_Multiplication.cppm]]

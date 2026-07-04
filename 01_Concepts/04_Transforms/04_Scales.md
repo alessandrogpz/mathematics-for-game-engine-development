@@ -138,4 +138,4 @@ $$
 
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/04_Transforms/04_Scales.cppm|04_Scales.cppm]]
+*   **C++ Source Code:** [[03_Code/04_Transforms/Scales.cppm|Scales.cppm]]

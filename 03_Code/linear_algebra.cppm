@@ -14,7 +14,6 @@ export import matrices_determinants;
 export import matrices_inversion;
 export import matrices_orthogonal;
 export import matrices_projection;
-export import transforms_matrices;
 export import transforms_rotations;
 export import transforms_reflections;
 export import transforms_scales;

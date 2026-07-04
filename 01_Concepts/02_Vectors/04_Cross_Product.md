@@ -104,4 +104,4 @@ In graphics programming, game engines, and physics engines, representing the cro
 
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/02_Vectors/04_Cross_Product.cppm|04_Cross_Product.cppm]]
+*   **C++ Source Code:** [[03_Code/02_Vectors/Cross_Product.cppm|Cross_Product.cppm]]

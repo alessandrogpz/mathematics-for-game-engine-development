@@ -33,14 +33,14 @@ These solution files still contain `[Insert ...]` placeholders that need LaTeX m
 These files contain only console-log helper tests and need their core mathematical functions and algorithms implemented.
 
 ### Systems of Equations
-- [ ] Implement **Gaussian Elimination / Solver** logic: [01_Linear_Systems.cppm](03_Code/01_Systems_of_Equations/01_Linear_Systems.cppm)
+- [ ] Implement **Gaussian Elimination / Solver** logic: [Linear_Systems.cppm](03_Code/01_Systems_of_Equations/Linear_Systems.cppm)
 
 ### Vectors
-- [ ] Implement **Coordinate Conversion** routines: [03_Coordinate_Systems.cppm](03_Code/02_Vectors/03_Coordinate_Systems.cppm)
+- [ ] Implement **Coordinate Conversion** routines: [Coordinate_Systems.cppm](03_Code/02_Vectors/Coordinate_Systems.cppm)
 
 ### Matrices
-- [ ] Implement **Orthogonality Check** logic: [05_Orthogonal_Matrices.cppm](03_Code/03_Matrices/05_Orthogonal_Matrices.cppm)
+- [ ] Implement **Orthogonality Check** logic: [Orthogonal_Matrices.cppm](03_Code/03_Matrices/Orthogonal_Matrices.cppm)
 
 ### Transforms
 - [ ] Implement **4x4 Transformation Matrices** representation and composition: [01_Transformation_Matrices.cppm](03_Code/04_Transforms/01_Transformation_Matrices.cppm)
-- [ ] Implement **3D Translation Matrix** creation and vector translation: [06_Translations.cppm](03_Code/04_Transforms/06_Translations.cppm)
+- [ ] Implement **3D Translation Matrix** creation and vector translation: [Translations.cppm](03_Code/04_Transforms/Translations.cppm)

@@ -37,4 +37,4 @@ $$
 
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/03_Matrices/05_Orthogonal_Matrices.cppm|05_Orthogonal_Matrices.cppm]]
+*   **C++ Source Code:** [[03_Code/03_Matrices/Orthogonal_Matrices.cppm|Orthogonal_Matrices.cppm]]

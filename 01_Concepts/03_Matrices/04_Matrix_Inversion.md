@@ -111,4 +111,4 @@ This method uses an **augmented matrix** $[M | I]$:
 
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/03_Matrices/04_Matrix_Inversion.cppm|04_Matrix_Inversion.cppm]]
+*   **C++ Source Code:** [[03_Code/03_Matrices/Matrix_Inversion.cppm|Matrix_Inversion.cppm]]

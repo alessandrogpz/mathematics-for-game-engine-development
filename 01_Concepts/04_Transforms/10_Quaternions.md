@@ -266,6 +266,6 @@ This ensures the final output remains in the 3D imaginary subspace.
 
 ## Code Implementation
 
-*   **C++ Source Code:** [[03_Code/04_Transforms/10_Quaternions.cppm|10_Quaternions.cppm]]
+*   **C++ Source Code:** [[03_Code/04_Transforms/Quaternions.cppm|Quaternions.cppm]]
 
 
