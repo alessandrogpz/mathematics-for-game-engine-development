@@ -36,11 +36,11 @@ These files contain only console-log helper tests and need their core mathematic
 - [ ] Implement **Gaussian Elimination / Solver** logic: [Linear_Systems.cppm](03_Code/01_Systems_of_Equations/Linear_Systems.cppm)
 
 ### Vectors
-- [ ] Implement **Coordinate Conversion** routines: [Coordinate_Systems.cppm](03_Code/02_Vectors/Coordinate_Systems.cppm)
+- [x] Implement **Coordinate Conversion** routines: [Coordinate_Systems.cppm](03_Code/02_Vectors/Coordinate_Systems.cppm)
 
 ### Matrices
 - [ ] Implement **Orthogonality Check** logic: [Orthogonal_Matrices.cppm](03_Code/03_Matrices/Orthogonal_Matrices.cppm)
 
 ### Transforms
-- [ ] Implement **4x4 Transformation Matrices** representation and composition: [01_Transformation_Matrices.cppm](03_Code/04_Transforms/01_Transformation_Matrices.cppm)
-- [ ] Implement **3D Translation Matrix** creation and vector translation: [Translations.cppm](03_Code/04_Transforms/Translations.cppm)
+- [x] Implement **4x4 Transformation Matrices** representation and composition (integrated natively in Matrix4x4)
+- [x] Implement **3D Translation Matrix** creation and vector translation: [Translations.cppm](03_Code/04_Transforms/Translations.cppm)
