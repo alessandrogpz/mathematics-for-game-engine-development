@@ -9,7 +9,7 @@ TEST(MatricesInversion, IdentityInverse) {
     matrices::Matrix4x4 inv = matrices::inverse(i);
     for (int r = 0; r < 4; ++r) {
         for (int c = 0; c < 4; ++c) {
-            EXPECT_NEAR((inv[r, c]), (i[r, c]), 1e-9);
+            EXPECT_NEAR((inv[r, c]), (i[r, c]), 1e-5f);
         }
     }
 }
@@ -27,7 +27,7 @@ TEST(MatricesInversion, GeneralInverse) {
 
     for (int r = 0; r < 4; ++r) {
         for (int c = 0; c < 4; ++c) {
-            EXPECT_NEAR((prod[r, c]), (i[r, c]), 1e-9);
+            EXPECT_NEAR((prod[r, c]), (i[r, c]), 1e-5f);
         }
     }
 }
@@ -42,7 +42,7 @@ TEST(MatricesInversion, SingularMatrixReturnsZero) {
     matrices::Matrix4x4 inv = matrices::inverse(a);
     for (int r = 0; r < 4; ++r) {
         for (int c = 0; c < 4; ++c) {
-            EXPECT_DOUBLE_EQ((inv[r, c]), 0.0);
+            EXPECT_FLOAT_EQ((inv[r, c]), 0.0);
         }
     }
 }

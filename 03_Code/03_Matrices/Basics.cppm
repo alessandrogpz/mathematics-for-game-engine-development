@@ -6,17 +6,17 @@ import std;
 export namespace matrices {
     struct Matrix4x4
     {
-        double data[16];
+        float data[16];
 
         Matrix4x4() : data{} {}
 
         [[nodiscard]]
-        double& operator[](const std::size_t row, const std::size_t col) {
+        float& operator[](const std::size_t row, const std::size_t col) {
             return data[ row * 4 + col ];
         }
 
         [[nodiscard]]
-        const double& operator[](const std::size_t row, const std::size_t col) const {
+        const float& operator[](const std::size_t row, const std::size_t col) const {
             return data[ row * 4 + col ];
         }
 
@@ -42,7 +42,7 @@ export namespace matrices {
 
         // 3. Scalar Multiplication
         [[nodiscard]]
-        Matrix4x4 operator*(const double scalar) const {
+        Matrix4x4 operator*(const float scalar) const {
             Matrix4x4 result{};
             for (std::size_t i = 0; i < 16; ++i) {
                 result.data[i] = data[i] * scalar;
@@ -52,7 +52,7 @@ export namespace matrices {
 
         // 5. Trace of a Matrix (Sum of main diagonal elements)
         [[nodiscard]]
-        double trace() const {
+        float trace() const {
             return data[0] + data[5] + data[10] + data[15];
         }
 
@@ -98,7 +98,7 @@ export namespace matrices {
     }
 
     [[nodiscard]]
-    double trace(const Matrix4x4& m) {
+    float trace(const Matrix4x4& m) {
         return m.trace();
     }
 }

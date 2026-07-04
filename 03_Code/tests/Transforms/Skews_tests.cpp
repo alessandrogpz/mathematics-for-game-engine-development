@@ -11,7 +11,7 @@ TEST(TransformsSkews, StandardSkew) {
     // Skew 45 degrees -> tan(45) = 1.0
     // x' = x + y * tan(45) = 2 + 3 * 1 = 5
     vectors::vector3 res = transforms::skew(dir, meas, v, 45.0);
-    EXPECT_NEAR(res.x, 5.0, 1e-9);
-    EXPECT_NEAR(res.y, 3.0, 1e-9);
-    EXPECT_NEAR(res.z, 5.0, 1e-9);
+    EXPECT_NEAR(res.x, 5.0, 1e-5f);
+    EXPECT_NEAR(res.y, 3.0, 1e-5f);
+    EXPECT_NEAR(res.z, 5.0, 1e-5f);
 }

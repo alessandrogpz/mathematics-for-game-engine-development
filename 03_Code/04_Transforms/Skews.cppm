@@ -13,12 +13,12 @@ export namespace transforms
     vectors::vector3 skew ( const vectors::vector3 a,
                             const vectors::vector3 b,
                             const vectors::vector3 v,
-                            const double degrees )
+                            const float degrees )
     {
         const vectors::vector3 n = vectors::normalized(a);
         const vectors::vector3 m = vectors::normalized(b);
-        const double radians = degrees * std::numbers::pi / 180.0;
-        const double tan_t = std::tan(radians);
+        const float radians = degrees * std::numbers::pi / 180.0;
+        const float tan_t = std::tan(radians);
         matrices::Matrix4x4 M_SKEW{};
 
         M_SKEW[0, 0] = 1.0 + n.x * m.x * tan_t;

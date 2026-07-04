@@ -12,12 +12,12 @@ export namespace matrices {
     [[nodiscard]]
     Matrix4x4 inverse(const Matrix4x4& m)
     {
-        const double det = determinant(m);
+        const float det = determinant(m);
 
         if (det == 0.0)
             return Matrix4x4{};
 
-        const double inv_det = 1.0 / det;
+        const float inv_det = 1.0 / det;
         Matrix4x4 inverse{};
 
         // Lambda to get indices of rows/cols excluding a specific row/col
@@ -37,8 +37,8 @@ export namespace matrices {
                 get_indices_except(r, r0, r1, r2);
                 get_indices_except(c, c0, c1, c2);
 
-                double sub_det = subDeterminant3x3(m, r0, r1, r2, c0, c1, c2);
-                double sign = ((r + c) % 2 == 0) ? 1.0 : -1.0;
+                float sub_det = subDeterminant3x3(m, r0, r1, r2, c0, c1, c2);
+                float sign = ((r + c) % 2 == 0) ? 1.0 : -1.0;
 
                 // Transpose: inverse[c, r] is cofactor[r, c] * inv_det
                 inverse[c, r] = sign * sub_det * inv_det;

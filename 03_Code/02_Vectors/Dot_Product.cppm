@@ -8,31 +8,31 @@ import vectors_basics;
 export namespace vectors {
 
     [[nodiscard]]
-    double dot(const vector3 a, const vector3 b) {
+    float dot(const vector3 a, const vector3 b) {
         return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
     }
 
     [[nodiscard]]
-    double dot(const vector4 a, const vector4 b) {
+    float dot(const vector4 a, const vector4 b) {
         return (a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w);
     }
 
     [[nodiscard]]
-    double dotGeo(const vector3 a, const vector3 b, const double theta) {
+    float dotGeo(const vector3 a, const vector3 b, const float theta) {
         return magnitude(a) * magnitude(b) * std::cos(theta);
     }
 
     [[nodiscard]]
-    double angle(const vector3 a, const vector3 b)
+    float angle(const vector3 a, const vector3 b)
     {
-        const double magA = magnitude(a);
-        const double magB = magnitude(b);
+        const float magA = magnitude(a);
+        const float magB = magnitude(b);
         if (magA == 0.0 || magB == 0.0) return 0.0;
 
-        const double cosTheta = dot(a, b) / (magA * magB);
+        const float cosTheta = dot(a, b) / (magA * magB);
 
         // Prevent floating-point precision issues from pushing cosTheta outside [-1.0, 1.0]
-        const double clampedCosTheta = std::clamp(cosTheta, -1.0, 1.0);
+        const float clampedCosTheta = std::clamp(cosTheta, -1.0f, 1.0f);
         return std::acos(clampedCosTheta);
     }
 }

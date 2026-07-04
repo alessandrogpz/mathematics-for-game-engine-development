@@ -8,11 +8,11 @@ export namespace vectors {
 
     struct alignas(16) vector3
     {
-        double x{0.0}, y{0.0}, z{0.0};
+        float x{0.0}, y{0.0}, z{0.0};
 
         vector3() = default;
 
-        vector3(const double xVal, const double yVal, const double zVal)
+        vector3(const float xVal, const float yVal, const float zVal)
             : x(xVal), y(yVal), z(zVal) {}
 
         [[nodiscard]]
@@ -26,46 +26,46 @@ export namespace vectors {
         }
 
         [[nodiscard]]
-        vector3 operator*(const double value) const {
+        vector3 operator*(const float value) const {
             return { x * value, y * value, z * value };
         }
 
         [[nodiscard]]
-        vector3 operator/(const double value) const {
+        vector3 operator/(const float value) const {
             if (value == 0.0)
                 return {x, y, z};
 
-            const double reciprocal = 1.0 / value;
+            const float reciprocal = 1.0 / value;
             return { x * reciprocal, y * reciprocal, z * reciprocal };
         }
 
         [[nodiscard]]
-        double magnitude() const {
+        float magnitude() const {
             return std::sqrt((x * x) + (y * y) + (z * z));
         }
 
         [[nodiscard]]
         vector3 normalized() const
         {
-            const double m = magnitude();
+            const float m = magnitude();
             if (m == 0.0)
                 return {0.0, 0.0, 0.0};
 
-            const double reciprocal = 1.0 / m;
+            const float reciprocal = 1.0 / m;
             return { x * reciprocal, y * reciprocal, z * reciprocal };
         }
     };
 
-    struct alignas(32) vector4
+    struct alignas(16) vector4
     {
-        double x{0.0}, y{0.0}, z{0.0}, w{0.0};
+        float x{0.0}, y{0.0}, z{0.0}, w{0.0};
 
         vector4() = default;
 
-        vector4(const double xVal, const double yVal, const double zVal, const double wVal)
+        vector4(const float xVal, const float yVal, const float zVal, const float wVal)
             : x(xVal), y(yVal), z(zVal), w(wVal) {}
 
-        vector4(const vector3& v, const double wVal = 1.0)
+        vector4(const vector3& v, const float wVal = 1.0)
             : x(v.x), y(v.y), z(v.z), w(wVal) {}
 
         [[nodiscard]]
@@ -79,32 +79,32 @@ export namespace vectors {
         }
 
         [[nodiscard]]
-        vector4 operator*(const double value) const {
+        vector4 operator*(const float value) const {
             return { x * value, y * value, z * value, w * value };
         }
 
         [[nodiscard]]
-        vector4 operator/(const double value) const {
+        vector4 operator/(const float value) const {
             if (value == 0.0)
                 return {x, y, z, w};
 
-            const double reciprocal = 1.0 / value;
+            const float reciprocal = 1.0 / value;
             return { x * reciprocal, y * reciprocal, z * reciprocal, w * reciprocal };
         }
 
         [[nodiscard]]
-        double magnitude() const {
+        float magnitude() const {
             return std::sqrt((x * x) + (y * y) + (z * z) + (w * w));
         }
 
         [[nodiscard]]
         vector4 normalized() const
         {
-            const double m = magnitude();
+            const float m = magnitude();
             if (m == 0.0)
                 return {0.0, 0.0, 0.0, 0.0};
 
-            const double reciprocal = 1.0 / m;
+            const float reciprocal = 1.0 / m;
             return { x * reciprocal, y * reciprocal, z * reciprocal, w * reciprocal };
         }
     };
@@ -132,7 +132,7 @@ export namespace vectors {
     }
 
     [[nodiscard]]
-    double magnitude(const vector3 v) {
+    float magnitude(const vector3 v) {
         return v.magnitude();
     }
 
@@ -142,7 +142,7 @@ export namespace vectors {
     }
 
     [[nodiscard]]
-    double magnitude(const vector4 v) {
+    float magnitude(const vector4 v) {
         return v.magnitude();
     }
 

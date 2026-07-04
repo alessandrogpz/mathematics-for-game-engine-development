@@ -10,9 +10,9 @@ import vectors_dot_product;
 export namespace vectors {
 
     [[nodiscard]]
-    double scalarProj ( const vector3 a, const vector3 b ) {
+    float scalarProj ( const vector3 a, const vector3 b ) {
 
-        const double magB = magnitude(b);
+        const float magB = magnitude(b);
         if (magB == 0.0)
             return 0.0;
 
@@ -21,11 +21,11 @@ export namespace vectors {
 
     [[nodiscard]]
     vector3 vecProj ( const vector3 a, const vector3 b ) {
-        const double magB = magnitude(b);
+        const float magB = magnitude(b);
         if (magB == 0.0)
             return {0.0, 0.0, 0.0};
 
-        const double sProj = scalarProj(a, b);
+        const float sProj = scalarProj(a, b);
         return b * (sProj / magB);
     }
 

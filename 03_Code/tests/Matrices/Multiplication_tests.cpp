@@ -14,7 +14,7 @@ TEST(MatricesMultiplication, IdentityMultiplication) {
     matrices::Matrix4x4 res = matrices::matrixMultiplication4x4(m, i);
     for (int r = 0; r < 4; ++r) {
         for (int c = 0; c < 4; ++c) {
-            EXPECT_DOUBLE_EQ((res[r, c]), (m[r, c]));
+            EXPECT_FLOAT_EQ((res[r, c]), (m[r, c]));
         }
     }
 }
@@ -30,9 +30,9 @@ TEST(MatricesMultiplication, GeneralMultiplication) {
     matrices::Matrix4x4 res = matrices::matrixMultiplication4x4(a, a);
     
     // Row 0 x Col 0 = 30
-    EXPECT_DOUBLE_EQ((res[0, 0]), 30.0);
+    EXPECT_FLOAT_EQ((res[0, 0]), 30.0);
     // Row 0 x Col 1 = 36
-    EXPECT_DOUBLE_EQ((res[0, 1]), 36.0);
+    EXPECT_FLOAT_EQ((res[0, 1]), 36.0);
     // Row 3 x Col 3 = 1.0
-    EXPECT_DOUBLE_EQ((res[3, 3]), 1.0);
+    EXPECT_FLOAT_EQ((res[3, 3]), 1.0);
 }

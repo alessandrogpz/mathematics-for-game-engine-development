@@ -9,22 +9,22 @@ import vectors_basics;
 export namespace transforms {
 
     [[nodiscard]]
-    vectors::vector3 scaleUniform (const vectors::vector3 v, const double s)
+    vectors::vector3 scaleUniform (const vectors::vector3 v, const float s)
     {
         return { v.x * s, v.y * s, v.z * s };
     }
 
     [[nodiscard]]
     vectors::vector3 scaleNonuniform (  const vectors::vector3 v,
-                                        const double sx,
-                                        const double sy,
-                                        const double sz )
+                                        const float sx,
+                                        const float sy,
+                                        const float sz )
     {
         return { v.x * sx, v.y * sy, v.z * sz };
     }
 
     [[nodiscard]]
-    vectors::vector3 scaleArbitraryAxis ( const vectors::vector3 v, const vectors::vector3 a, const double s)
+    vectors::vector3 scaleArbitraryAxis ( const vectors::vector3 v, const vectors::vector3 a, const float s)
     {
         matrices::Matrix4x4 scaleArbitrary {};
         vectors::vector3 n = vectors::normalized(a);

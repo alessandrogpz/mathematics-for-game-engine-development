@@ -6,16 +6,16 @@ import std;
 import vectors_basics;
 
 export namespace transforms {
-    struct alignas(32) Quaternion
+    struct alignas(16) Quaternion
     {
-        double w{0.0}, x{0.0}, y{0.0}, z{0.0};
+        float w{0.0}, x{0.0}, y{0.0}, z{0.0};
 
         Quaternion() = default;
 
-        Quaternion(const double wVal, const double xVal, const double yVal, const double zVal)
+        Quaternion(const float wVal, const float xVal, const float yVal, const float zVal)
             : w(wVal), x(xVal), y(yVal), z(zVal) {}
 
-        Quaternion(const double wVal, const vectors::vector3& vVal)
+        Quaternion(const float wVal, const vectors::vector3& vVal)
             : w(wVal), x(vVal.x), y(vVal.y), z(vVal.z) {}
 
         [[nodiscard]]
@@ -29,18 +29,18 @@ export namespace transforms {
             };
         }
 
-        Quaternion operator/(const double value) const
+        Quaternion operator/(const float value) const
         {
             if (value == 0.0) {
                 return *this;
             }
-            const double reciprocal = 1.0 / value;
+            const float reciprocal = 1.0 / value;
             return { w * reciprocal, x * reciprocal, y * reciprocal, z * reciprocal };
         }
     };
 
     [[nodiscard]]
-    double qMagnitude(const Quaternion& q)
+    float qMagnitude(const Quaternion& q)
     {
         return std::sqrt(q.w * q.w + q.x * q.x + q.y * q.y + q.z * q.z);
     }
@@ -54,7 +54,7 @@ export namespace transforms {
     [[nodiscard]]
     Quaternion qInverse(const Quaternion& q)
     {
-        const double mag = qMagnitude(q);
+        const float mag = qMagnitude(q);
         if (mag == 0.0) {
             return {};
         }
@@ -64,10 +64,10 @@ export namespace transforms {
     // Constructs a unit rotation quaternion representing a rotation of 'degrees' about the given 'axis'.
     // The input axis does not need to be pre-normalized.
     [[nodiscard]]
-    Quaternion qRotationAxisAngle(const vectors::vector3& axis, const double degrees)
+    Quaternion qRotationAxisAngle(const vectors::vector3& axis, const float degrees)
     {
-        const double radians = degrees * std::numbers::pi / 180.0;
-        const double half_angle = radians * 0.5;
+        const float radians = degrees * std::numbers::pi / 180.0;
+        const float half_angle = radians * 0.5;
         const vectors::vector3 normalized_axis = vectors::normalized(axis);
         return { std::cos(half_angle), normalized_axis * std::sin(half_angle) };
     }

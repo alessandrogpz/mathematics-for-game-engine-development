@@ -11,9 +11,9 @@ import vectors_cross_product;
 export namespace transforms {
 
     [[nodiscard]]
-    vectors::vector3 rotationX(const vectors::vector3 vec, const double degrees)
+    vectors::vector3 rotationX(const vectors::vector3 vec, const float degrees)
     {
-        const double radians = degrees * std::numbers::pi / 180.0;
+        const float radians = degrees * std::numbers::pi / 180.0;
         matrices::Matrix4x4 M_rotX {};
 
         // Row 0
@@ -44,9 +44,9 @@ export namespace transforms {
     }
 
     [[nodiscard]]
-    vectors::vector3 rotationY(const vectors::vector3 vec, const double degrees)
+    vectors::vector3 rotationY(const vectors::vector3 vec, const float degrees)
     {
-        const double radians = degrees * std::numbers::pi / 180.0;
+        const float radians = degrees * std::numbers::pi / 180.0;
         matrices::Matrix4x4 M_rotY {};
 
         // Row 0
@@ -77,9 +77,9 @@ export namespace transforms {
     }
 
     [[nodiscard]]
-    vectors::vector3 rotationZ(const vectors::vector3 vec, const double degrees)
+    vectors::vector3 rotationZ(const vectors::vector3 vec, const float degrees)
     {
-        const double radians = degrees * std::numbers::pi / 180.0;
+        const float radians = degrees * std::numbers::pi / 180.0;
         matrices::Matrix4x4 M_rotZ {};
 
         // Row 0
@@ -112,9 +112,9 @@ export namespace transforms {
     [[nodiscard]]
     vectors::vector3 rotationArbitraryAxis( const vectors::vector3 v,
                                             const vectors::vector3 a,
-                                            const double degrees)
+                                            const float degrees)
     {
-        const double radians = degrees * std::numbers::pi / 180.0;
+        const float radians = degrees * std::numbers::pi / 180.0;
 
         const vectors::vector3 axis = vectors::normalized(a);
 
