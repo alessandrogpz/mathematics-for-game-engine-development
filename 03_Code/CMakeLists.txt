@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS ON CACHE INTERNAL "Suppress dev warnings" FORCE)
+
 if(CMAKE_VERSION VERSION_GREATER_EQUAL "4.3.0")
     set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "451f2fe2-a8a2-47c3-bc32-94786d8fc91b")
 else()
@@ -12,18 +13,11 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_MODULE_STD ON)
 
-# Enable common compiler warnings for clean code
-if(MSVC)
-    add_compile_options(/W4)
-else()
-    add_compile_options(-Wall -Wextra -Wpedantic -mavx)
-endif()
+# Define static library for linear algebra modules
+add_library(LinearAlgebraLib STATIC)
 
-# Define the single main executable target
-add_executable(LinearAlgebra main.cpp)
-
-# Define target C++ module interface files (.cppm)
-target_sources(LinearAlgebra
+# Define target C++ module interface files (.cppm) on the library target
+target_sources(LinearAlgebraLib
   PUBLIC
     FILE_SET CXX_MODULES FILES
         "linear_algebra.cppm"
@@ -44,6 +38,32 @@ target_sources(LinearAlgebra
         "04_Transforms/Reflections.cppm"
         "04_Transforms/Scales.cppm"
         "04_Transforms/Skews.cppm"
-        "04_Transforms/Quaternions.cppm"
         "04_Transforms/Translations.cppm"
+        "04_Transforms/Quaternions.cppm"
 )
+
+# Set compile flags on the library target
+if(MSVC)
+    target_compile_options(LinearAlgebraLib PRIVATE /W4)
+else()
+    target_compile_options(LinearAlgebraLib PRIVATE -Wall -Wextra -Wpedantic -mavx)
+endif()
+
+# Define main application executable linking to our library
+add_executable(LinearAlgebra main.cpp)
+target_link_libraries(LinearAlgebra PRIVATE LinearAlgebraLib)
+
+# Fetch GoogleTest
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        v1.15.2
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+# Enable testing and add tests subdirectory
+enable_testing()
+add_subdirectory(tests)
