@@ -13,6 +13,11 @@ export namespace vectors {
     }
 
     [[nodiscard]]
+    double dot(const vector4 a, const vector4 b) {
+        return (a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w);
+    }
+
+    [[nodiscard]]
     double dotGeo(const vector3 a, const vector3 b, const double theta) {
         return magnitude(a) * magnitude(b) * std::cos(theta);
     }

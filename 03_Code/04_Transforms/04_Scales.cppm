@@ -11,7 +11,7 @@ export namespace transforms {
     [[nodiscard]]
     vectors::vector3 scaleUniform (const vectors::vector3 v, const double s)
     {
-        return { v.x * s, v.y * s, v.z * s, v.w };
+        return { v.x * s, v.y * s, v.z * s };
     }
 
     [[nodiscard]]
@@ -20,7 +20,7 @@ export namespace transforms {
                                         const double sy,
                                         const double sz )
     {
-        return { v.x * sx, v.y * sy, v.z * sz, v.w };
+        return { v.x * sx, v.y * sy, v.z * sz };
     }
 
     [[nodiscard]]

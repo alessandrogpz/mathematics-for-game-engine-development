@@ -88,8 +88,8 @@ int main() {
 
     // --- 5. Vector Projections & Rejections ---
     std::cout << "\n5. --- Vector Projections & Rejections ---" << std::endl;
-    vectors::vector3 v{3.0, 4.0, 5.0, 1.0};
-    vectors::vector3 axis{1.0, 0.0, 0.0, 0.0}; // X-axis direction
+    vectors::vector3 v{3.0, 4.0, 5.0};
+    vectors::vector3 axis{1.0, 0.0, 0.0}; // X-axis direction
 
     std::cout << "Vector v: (" << v.x << ", " << v.y << ", " << v.z << ")" << std::endl;
     std::cout << "Axis of projection: (" << axis.x << ", " << axis.y << ", " << axis.z << ")" << std::endl;
@@ -121,7 +121,7 @@ int main() {
 
     // --- 6. 3D Coordinate Axis Rotations ---
     std::cout << "\n6. --- 3D Coordinate Axis Rotations ---" << std::endl;
-    vectors::vector3 test_vec{0.0, 1.0, 0.0, 1.0}; // Pointing along Y-axis
+    vectors::vector3 test_vec{0.0, 1.0, 0.0}; // Pointing along Y-axis
     std::cout << "Original Vector: (" << test_vec.x << ", " << test_vec.y << ", " << test_vec.z << ")" << std::endl;
 
     // Rotate 90 degrees about X-axis -> sweeps Y-axis into Z-axis
@@ -137,14 +137,14 @@ int main() {
     std::cout << "Rotated 90° about Z: (" << rotZ_90.x << ", " << rotZ_90.y << ", " << rotZ_90.z << ") (Expected: -1, 0, 0)" << std::endl;
 
     // Rotate 90 degrees about arbitrary axis (0, 0, 1) -> should match Z-axis rotation
-    vectors::vector3 arb_axis{0.0, 0.0, 1.0, 0.0};
+    vectors::vector3 arb_axis{0.0, 0.0, 1.0};
     vectors::vector3 rotArb_90 = transforms::rotationArbitraryAxis(test_vec, arb_axis, 90.0);
     std::cout << "Rotated 90° about Arb (0,0,1): (" << rotArb_90.x << ", " << rotArb_90.y << ", " << rotArb_90.z << ") (Expected: -1, 0, 0)" << std::endl;
 
     // --- 7. 3D Reflections ---
     std::cout << "\n7. --- 3D Reflections ---" << std::endl;
-    vectors::vector3 ref_v{2.0, -1.0, 3.0, 1.0};
-    vectors::vector3 ref_normal{0.0, 0.0, 1.0, 0.0}; // Z-axis normal
+    vectors::vector3 ref_v{2.0, -1.0, 3.0};
+    vectors::vector3 ref_normal{0.0, 0.0, 1.0}; // Z-axis normal
 
     vectors::vector3 ref_plane = transforms::reflection(ref_normal, ref_v);
     vectors::vector3 ref_axis = transforms::involution(ref_normal, ref_v);
@@ -155,8 +155,8 @@ int main() {
 
     // --- 8. 3D Scales ---
     std::cout << "\n8. --- 3D Scales ---" << std::endl;
-    vectors::vector3 scale_v{1.0, 2.0, 3.0, 1.0};
-    vectors::vector3 scale_axis{0.0, 1.0, 0.0, 0.0}; // Y-axis
+    vectors::vector3 scale_v{1.0, 2.0, 3.0};
+    vectors::vector3 scale_axis{0.0, 1.0, 0.0}; // Y-axis
 
     vectors::vector3 sc_uniform = transforms::scaleUniform(scale_v, 2.5);
     vectors::vector3 sc_nonuniform = transforms::scaleNonuniform(scale_v, 2.0, 0.5, 3.0);
@@ -169,9 +169,9 @@ int main() {
 
     // --- 9. 3D Skews ---
     std::cout << "\n9. --- 3D Skews ---" << std::endl;
-    vectors::vector3 skew_v{2.0, 3.0, 5.0, 1.0};
-    vectors::vector3 skew_dir{1.0, 0.0, 0.0, 0.0};   // slide along X-axis
-    vectors::vector3 skew_meas{0.0, 1.0, 0.0, 0.0};  // relative to Y-axis
+    vectors::vector3 skew_v{2.0, 3.0, 5.0};
+    vectors::vector3 skew_dir{1.0, 0.0, 0.0};   // slide along X-axis
+    vectors::vector3 skew_meas{0.0, 1.0, 0.0};  // relative to Y-axis
 
     // Skew of 45 degrees (tan(45) = 1)
     vectors::vector3 sk_res = transforms::skew(skew_dir, skew_meas, skew_v, 45.0);
@@ -180,12 +180,20 @@ int main() {
 
     // --- 10. Quaternion Rotations ---
     std::cout << "\n10. --- Quaternion Rotations ---" << std::endl;
-    vectors::vector3 q_axis{0.0, 0.0, 1.0, 0.0}; // Z-axis
-    vectors::vector3 q_v{0.0, 1.0, 0.0, 1.0};    // Pointing along Y
+    vectors::vector3 q_axis{0.0, 0.0, 1.0}; // Z-axis
+    vectors::vector3 q_v{0.0, 1.0, 0.0};    // Pointing along Y
     transforms::Quaternion q = transforms::qRotationAxisAngle(q_axis, 90.0);
     vectors::vector3 q_rotated = transforms::qRotateVector(q_v, q);
     std::cout << "Original Vector: (" << q_v.x << ", " << q_v.y << ", " << q_v.z << ")" << std::endl;
     std::cout << "Rotated 90° about Z via Quaternion: (" << q_rotated.x << ", " << q_rotated.y << ", " << q_rotated.z << ") (Expected: -1, 0, 0)" << std::endl;
+
+    // --- 11. 4D Homogeneous Transformations ---
+    std::cout << "\n11. --- 4D Homogeneous Transformations ---" << std::endl;
+    vectors::vector4 v4{1.0, 2.0, 3.0, 1.0}; // Homogeneous point
+    matrices::Matrix4x4 T = transforms::translationMatrix(vectors::vector3{5.0, -2.0, 0.0});
+    vectors::vector4 v4_translated = T * v4;
+    std::cout << "Original Homogeneous Point v4: (" << v4.x << ", " << v4.y << ", " << v4.z << ", " << v4.w << ")" << std::endl;
+    std::cout << "Translated Homogeneous Point v4: (" << v4_translated.x << ", " << v4_translated.y << ", " << v4_translated.z << ", " << v4_translated.w << ") (Expected: 6, 0, 3, 1)" << std::endl;
 
     return 0;
 }
