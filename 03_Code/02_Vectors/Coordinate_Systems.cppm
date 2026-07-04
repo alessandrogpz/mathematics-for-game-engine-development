@@ -4,6 +4,7 @@ export module vectors_coordinate_systems;
 import std;
 import vectors_basics;
 import vectors_cross_product;
+import linear_algebra_util;
 
 export namespace vectors {
 
@@ -55,8 +56,8 @@ export namespace vectors {
     spherical cartesianToSpherical(const vector3& v)
     {
         const float r = v.magnitude();
-        if (r == 0.0) {
-            return {0.0, 0.0, 0.0};
+        if (util::floatEqual(r, 0.0f)) {
+            return {0.0f, 0.0f, 0.0f};
         }
         
         // Inclination angle theta from positive Y-axis [0, pi]

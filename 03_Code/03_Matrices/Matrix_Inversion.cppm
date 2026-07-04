@@ -5,6 +5,7 @@ import std;
 
 import matrices_basics;
 import matrices_determinants;
+import linear_algebra_util;
 
 export namespace matrices {
 
@@ -14,7 +15,7 @@ export namespace matrices {
     {
         const float det = determinant(m);
 
-        if (det == 0.0)
+        if (util::floatEqual(det, 0.0f))
             return Matrix4x4{};
 
         const float inv_det = 1.0 / det;

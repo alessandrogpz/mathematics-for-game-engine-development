@@ -4,6 +4,7 @@ export module transforms_quaternions;
 import std;
 
 import vectors_basics;
+import linear_algebra_util;
 
 export namespace transforms {
     struct alignas(16) Quaternion
@@ -31,7 +32,7 @@ export namespace transforms {
 
         Quaternion operator/(const float value) const
         {
-            if (value == 0.0) {
+            if (util::floatEqual(value, 0.0f)) {
                 return *this;
             }
             const float reciprocal = 1.0 / value;
@@ -55,7 +56,7 @@ export namespace transforms {
     Quaternion qInverse(const Quaternion& q)
     {
         const float mag = qMagnitude(q);
-        if (mag == 0.0) {
+        if (util::floatEqual(mag, 0.0f)) {
             return {};
         }
         return qConjugate(q) / (mag * mag);

@@ -3,6 +3,7 @@ export module linear_algebra;
 // Re-export all sub-modules (umbrella module pattern)
 export import systems_linear_systems;
 export import vectors_basics;
+export import linear_algebra_util;
 export import vectors_dot_product;
 export import vectors_coordinate_systems;
 export import vectors_cross_product;

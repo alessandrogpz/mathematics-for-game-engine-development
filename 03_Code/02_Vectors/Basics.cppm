@@ -3,6 +3,7 @@ export module vectors_basics;
 
 import std;
 import matrices_basics;
+import linear_algebra_util;
 
 export namespace vectors {
 
@@ -32,7 +33,7 @@ export namespace vectors {
 
         [[nodiscard]]
         vector3 operator/(const float value) const {
-            if (value == 0.0)
+            if (util::floatEqual(value, 0.0f))
                 return {x, y, z};
 
             const float reciprocal = 1.0 / value;
@@ -48,8 +49,8 @@ export namespace vectors {
         vector3 normalized() const
         {
             const float m = magnitude();
-            if (m == 0.0)
-                return {0.0, 0.0, 0.0};
+            if (util::floatEqual(m, 0.0f))
+                return {0.0f, 0.0f, 0.0f};
 
             const float reciprocal = 1.0 / m;
             return { x * reciprocal, y * reciprocal, z * reciprocal };
@@ -85,7 +86,7 @@ export namespace vectors {
 
         [[nodiscard]]
         vector4 operator/(const float value) const {
-            if (value == 0.0)
+            if (util::floatEqual(value, 0.0f))
                 return {x, y, z, w};
 
             const float reciprocal = 1.0 / value;
@@ -101,8 +102,8 @@ export namespace vectors {
         vector4 normalized() const
         {
             const float m = magnitude();
-            if (m == 0.0)
-                return {0.0, 0.0, 0.0, 0.0};
+            if (util::floatEqual(m, 0.0f))
+                return {0.0f, 0.0f, 0.0f, 0.0f};
 
             const float reciprocal = 1.0 / m;
             return { x * reciprocal, y * reciprocal, z * reciprocal, w * reciprocal };
