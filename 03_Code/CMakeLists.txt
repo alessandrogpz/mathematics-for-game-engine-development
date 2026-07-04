@@ -21,7 +21,7 @@ target_sources(LinearAlgebraLib
   PUBLIC
     FILE_SET CXX_MODULES FILES
         "linear_algebra.cppm"
-        "util.cppm"
+        "00_Utils/util.cppm"
         "01_Systems_of_Equations/Linear_Systems.cppm"
         "02_Vectors/Basics.cppm"
         "02_Vectors/Dot_Product.cppm"
