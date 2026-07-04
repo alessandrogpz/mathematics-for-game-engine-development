@@ -13,6 +13,7 @@ add_executable(LinearAlgebraTests
     Matrices/Multiplication_tests.cpp
     Matrices/Determinants_tests.cpp
     Matrices/Inversion_tests.cpp
+    Matrices/Orthogonal_tests.cpp
     Transforms/Rotations_tests.cpp
     Transforms/Scales_tests.cpp
     Transforms/Reflections_tests.cpp

@@ -39,7 +39,7 @@ These files contain only console-log helper tests and need their core mathematic
 - [x] Implement **Coordinate Conversion** routines: [Coordinate_Systems.cppm](03_Code/02_Vectors/Coordinate_Systems.cppm)
 
 ### Matrices
-- [ ] Implement **Orthogonality Check** logic: [Orthogonal_Matrices.cppm](03_Code/03_Matrices/Orthogonal_Matrices.cppm)
+- [x] Implement **Orthogonality Check** logic: [Orthogonal_Matrices.cppm](03_Code/03_Matrices/Orthogonal_Matrices.cppm)
 
 ### Transforms
 - [x] Implement **4x4 Transformation Matrices** representation and composition (integrated natively in Matrix4x4)
