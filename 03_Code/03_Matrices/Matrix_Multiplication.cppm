@@ -9,6 +9,7 @@ import vectors_dot_product;
 
 export namespace matrices {
 
+    [[nodiscard]]
     Matrix4x4 matrixMultiplication4x4(const Matrix4x4& a, const Matrix4x4& b)
     {
         Matrix4x4 result{};

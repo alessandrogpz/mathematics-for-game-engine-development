@@ -10,7 +10,6 @@ import linear_algebra_util;
 export namespace matrices {
 
     [[nodiscard]]
-    [[nodiscard]]
     Matrix4x4 inverse(const Matrix4x4& m)
     {
         const float det = determinant(m);

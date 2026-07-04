@@ -9,6 +9,8 @@ import vectors_dot_product;
 import linear_algebra_util;
 
 export namespace matrices {
+
+    [[nodiscard]]
     bool isOrthogonal(const matrices::Matrix4x4 &m)
     {
         vectors::vector4 c0(m[0, 0], m[1, 0], m[2, 0], m[3, 0]);
