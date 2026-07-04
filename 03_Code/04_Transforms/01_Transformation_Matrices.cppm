@@ -4,8 +4,11 @@ module;
 
 export module transforms_matrices;
 
+import matrices_basics;
+import vectors_basics;
+
 export namespace transforms {
     void test_transforms_matrices() {
-        std::cout << "Transforms - Transformation Matrices Module" << std::endl;
+        std::cout << "Transforms - 4x4 Transformation Matrices Module Initialized" << std::endl;
     }
 }

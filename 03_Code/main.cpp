@@ -11,16 +11,17 @@ int main() {
 
     // --- 1. Basic Matrix Operations ---
     std::cout << "\n1. --- Basic Matrix Operations ---" << std::endl;
-    matrices::Matrix3x3 A;
-    A[0, 0] = 1.0; A[0, 1] = 2.0; A[0, 2] = 3.0;
-    A[1, 0] = 4.0; A[1, 1] = 5.0; A[1, 2] = 6.0;
-    A[2, 0] = 7.0; A[2, 1] = 8.0; A[2, 2] = 9.0;
+    matrices::Matrix4x4 A;
+    A[0, 0] = 1.0; A[0, 1] = 2.0; A[0, 2] = 3.0; A[0, 3] = 0.0;
+    A[1, 0] = 4.0; A[1, 1] = 5.0; A[1, 2] = 6.0; A[1, 3] = 0.0;
+    A[2, 0] = 7.0; A[2, 1] = 8.0; A[2, 2] = 9.0; A[2, 3] = 0.0;
+    A[3, 0] = 0.0; A[3, 1] = 0.0; A[3, 2] = 0.0; A[3, 3] = 1.0;
 
     std::cout << "Matrix A:" << std::endl;
     matrices::print(A);
 
     // Identity Matrix
-    matrices::Matrix3x3 I = matrices::Matrix3x3::identity();
+    matrices::Matrix4x4 I = matrices::Matrix4x4::identity();
     std::cout << "Identity Matrix I:" << std::endl;
     matrices::print(I);
 
@@ -37,21 +38,21 @@ int main() {
 
     // Transposition
     std::cout << "Transposition transpose(A):" << std::endl;
-    matrices::Matrix3x3 A_transposed = matrices::transpose(A);
+    matrices::Matrix4x4 A_transposed = matrices::transpose(A);
     matrices::print(A_transposed);
 
     // Trace
-    std::cout << "Trace of A: " << matrices::trace(A) << " (Expected: 15)" << std::endl;
-    std::cout << "Trace of I: " << matrices::trace(I) << " (Expected: 3)" << std::endl;
+    std::cout << "Trace of A: " << matrices::trace(A) << " (Expected: 16)" << std::endl;
+    std::cout << "Trace of I: " << matrices::trace(I) << " (Expected: 4)" << std::endl;
 
 
     // --- 2. Matrix Multiplication ---
     std::cout << "\n2. --- Matrix Multiplication ---" << std::endl;
     std::cout << "A * I (Should be equal to A):" << std::endl;
-    matrices::print(matrices::matrixMultiplication3x3(A, I));
+    matrices::print(matrices::matrixMultiplication4x4(A, I));
 
     std::cout << "A * A (Matrix Squared):" << std::endl;
-    matrices::print(matrices::matrixMultiplication3x3(A, A));
+    matrices::print(matrices::matrixMultiplication4x4(A, A));
 
 
     // --- 3. Determinants ---
@@ -59,10 +60,11 @@ int main() {
     std::cout << "Determinant of A (Singular): " << matrices::determinant(A) << " (Expected: 0)" << std::endl;
     std::cout << "Determinant of I (Identity): " << matrices::determinant(I) << " (Expected: 1)" << std::endl;
 
-    matrices::Matrix3x3 B;
-    B[0, 0] = 1.0; B[0, 1] = 0.0; B[0, 2] = 2.0;
-    B[1, 0] = 0.0; B[1, 1] = 3.0; B[1, 2] = 0.0;
-    B[2, 0] = 4.0; B[2, 1] = 0.0; B[2, 2] = 5.0;
+    matrices::Matrix4x4 B;
+    B[0, 0] = 1.0; B[0, 1] = 0.0; B[0, 2] = 2.0; B[0, 3] = 0.0;
+    B[1, 0] = 0.0; B[1, 1] = 3.0; B[1, 2] = 0.0; B[1, 3] = 0.0;
+    B[2, 0] = 4.0; B[2, 1] = 0.0; B[2, 2] = 5.0; B[2, 3] = 0.0;
+    B[3, 0] = 0.0; B[3, 1] = 0.0; B[3, 2] = 0.0; B[3, 3] = 1.0;
 
     std::cout << "Matrix B:" << std::endl;
     matrices::print(B);
@@ -72,11 +74,11 @@ int main() {
     // --- 4. Matrix Inversion ---
     std::cout << "\n4. --- Matrix Inversion Tests ---" << std::endl;
     std::cout << "Inverse of B (Invertible):" << std::endl;
-    matrices::Matrix3x3 B_inv = matrices::inverse(B);
+    matrices::Matrix4x4 B_inv = matrices::inverse(B);
     matrices::print(B_inv);
 
     std::cout << "Verification B * B_inv (Should equal I):" << std::endl;
-    matrices::print(matrices::matrixMultiplication3x3(B, B_inv));
+    matrices::print(matrices::matrixMultiplication4x4(B, B_inv));
 
     std::cout << "Inverse of I (Identity):" << std::endl;
     matrices::print(matrices::inverse(I));
@@ -87,8 +89,8 @@ int main() {
 
     // --- 5. Vector Projections & Rejections ---
     std::cout << "\n5. --- Vector Projections & Rejections ---" << std::endl;
-    vectors::vector3 v{3.0, 4.0, 5.0};
-    vectors::vector3 axis{1.0, 0.0, 0.0}; // X-axis
+    vectors::vector3 v{3.0, 4.0, 5.0, 1.0};
+    vectors::vector3 axis{1.0, 0.0, 0.0, 0.0}; // X-axis direction
 
     std::cout << "Vector v: (" << v.x << ", " << v.y << ", " << v.z << ")" << std::endl;
     std::cout << "Axis of projection: (" << axis.x << ", " << axis.y << ", " << axis.z << ")" << std::endl;
@@ -104,8 +106,8 @@ int main() {
     std::cout << "Algebraic Rejection:  (" << r_alg.x << ", " << r_alg.y << ", " << r_alg.z << ") (Expected: 0, 4, 5)" << std::endl;
 
     // Matrix-based Projection & Rejection
-    matrices::Matrix3x3 P = matrices::projMatrix(axis);
-    matrices::Matrix3x3 P_perp = matrices::orthogonalRejMatrix(axis);
+    matrices::Matrix4x4 P = matrices::projMatrix(axis);
+    matrices::Matrix4x4 P_perp = matrices::orthogonalRejMatrix(axis);
 
     std::cout << "\nProjection Matrix P:" << std::endl;
     matrices::print(P);
@@ -120,7 +122,7 @@ int main() {
 
     // --- 6. 3D Coordinate Axis Rotations ---
     std::cout << "\n6. --- 3D Coordinate Axis Rotations ---" << std::endl;
-    vectors::vector3 test_vec{0.0, 1.0, 0.0}; // Pointing along Y-axis
+    vectors::vector3 test_vec{0.0, 1.0, 0.0, 1.0}; // Pointing along Y-axis
     std::cout << "Original Vector: (" << test_vec.x << ", " << test_vec.y << ", " << test_vec.z << ")" << std::endl;
 
     // Rotate 90 degrees about X-axis -> sweeps Y-axis into Z-axis
@@ -136,14 +138,14 @@ int main() {
     std::cout << "Rotated 90° about Z: (" << rotZ_90.x << ", " << rotZ_90.y << ", " << rotZ_90.z << ") (Expected: -1, 0, 0)" << std::endl;
 
     // Rotate 90 degrees about arbitrary axis (0, 0, 1) -> should match Z-axis rotation
-    vectors::vector3 arb_axis{0.0, 0.0, 1.0};
+    vectors::vector3 arb_axis{0.0, 0.0, 1.0, 0.0};
     vectors::vector3 rotArb_90 = transforms::rotationArbitraryAxis(test_vec, arb_axis, 90.0);
     std::cout << "Rotated 90° about Arb (0,0,1): (" << rotArb_90.x << ", " << rotArb_90.y << ", " << rotArb_90.z << ") (Expected: -1, 0, 0)" << std::endl;
 
     // --- 7. 3D Reflections ---
     std::cout << "\n7. --- 3D Reflections ---" << std::endl;
-    vectors::vector3 ref_v{2.0, -1.0, 3.0};
-    vectors::vector3 ref_normal{0.0, 0.0, 1.0}; // Z-axis normal
+    vectors::vector3 ref_v{2.0, -1.0, 3.0, 1.0};
+    vectors::vector3 ref_normal{0.0, 0.0, 1.0, 0.0}; // Z-axis normal
 
     vectors::vector3 ref_plane = transforms::reflection(ref_normal, ref_v);
     vectors::vector3 ref_axis = transforms::involution(ref_normal, ref_v);
@@ -154,8 +156,8 @@ int main() {
 
     // --- 8. 3D Scales ---
     std::cout << "\n8. --- 3D Scales ---" << std::endl;
-    vectors::vector3 scale_v{1.0, 2.0, 3.0};
-    vectors::vector3 scale_axis{0.0, 1.0, 0.0}; // Y-axis
+    vectors::vector3 scale_v{1.0, 2.0, 3.0, 1.0};
+    vectors::vector3 scale_axis{0.0, 1.0, 0.0, 0.0}; // Y-axis
 
     vectors::vector3 sc_uniform = transforms::scaleUniform(scale_v, 2.5);
     vectors::vector3 sc_nonuniform = transforms::scaleNonuniform(scale_v, 2.0, 0.5, 3.0);
@@ -168,9 +170,9 @@ int main() {
 
     // --- 9. 3D Skews ---
     std::cout << "\n9. --- 3D Skews ---" << std::endl;
-    vectors::vector3 skew_v{2.0, 3.0, 5.0};
-    vectors::vector3 skew_dir{1.0, 0.0, 0.0};   // slide along X-axis
-    vectors::vector3 skew_meas{0.0, 1.0, 0.0};  // relative to Y-axis
+    vectors::vector3 skew_v{2.0, 3.0, 5.0, 1.0};
+    vectors::vector3 skew_dir{1.0, 0.0, 0.0, 0.0};   // slide along X-axis
+    vectors::vector3 skew_meas{0.0, 1.0, 0.0, 0.0};  // relative to Y-axis
 
     // Skew of 45 degrees (tan(45) = 1)
     vectors::vector3 sk_res = transforms::skew(skew_dir, skew_meas, skew_v, 45.0);
@@ -179,8 +181,8 @@ int main() {
 
     // --- 10. Quaternion Rotations ---
     std::cout << "\n10. --- Quaternion Rotations ---" << std::endl;
-    vectors::vector3 q_axis{0.0, 0.0, 1.0}; // Z-axis
-    vectors::vector3 q_v{0.0, 1.0, 0.0};    // Pointing along Y
+    vectors::vector3 q_axis{0.0, 0.0, 1.0, 0.0}; // Z-axis
+    vectors::vector3 q_v{0.0, 1.0, 0.0, 1.0};    // Pointing along Y
     transforms::Quaternion q = transforms::qRotationAxisAngle(q_axis, 90.0);
     vectors::vector3 q_rotated = transforms::qRotateVector(q_v, q);
     std::cout << "Original Vector: (" << q_v.x << ", " << q_v.y << ", " << q_v.z << ")" << std::endl;

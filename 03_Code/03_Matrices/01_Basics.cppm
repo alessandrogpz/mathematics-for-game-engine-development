@@ -6,27 +6,27 @@ module;
 export module matrices_basics;
 
 export namespace matrices {
-    struct Matrix3x3
+    struct Matrix4x4
     {
-        double data[9];
+        double data[16];
 
-        Matrix3x3() : data{} {}
+        Matrix4x4() : data{} {}
 
         [[nodiscard]]
         double& operator[](const size_t row, const size_t col) {
-            return data[ row * 3 + col ];
+            return data[ row * 4 + col ];
         }
 
         [[nodiscard]]
         const double& operator[](const size_t row, const size_t col) const {
-            return data[ row * 3 + col ];
+            return data[ row * 4 + col ];
         }
 
         // 1. Matrix Addition
         [[nodiscard]]
-        Matrix3x3 operator+(const Matrix3x3& other) const {
-            Matrix3x3 result{};
-            for (size_t i = 0; i < 9; ++i) {
+        Matrix4x4 operator+(const Matrix4x4& other) const {
+            Matrix4x4 result{};
+            for (size_t i = 0; i < 16; ++i) {
                 result.data[i] = data[i] + other.data[i];
             }
             return result;
@@ -34,9 +34,9 @@ export namespace matrices {
 
         // 2. Matrix Subtraction
         [[nodiscard]]
-        Matrix3x3 operator-(const Matrix3x3& other) const {
-            Matrix3x3 result{};
-            for (size_t i = 0; i < 9; ++i) {
+        Matrix4x4 operator-(const Matrix4x4& other) const {
+            Matrix4x4 result{};
+            for (size_t i = 0; i < 16; ++i) {
                 result.data[i] = data[i] - other.data[i];
             }
             return result;
@@ -44,9 +44,9 @@ export namespace matrices {
 
         // 3. Scalar Multiplication
         [[nodiscard]]
-        Matrix3x3 operator*(const double scalar) const {
-            Matrix3x3 result{};
-            for (size_t i = 0; i < 9; ++i) {
+        Matrix4x4 operator*(const double scalar) const {
+            Matrix4x4 result{};
+            for (size_t i = 0; i < 16; ++i) {
                 result.data[i] = data[i] * scalar;
             }
             return result;
@@ -55,28 +55,29 @@ export namespace matrices {
         // 5. Trace of a Matrix (Sum of main diagonal elements)
         [[nodiscard]]
         double trace() const {
-            return data[0] + data[4] + data[8];
+            return data[0] + data[5] + data[10] + data[15];
         }
 
         // 6. Identity Matrix
-        static Matrix3x3 identity()
+        static Matrix4x4 identity()
         {
-            Matrix3x3 i{};
+            Matrix4x4 i{};
             i[0, 0] = 1.0;
             i[1, 1] = 1.0;
             i[2, 2] = 1.0;
+            i[3, 3] = 1.0;
             return i;
         }
     };
 
     // 4. Matrix Transposition
     [[nodiscard]]
-    Matrix3x3 transpose(const Matrix3x3& m)
+    Matrix4x4 transpose(const Matrix4x4& m)
     {
-        Matrix3x3 t{};
-        for ( int row = 0; row < 3; row++ )
+        Matrix4x4 t{};
+        for ( int row = 0; row < 4; row++ )
         {
-            for ( int column = 0; column < 3; column++ )
+            for ( int column = 0; column < 4; column++ )
             {
                 t[column, row] = m[row, column];
             }
@@ -84,13 +85,13 @@ export namespace matrices {
         return t;
     }
 
-    // 7. 3x3 ASCII Matrix Printer
-    void print(const Matrix3x3& m)
+    // 7. 4x4 ASCII Matrix Printer
+    void print(const Matrix4x4& m)
     {
-        for (size_t row = 0; row < 3; ++row)
+        for (size_t row = 0; row < 4; ++row)
         {
             std::cout << "[ ";
-            for (size_t col = 0; col < 3; ++col)
+            for (size_t col = 0; col < 4; ++col)
             {
                 std::cout << std::format("{:>8.4f} ", m[row, col]);
             }
@@ -99,7 +100,7 @@ export namespace matrices {
     }
 
     [[nodiscard]]
-    double trace(const Matrix3x3& m) {
+    double trace(const Matrix4x4& m) {
         return m.trace();
     }
 }
