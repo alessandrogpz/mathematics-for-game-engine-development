@@ -100,3 +100,7 @@ Checking against the cube ($V = 8$): $F = 2(8) - 4 = 12$ and $E = 3(8) - 6 = 18$
 ---
 
 *(For how the normal vector of each triangular face is computed from its vertices, see [[02_Normal_Vectors]].)*
+
+## Code Implementation
+
+*   **C++ Source Code:** [[03_Code/05_Geometry/Triangle_Meshes.cppm|Triangle_Meshes.cppm]]

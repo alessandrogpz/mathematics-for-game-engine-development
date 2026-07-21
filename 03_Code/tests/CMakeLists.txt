@@ -20,6 +20,8 @@ add_executable(LinearAlgebraTests
     Transforms/Skews_tests.cpp
     Transforms/Translations_tests.cpp
     Transforms/Quaternions_tests.cpp
+    Geometry/Triangle_Meshes_tests.cpp
+    Geometry/Normal_Vectors_tests.cpp
 )
 
 # Set standards and modules

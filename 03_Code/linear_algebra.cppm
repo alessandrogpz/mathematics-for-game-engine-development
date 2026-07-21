@@ -21,3 +21,5 @@ export import transforms_scales;
 export import transforms_skews;
 export import transforms_translations;
 export import transforms_quaternions;
+export import geometry_triangle_meshes;
+export import geometry_normal_vectors;

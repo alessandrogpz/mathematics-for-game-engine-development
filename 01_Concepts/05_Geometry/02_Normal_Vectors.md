@@ -134,3 +134,9 @@ Except for pure rotations and translations, none of the transformations above pr
 | Rotation | $\mathbf{M}\vec{n}_A$ | No |
 | Scale / Shear | $(\mathbf{M}^{-1})^T \vec{n}_A$ | Yes |
 | Reflection | $\text{sign}(\det(\mathbf{M}))\,(\mathbf{M}^{-1})^T \vec{n}_A$ | Yes |
+
+---
+
+## Code Implementation
+
+*   **C++ Source Code:** [[03_Code/05_Geometry/Normal_Vectors.cppm|Normal_Vectors.cppm]]
