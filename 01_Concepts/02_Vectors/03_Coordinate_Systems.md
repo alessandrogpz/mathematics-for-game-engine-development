@@ -22,7 +22,7 @@ This establishes the standard right-handed space. In a left-handed space (using 
 
 
 ## Why It Matters
-When working with **Cross Products** (see [[04_Cross_Product]]), the resulting vector $\vec{a} \times \vec{b}$ is defined to follow the **Right-Hand Rule**. If you are working in a Left-Handed coordinate system, your visual intuition for "up" or "forward" might be inverted compared to the mathematical result.
+When working with **[[04_Cross_Product|Cross Products]]**, the resulting vector $\vec{a} \times \vec{b}$ is defined to follow the **Right-Hand Rule**. If you are working in a Left-Handed coordinate system, your visual intuition for "up" or "forward" might be inverted compared to the mathematical result.
 
 ---
 

@@ -40,7 +40,7 @@ $$
 $$
 
 ### 2. Connect to the Dot Product
-We know the geometric definition of the dot product is:
+We know the geometric definition of the [[02_Dot_Product|dot product]] is:
 
 $$
 \vec{a} \cdot \vec{b} = \|\vec{a}\| \|\vec{b}\| \cos(\theta)

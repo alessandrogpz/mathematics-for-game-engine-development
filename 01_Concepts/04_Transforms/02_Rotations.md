@@ -252,7 +252,7 @@ $$
 $$
 
 3. **The $\sin\theta$ term (Cross Product to Skew-Symmetric Matrix):**  
-   A cross product with a fixed vector $\vec{a}$ can be represented as a matrix-vector multiplication using the cross-product matrix notation $[\vec{a}]_\times$ (a skew-symmetric matrix):
+   A cross product with a fixed vector $\vec{a}$ can be represented as a matrix-vector multiplication using the [[04_Cross_Product|cross-product matrix]] notation $[\vec{a}]_\times$ (a skew-symmetric matrix):
    
 $$
 \vec{a} \times \vec{v} \implies [\vec{a}]_\times\vec{v}

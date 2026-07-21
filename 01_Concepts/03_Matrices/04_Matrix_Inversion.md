@@ -11,7 +11,7 @@ The primary purpose of a matrix inverse is to reverse a transformation. If $M$ t
 
 ## Method 1: The Adjugate Matrix Method (Laplace Inversion)
 
-This method calculates the inverse of a matrix algebraically using the **matrix of cofactors** and its transpose, the **adjugate matrix**. It is particularly useful for $2 \times 2$ and $3 \times 3$ matrices and is the basis of Cramer's Rule.
+This method calculates the inverse of a matrix algebraically using the **matrix of cofactors** ([[03_Determinants|determinants]]) and its transpose, the **adjugate matrix**. It is particularly useful for $2 \times 2$ and $3 \times 3$ matrices and is the basis of Cramer's Rule.
 
 $$
 A^{-1} = \frac{1}{\det(A)} \text{adj}(A)

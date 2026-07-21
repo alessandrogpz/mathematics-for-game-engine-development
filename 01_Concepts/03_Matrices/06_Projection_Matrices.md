@@ -21,7 +21,7 @@ The **outer product** (denoted as $\vec{a}\vec{b}^T$ or $\vec{a} \otimes \vec{b}
 ---
 
 ### Derivation of the Projection Matrix
-For any vector $\vec{a}$ and a unit direction vector $\hat{u}$ (where $\|\hat{u}\|^2 = 1$), the vector projection is:
+For any vector $\vec{a}$ and a unit direction vector $\hat{u}$ (where $\|\hat{u}\|^2 = 1$), the [[06_Vector_Projection|vector projection]] is:
 
 $$
 \text{proj}_{\hat{u}}\vec{a} = (\vec{a} \cdot \hat{u})\hat{u}

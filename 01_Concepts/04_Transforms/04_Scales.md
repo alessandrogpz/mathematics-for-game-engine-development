@@ -51,7 +51,7 @@ We can scale an object along a single arbitrary direction defined by a unit vect
 Geometrically, this is achieved by decomposing a vector $\vec{v}$ into its parallel and perpendicular components relative to $\vec{a}$, and scaling only the parallel component.
 
 ### Geometric Setup and Decomposition
-Using the parallel and perpendicular vector projections:
+Using the parallel and perpendicular [[06_Vector_Projection|vector projections]]:
 1. **Parallel Component ($\vec{v}_{\parallel a}$):** The component of $\vec{v}$ along the scaling direction $\vec{a}$.
    
 $$
@@ -82,7 +82,7 @@ We can express the vector scaling equation in matrix form using the outer produc
 
 ### Step-by-Step Derivation
 1. **Substitute Matrix Equivalents:** 
-   We rewrite the parallel component using the outer product projection matrix ($\vec{a}\vec{a}^T$) and the perpendicular component using the orthogonal rejection matrix ($\mathbf{I} - \vec{a}\vec{a}^T$):
+   We rewrite the parallel component using the outer product projection matrix ($\vec{a}\vec{a}^T$) and the perpendicular component using the orthogonal rejection matrix ($\mathbf{I} - \vec{a}\vec{a}^T$) from [[06_Projection_Matrices]]:
    
 $$
 \vec{v}' = s(\vec{a}\vec{a}^T)\vec{v} + (\mathbf{I} - \vec{a}\vec{a}^T)\vec{v}

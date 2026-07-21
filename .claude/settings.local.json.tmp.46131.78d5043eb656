@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(pdfinfo /home/aper/Downloads/geometry.pdf)",
+      "Bash(mkdir -p \"/home/aper/Documents/LinearAlgebra/01_Concepts/05_Geometry\")",
+      "Bash(mkdir -p \"/home/aper/Documents/LinearAlgebra/02_Exercises/05_Geometry/Questions\")",
+      "Bash(mkdir -p \"/home/aper/Documents/LinearAlgebra/02_Exercises/05_Geometry/Solutions\")",
+      "Bash(cd *)",
+      "Bash(git stash *)"
+    ]
+  }
+}

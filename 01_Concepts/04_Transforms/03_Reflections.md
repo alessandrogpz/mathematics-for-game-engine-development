@@ -21,7 +21,7 @@ $$
 	<img src="../../98_Assets/Concepts/reflection_plane_decomposition.webp" width="400" height="300">
 </center>
 
-*   **Parallel Component ($\vec{v}_{\parallel a}$):** The vector projection of $\vec{v}$ onto the normal $\vec{a}$.
+*   **Parallel Component ($\vec{v}_{\parallel a}$):** The [[06_Vector_Projection|vector projection]] of $\vec{v}$ onto the normal $\vec{a}$.
     
 $$
 \vec{v}_{\parallel a} = \text{proj}_{\vec{a}}\vec{v} = (\vec{v} \cdot \vec{a})\vec{a}

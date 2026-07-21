@@ -64,8 +64,8 @@ For a linear system $\mathbf{A}\vec{x} = \vec{b}$ with $n$ variables:
 ## 5. Connection to Matrix Invertibility (Square Matrices)
 
 For an $n \times n$ square matrix $\mathbf{A}$, the following statements are equivalent:
-*   $\mathbf{A}$ is invertible ($\mathbf{A}^{-1}$ exists).
-*   $\det(\mathbf{A}) \neq 0$.
+*   $\mathbf{A}$ is [[04_Matrix_Inversion|invertible]] ($\mathbf{A}^{-1}$ exists).
+*   $\det(\mathbf{A}) \neq 0$ (its [[03_Determinants|determinant]] is non-zero).
 *   $\mathbf{A}$ has full rank: $\text{rank}(\mathbf{A}) = n$.
 *   $\mathbf{A}$ has zero nullity: $\text{nullity}(\mathbf{A}) = 0$.
 

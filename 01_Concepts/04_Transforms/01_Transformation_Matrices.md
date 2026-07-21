@@ -64,7 +64,7 @@ $$
 
 ## 2. Orthogonal Transforms
 
-An **orthogonal matrix** is a square matrix whose columns form an orthonormal set (mutually perpendicular unit-length vectors). In game physics and graphics, pure rotation matrices are orthogonal.
+An **[[05_Orthogonal_Matrices|orthogonal matrix]]** is a square matrix whose columns form an orthonormal set (mutually perpendicular unit-length vectors). In game physics and graphics, pure rotation matrices are orthogonal.
 
 Let $\mathbf{M}$ be a matrix with orthonormal columns:
 

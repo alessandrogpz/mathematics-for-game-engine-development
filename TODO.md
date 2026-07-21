@@ -9,6 +9,7 @@ These solution files still contain `[Insert ...]` placeholders that need LaTeX m
 ### Geometry
 - [ ] Complete **Triangle Meshes** derivation (Euler's formula calculations & conceptual answers): [S_01_Triangle_Meshes.md](02_Exercises/05_Geometry/Solutions/S_01_Triangle_Meshes.md)
 - [ ] Complete **Normal Vectors** derivation (cross product calculation & normal-transformation proofs): [S_02_Normal_Vectors.md](02_Exercises/05_Geometry/Solutions/S_02_Normal_Vectors.md)
+- [ ] Finish **Lines and Rays** explanation: [03_Lines_and_Rays.md](01_Concepts/05_Geometry/03_Lines_and_Rays.md)
 
 ---
 

@@ -29,7 +29,7 @@ To define the displacement vector, we need:
 ## 2. Derivation of the Skew Formula
 
 ### Step 1: Measuring Height
-The amount of slide is proportional to the perpendicular distance (height) from the plane perpendicular to $\vec{b}$ (often a coordinate plane). For any vector $\vec{v}$, this height is the scalar projection of $\vec{v}$ onto the unit vector $\vec{b}$:
+The amount of slide is proportional to the perpendicular distance (height) from the plane perpendicular to $\vec{b}$ (often a coordinate plane). For any vector $\vec{v}$, this height is the [[06_Vector_Projection|scalar projection]] of $\vec{v}$ onto the unit vector $\vec{b}$:
 
 $$
 \text{height} = \text{comp}_{\vec{b}}\vec{v} = \vec{b} \cdot \vec{v}

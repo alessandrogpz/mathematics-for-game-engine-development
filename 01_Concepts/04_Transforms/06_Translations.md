@@ -73,7 +73,7 @@ This creates a major bottleneck: we cannot combine (compose) a sequence of rotat
 
 ## 3. The Solution: Introducing a New Dimension
 
-To combine translations with other transformations into a single matrix operation, we must introduce an additional dimension. This leads to the concept of **homogeneous coordinates**.
+To combine translations with other transformations into a single matrix operation, we must introduce an additional dimension. This leads to the concept of **[[07_Homogeneous_Coordinates|homogeneous coordinates]]**.
 
 Let's see how this works for a 2D vector $[x, y]^T$. We start with the identity transformation:
 

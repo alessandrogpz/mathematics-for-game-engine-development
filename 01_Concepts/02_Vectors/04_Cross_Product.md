@@ -54,7 +54,7 @@ Using your **right hand**, orient your fingers to find the direction of $\vec{a}
 *   **Index Finger:** Point in the direction of the second vector $\vec{b}$.
 *   **Middle Finger:** Points perpendicular to your palm, indicating the direction of the cross product vector $\vec{a} \times \vec{b}$.
 
-*(For more details on coordinate systems, see [[03_Coordinate_Systems]]).*
+*(For more details, see [[03_Coordinate_Systems|Coordinate Systems]]).*
 
 ## Matrix Representation of Cross Product (Skew-Symmetric Matrix)
 

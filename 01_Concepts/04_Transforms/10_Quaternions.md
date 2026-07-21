@@ -73,8 +73,8 @@ q_1 q_2 = (s_1 s_2 - \vec{v}_1 \cdot \vec{v}_2) + (s_1 \vec{v}_2 + s_2 \vec{v}_1
 $$
 
 This splits the result into:
-*   **Scalar part:** $s_1 s_2 - \vec{v}_1 \cdot \vec{v}_2$ (the product of the scalars minus the dot product of the vectors).
-*   **Vector part:** $s_1 \vec{v}_2 + s_2 \vec{v}_1 + \vec{v}_1 \times \vec{v}_2$ (the scaled vector parts plus their cross product).
+*   **Scalar part:** $s_1 s_2 - \vec{v}_1 \cdot \vec{v}_2$ (the product of the scalars minus the [[02_Dot_Product|dot product]] of the vectors).
+*   **Vector part:** $s_1 \vec{v}_2 + s_2 \vec{v}_1 + \vec{v}_1 \times \vec{v}_2$ (the scaled vector parts plus their [[04_Cross_Product|cross product]]).
 
 ##### The Commutativity Difference
 Because the vector part contains a cross product, reversing the order of multiplication yields a different result:

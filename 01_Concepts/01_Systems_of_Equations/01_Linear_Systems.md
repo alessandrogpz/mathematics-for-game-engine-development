@@ -113,8 +113,8 @@ $$
 ---
 
 ### 3. Other Methods
-- **Matrix Inverse:** If $A$ is square and invertible, the system can be solved directly via $\vec{x} = A^{-1}\vec{b}$.
-- **Cramer's Rule:** Uses determinants to compute each variable individually (best suited for small systems).
+- **[[04_Matrix_Inversion|Matrix Inverse]]**: If $A$ is square and invertible, the system can be solved directly via $\vec{x} = A^{-1}\vec{b}$.
+- **Cramer's Rule:** Uses [[03_Determinants|determinants]] to compute each variable individually (best suited for small systems).
 
 ---
 
