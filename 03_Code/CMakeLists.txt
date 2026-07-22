@@ -43,6 +43,7 @@ target_sources(LinearAlgebraLib
         "04_Transforms/Quaternions.cppm"
         "05_Geometry/Triangle_Meshes.cppm"
         "05_Geometry/Normal_Vectors.cppm"
+        "05_Geometry/Lines_and_Rays.cppm"
 )
 
 # Set compile flags on the library target

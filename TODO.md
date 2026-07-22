@@ -9,7 +9,7 @@ These solution files still contain `[Insert ...]` placeholders that need LaTeX m
 ### Geometry
 - [ ] Complete **Triangle Meshes** derivation (Euler's formula calculations & conceptual answers): [S_01_Triangle_Meshes.md](02_Exercises/05_Geometry/Solutions/S_01_Triangle_Meshes.md)
 - [ ] Complete **Normal Vectors** derivation (cross product calculation & normal-transformation proofs): [S_02_Normal_Vectors.md](02_Exercises/05_Geometry/Solutions/S_02_Normal_Vectors.md)
-- [ ] Finish **Lines and Rays** explanation: [03_Lines_and_Rays.md](01_Concepts/05_Geometry/03_Lines_and_Rays.md)
+- [ ] Complete **Lines and Rays** derivation (point-to-line & skew line distance derivations): [S_03_Lines_and_Rays.md](02_Exercises/05_Geometry/Solutions/S_03_Lines_and_Rays.md)
 
 ---
 
@@ -23,3 +23,4 @@ These files contain only console-log helper tests and need their core mathematic
 ### Geometry
 - [ ] Implement **Triangle Mesh** representation (indexed vertex/index buffers, closed-mesh validation): [Triangle_Meshes.cppm](03_Code/05_Geometry/Triangle_Meshes.cppm)
 - [ ] Implement **Normal Vector** calculation and transformation (face normal via cross product, inverse-transpose transform): [Normal_Vectors.cppm](03_Code/05_Geometry/Normal_Vectors.cppm)
+- [ ] Implement **Lines and Rays** calculations (point-to-line & skew/parallel line distances): [Lines_and_Rays.cppm](03_Code/05_Geometry/Lines_and_Rays.cppm)
