@@ -7,8 +7,8 @@ Use this list to track the remaining exercises and code implementations that nee
 These solution files still contain `[Insert ...]` placeholders that need LaTeX mathematics or conceptual descriptions.
 
 ### Geometry
-- [ ] Complete **Triangle Meshes** derivation (Euler's formula calculations & conceptual answers): [S_01_Triangle_Meshes.md](02_Exercises/05_Geometry/Solutions/S_01_Triangle_Meshes.md)
-- [ ] Complete **Normal Vectors** derivation (cross product calculation & normal-transformation proofs): [S_02_Normal_Vectors.md](02_Exercises/05_Geometry/Solutions/S_02_Normal_Vectors.md)
+- [x] Complete **Triangle Meshes** derivation (Euler's formula calculations & conceptual answers): [S_01_Triangle_Meshes.md](02_Exercises/05_Geometry/Solutions/S_01_Triangle_Meshes.md)
+- [x] Complete **Normal Vectors** derivation (cross product calculation & normal-transformation proofs): [S_02_Normal_Vectors.md](02_Exercises/05_Geometry/Solutions/S_02_Normal_Vectors.md)
 - [ ] Complete **Lines and Rays** derivation (point-to-line & skew line distance derivations): [S_03_Lines_and_Rays.md](02_Exercises/05_Geometry/Solutions/S_03_Lines_and_Rays.md)
 
 ---

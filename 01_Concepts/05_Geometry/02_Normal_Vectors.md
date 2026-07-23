@@ -20,6 +20,19 @@ $$
 
 ---
 
+### Vertex Winding Order and Hand Rules
+
+Because the [[04_Cross_Product|cross product]] is anti-commutative ($\vec{a} \times \vec{b} = -(\vec{b} \times \vec{a})$), the **winding order** (the sequence in which vertices $P_0, P_1, P_2$ are defined) directly determines the direction of the resulting normal vector:
+
+* **Right-Hand Rule:** In a standard right-handed space (see [[03_Coordinate_Systems|Coordinate Systems]]), if you curl the fingers of your right hand along the vertex sequence ($P_0 \rightarrow P_1 \rightarrow P_2$), your extended thumb points in the direction of the outward normal vector $\vec{n}$.
+* **Reversing Winding Order:** Swapping the vertex sequence to $P_0 \rightarrow P_2 \rightarrow P_1$ flips the cross product result to $-\vec{n}$, pointing the normal vector in the exact opposite direction.
+
+> [!IMPORTANT]
+> **Importance for Graphics Engines:**
+> Game engines and graphics APIs (OpenGL, Direct3D, Vulkan) rely on a consistent winding order convention—typically **Counter-Clockwise (CCW)** when viewed from outside the object—so that all computed surface normals point outward. Inconsistent winding across a mesh causes **backface culling errors** (where visible front faces disappear) and inverted lighting/shading calculations.
+
+---
+
 ## Transforming Normal Vectors
 
 When an object is transformed by a transformation matrix $\mathbf{M}$, there is no guarantee that the normal vector will be transformed correctly by $\mathbf{M}$ — that is, it may no longer be orthogonal to its edge and/or pointing in the right direction.
