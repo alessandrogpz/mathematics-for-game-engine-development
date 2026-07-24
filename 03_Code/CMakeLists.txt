@@ -44,6 +44,13 @@ target_sources(LinearAlgebraLib
         "05_Geometry/Triangle_Meshes.cppm"
         "05_Geometry/Normal_Vectors.cppm"
         "05_Geometry/Lines_and_Rays.cppm"
+        "05_Geometry/Planes.cppm"
+        "05_Geometry/Distance_Point_and_Plane.cppm"
+        "05_Geometry/Reflection_Through_Plane.cppm"
+        "05_Geometry/Intersection_Line_and_Plane.cppm"
+        "05_Geometry/Intersection_Three_Planes.cppm"
+        "05_Geometry/Intersection_Two_Planes.cppm"
+        "05_Geometry/Transforming_Planes.cppm"
 )
 
 # Set compile flags on the library target
